@@ -77,14 +77,14 @@ adb pull /system/lib/egl/libEGL_mali.so ../../../vendor/$MANUFACTURER/$COMMON/pr
 adb pull /system/lib/egl/libGLES_android.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/egl/libGLES_android.so
 adb pull /system/lib/egl/libGLESv1_CM_mali.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/egl/libGLESv1_CM_mali.so
 adb pull /system/lib/egl/libGLESv2_mali.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/egl/libGLESv2_mali.so
-adb pull /system/etc/firmware/qt602240.fw ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/qt602240.fw
+#adb pull /system/etc/firmware/qt602240.fw ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/qt602240.fw
 #adb pull /system/etc/firmware/RS_M5LS_OB.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/RS_M5LS_OB.bin
 #adb pull /system/etc/firmware/RS_M5LS_OC.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/RS_M5LS_OC.bin
 #adb pull /system/etc/firmware/RS_M5LS_OE.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/RS_M5LS_OE.bin
 #adb pull /system/etc/firmware/RS_M5LS_TB.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/RS_M5LS_TB.bin
 #adb pull /system/vendor/firmware/mfc_fw.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/mfc_fw.bin
-adb pull /system/lib/hw/acoustics.default.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/acoustics.default.so
-adb pull /system/lib/hw/alsa.default.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/alsa.default.so
+#adb pull /system/lib/hw/acoustics.default.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/acoustics.default.so
+#adb pull /system/lib/hw/alsa.default.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/alsa.default.so
 adb pull /system/lib/hw/copybit.samsung.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/copybit.GT-I9070.so
 adb pull /system/lib/hw/gps.janice.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/gps.GT-I9070.so
 adb pull /system/lib/hw/gralloc.default.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/gralloc.default.so
