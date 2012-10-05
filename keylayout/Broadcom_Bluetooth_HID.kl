@@ -82,6 +82,7 @@ key 53    SLASH
 key 54    SHIFT_RIGHT
 
 key 57    SPACE
+key 58    CAPSLOCK
 
 key 108   DPAD_DOWN         WAKE_DROPPED
 key 103   DPAD_UP           WAKE_DROPPED
@@ -112,3 +113,12 @@ key 55    STAR
 key 96    ENTER
 key 104   PAGE_UP
 key 109   PAGE_DOWN
+
+key 113   MUTE
+key 163   MEDIA_NEXT
+key 164   MEDIA_PLAY_PAUSE
+key 165   MEDIA_PREVIOUS
+key 166   MEDIA_STOP
+
+key 172   HOME
+key 111   FORWARD_DEL
