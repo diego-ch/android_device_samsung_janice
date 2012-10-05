@@ -26,4 +26,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_galaxys2.mk
+    $(LOCAL_DIR)/full_janice.mk

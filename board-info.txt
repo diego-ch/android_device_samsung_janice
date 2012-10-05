@@ -1,3 +1,3 @@
-require board=c1
-require version-bootloader=I9100XWKE7
-require version-baseband=I9100XWKE7
+require board=ux500
+require version-bootloader=I9070XXLE1
+require version-baseband=I9070XXLE1

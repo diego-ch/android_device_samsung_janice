@@ -34,8 +34,8 @@
 # and is used by people who have access to binary versions of the drivers
 # but not to the original vendor tree. Be sure to update both.
 
-# include common makefile for c1 platform
-$(call inherit-product-if-exists, device/samsung/c1-common/common.mk)
+# include common makefile for u8500 platform
+$(call inherit-product-if-exists, device/samsung/u8500-common/common.mk)
 
 # apns config file
 PRODUCT_COPY_FILES += \
@@ -65,12 +65,12 @@ PRODUCT_PACKAGES += \
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
-	device/samsung/galaxys2/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-	device/samsung/galaxys2/keylayout/Broadcom_Bluetooth_HID.kl:system/usr/keylayout/Broadcom_Bluetooth_HID.kl \
-	device/samsung/galaxys2/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-	device/samsung/galaxys2/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
-	device/samsung/galaxys2/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
-	device/samsung/galaxys2/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
+	device/samsung/janice/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+	device/samsung/janice/keylayout/Broadcom_Bluetooth_HID.kl:system/usr/keylayout/Broadcom_Bluetooth_HID.kl \
+	device/samsung/janice/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+	device/samsung/janice/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
+	device/samsung/janice/keylayout/janice-kp.kl:system/usr/keylayout/janice-kp.kl \
+	device/samsung/janice/keylayout/Vendor_04E8_Product_7021.kl:system/usr/keylayout/Vendor_04E8_Product_7021.kl
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
@@ -109,23 +109,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # kernel modules for ramdisk
-RAMDISK_MODULES = $(addprefix device/samsung/galaxys2/,bthid.ko dhd.ko gspca_main.ko j4fs.ko \
-	scsi_wait_scan.ko Si4709_driver.ko vibrator.ko)
+RAMDISK_MODULES = $(addprefix device/samsung/janice/,bthid.ko dhd.ko j4fs.ko \
+	scsi_wait_scan.ko)
 PRODUCT_COPY_FILES += $(foreach module,\
 	$(RAMDISK_MODULES),\
 	$(module):root/lib/modules/$(notdir $(module)))
 
 # other kernel modules not in ramdisk
 PRODUCT_COPY_FILES += $(foreach module,\
-	$(filter-out $(RAMDISK_MODULES),$(wildcard device/samsung/galaxys2/*.ko)),\
+	$(filter-out $(RAMDISK_MODULES),$(wildcard device/samsung/janice/*.ko)),\
 	$(module):system/lib/modules/$(notdir $(module)))
 
 # kernel modules for recovery ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxys2/j4fs.ko:recovery/root/lib/modules/j4fs.ko
+    device/samsung/janice/j4fs.ko:recovery/root/lib/modules/j4fs.ko
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/samsung/galaxys2/kernel
+    LOCAL_KERNEL := device/samsung/janice/kernel
 else
     LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -137,4 +137,4 @@ PRODUCT_COPY_FILES += \
 # half of the device-specific product definition file takes care
 # of the aspects that require proprietary drivers that aren't
 # commonly available
-$(call inherit-product-if-exists, vendor/samsung/galaxys2/galaxys2-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor.mk)
