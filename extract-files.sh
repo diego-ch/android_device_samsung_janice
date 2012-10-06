@@ -219,7 +219,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libPanoraMax3.so:system/lib/libPanoraMax3.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libril.so:system/lib/libril.so \\
 #    vendor/__MANUFACTURER__/__COMMON__/proprietary/libs5pjpeg.so:system/lib/libs5pjpeg.so \\
- #   vendor/__MANUFACTURER__/__COMMON__/proprietary/libseccameraadaptor.so:system/lib/libseccameraadaptor.so \\
+#    vendor/__MANUFACTURER__/__COMMON__/proprietary/libseccameraadaptor.so:system/lib/libseccameraadaptor.so \\
 #    vendor/__MANUFACTURER__/__COMMON__/proprietary/libseccamera.so:system/lib/libseccamera.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libsecjpegarcsoft.so:system/lib/libsecjpegarcsoft.so \\
 #    vendor/__MANUFACTURER__/__COMMON__/proprietary/libsecjpegboard.so:system/lib/libsecjpegboard.so \\
@@ -261,8 +261,8 @@ PRODUCT_COPY_FILES += \\
 #    vendor/__MANUFACTURER__/__COMMON__/proprietary/firmware/mfc_fw.bin:system/vendor/firmware/mfc_fw.bin
 
 PRODUCT_COPY_FILES += \\
-    vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/acoustics.default.so:system/lib/hw/acoustics.default.so \\
-    vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/alsa.default.so:system/lib/hw/alsa.default.so \\
+#    vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/acoustics.default.so:system/lib/hw/acoustics.default.so \\
+#    vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/alsa.default.so:system/lib/hw/alsa.default.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/copybit.GT-I9070.so:system/lib/hw/copybit.samsung.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/gps.GT-I9070.so:system/lib/hw/gps.janice.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/gralloc.default.so:system/lib/hw/gralloc.default.so \\
