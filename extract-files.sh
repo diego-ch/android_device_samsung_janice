@@ -19,7 +19,7 @@ COMMON=u8500-common
 MANUFACTURER=samsung
 
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary
+mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/cameradata
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/egl
@@ -149,6 +149,30 @@ adb pull /system/media/battery_error.qmg ../../../vendor/$MANUFACTURER/$COMMON/p
 adb pull /system/media/chargingwarning.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/chargingwarning.qmg
 adb pull /system/media/Disconnected.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/Disconnected.qmg
 
+#Device specifics bin  (or board specifics?) from dmesg
+adb pull /system/bin/drexe ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/drexe
+adb pull /system/bin/npsmobex ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/npsmobex
+adb pull /system/bin/drmserver ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/drmserver
+#adb pull /system/bin/mtvmfservice ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/mtvmfservice
+adb pull /system/bin/geomagneticd6x ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/geomagneticd6x
+adb pull /system/bin/orientationd6x ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/orientationd6x
+adb pull /system/bin/ta_loader ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/ta_loader
+adb pull /system/bin/immvibed ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/immvibed
+#adb pull /system/bin/RescueStarter ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/RescueStarter
+adb pull /system/bin/modem-supervisor ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/modem-supervisor
+adb pull /system/bin/copsdaemon ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/copsdaemon
+adb pull /system/bin/chargemode ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/chargemode
+
+#Device specifics bin  (or board specifics?) from logcat
+adb pull /system/bin/admsrv ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/admsrv
+adb pull /system/bin/mediaserver ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/mediaserver
+
+#Libs for amdsrv
+adb pull /system/lib/libste_adm_server.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libste_adm_server.so
+adb pull /system/lib/liblvmaservice.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/liblvmaservice.so
+adb pull /system/lib/libste_audio_hwctrl.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libste_audio_hwctrl.so
+adb pull /system/lib/libhalaudioprocessing.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libhalaudioprocessing.so
+adb pull /system/lib/libomxil-bellagio.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libomxil-bellagio.so
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk
 
@@ -261,8 +285,8 @@ PRODUCT_COPY_FILES +=
 #    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/firmware/mfc_fw.bin:system/vendor/firmware/mfc_fw.bin
 
 #PRODUCT_COPY_FILES +=
-    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/acoustics.default.so:system/lib/hw/acoustics.default.so
-    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/alsa.default.so:system/lib/hw/alsa.default.so
+    #PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/acoustics.default.so:system/lib/hw/acoustics.default.so
+#    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/alsa.default.so:system/lib/hw/alsa.default.so
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/copybit.GT-I9070.so:system/lib/hw/copybit.samsung.so
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/gps.GT-I9070.so:system/lib/hw/gps.janice.so
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/gralloc.default.so:system/lib/hw/gralloc.default.so
@@ -272,8 +296,8 @@ PRODUCT_COPY_FILES +=
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/keychars/Broadcom_Bluetooth_HID.kcm.bin:system/usr/keychars/Broadcom_Bluetooth_HID.kcm.bin
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin
-    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/keychars/janice-kp.kcm.bin:system/usr/keychars/janice-kp.kcm.bin
-    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/keychars/Vendor_04E8_Product_7021.kcm.bin:system/usr/keychars/Vendor_04E8_Product_7021.kcm.bin
+    #PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/keychars/janice-kp.kcm.bin:system/usr/keychars/janice-kp.kcm.bin
+#    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/keychars/Vendor_04E8_Product_7021.kcm.bin:system/usr/keychars/Vendor_04E8_Product_7021.kcm.bin
 
 #PRODUCT_COPY_FILES +=
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/wifi/bcm4330_aps.bin:system/vendor/firmware/bcm4330_aps.bin
@@ -336,6 +360,31 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_cha
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_error.qmg:system/media/battery_error.qmg
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/chargingwarning.qmg:system/media/chargingwarning.qmg
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/Disconnected.qmg:system/media/Disconnected.qmg
+
+#Device specifics bin  (or board specifics?)
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/drexe:system/bin/
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/npsmobex:system/bin/
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/drmserver:system/bin/
+#PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/mtvmfservice:system/bin/
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/geomagneticd6x:system/bin/
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/orientationd6x:system/bin/
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/ta_loader:system/bin/
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/immvibed:system/bin/
+#PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/RescueStarter:system/bin/
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/modem-supervisor:system/bin/
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/copsdaemon:system/bin/
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/chargemode:system/bin/
+
+#Device specifics bin  (or board specifics?) from logcat
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/admsrv:system/bin/admsrv
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/mediaserver:system/bin/mediaserver
+
+#Libs for amdsrv
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_adm_server.so:system/lib/libste_adm_server.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/liblvmaservice.so:system/lib/liblvmaservice.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_audio_hwctrl.so:system/lib/libste_audio_hwctrl.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libhalaudioprocessing.so:system/lib/libhalaudioprocessing.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libomxil-bellagio.so:system/lib/libomxil-bellagio.so
 
 EOF
 
