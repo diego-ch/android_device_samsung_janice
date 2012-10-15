@@ -167,12 +167,16 @@ adb pull /system/bin/chargemode ../../../vendor/$MANUFACTURER/$COMMON/proprietar
 adb pull /system/bin/admsrv ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/admsrv
 adb pull /system/bin/mediaserver ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/mediaserver
 
-#Libs for amdsrv
+#Libs for amdsrv and mediaserver
 adb pull /system/lib/libste_adm_server.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libste_adm_server.so
 adb pull /system/lib/liblvmaservice.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/liblvmaservice.so
 adb pull /system/lib/libste_audio_hwctrl.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libste_audio_hwctrl.so
 adb pull /system/lib/libhalaudioprocessing.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libhalaudioprocessing.so
 adb pull /system/lib/libomxil-bellagio.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libomxil-bellagio.so
+adb pull /system/lib/libste_ensloader.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libste_ensloader.so
+adb pull /system/lib/libnmfee.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libnmfee.so
+
+
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk
 
@@ -385,6 +389,8 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/liblvmaserv
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_audio_hwctrl.so:system/lib/libste_audio_hwctrl.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libhalaudioprocessing.so:system/lib/libhalaudioprocessing.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libomxil-bellagio.so:system/lib/libomxil-bellagio.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_ensloader.so:system/lib/libste_ensloader.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmfee.so:system/lib/libnmfee.so
 
 EOF
 
