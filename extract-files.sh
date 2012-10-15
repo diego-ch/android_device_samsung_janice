@@ -167,10 +167,10 @@ adb pull /system/media/Disconnected.qmg ../../../vendor/$MANUFACTURER/$COMMON/pr
 # limitations under the License.
 
 # Prebuilt libraries that are needed to build open-source libraries
-PRODUCT_COPY_FILES :=
+PRODUCT_COPY_FILES := \\
 
 # All the blobs necessary for galaxys2 devices
-PRODUCT_COPY_FILES +=
+PRODUCT_COPY_FILES += \\
 
 EOF
 
