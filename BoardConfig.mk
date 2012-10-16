@@ -22,28 +22,36 @@ BOARD_USES_GENERIC_AUDIO := false
 BOARD_PREBUILT_LIBAUDIO := true
 #BOARD_USE_YAMAHAPLAYER := true
 
+TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 BOARD_USES_LIBSECRIL_STUB := true
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/janice/BoardConfigVendor.mk
 
+# Platform
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
 ARCH_ARM_HAVE_TLS_REGISTER := true
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
-
-TARGET_NO_BOOTLOADER := true
-TARGET_NO_RADIOIMAGE := true
-
 TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
 TARGET_BOARD_PLATFORM := ux500
 TARGET_BOOTLOADER_BOARD_NAME := GT-I9070
-TARGET_RECOVERY_INITRC := device/samsung/u8500-common/recovery.rc
+
+# Kernel
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+BOARD_NAND_PAGE_SIZE := 4096 -s 128
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_BASE := 0x40000000
+BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0
+TARGET_PREBUILT_KERNEL := device/samsung/janice/kernel
+
+# Misc
 TARGET_PROVIDES_MEDIASERVER := true
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/u8500-common/shbootimg.mk
 
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
 
@@ -56,6 +64,9 @@ USE_CAMERA_STUB := false
 ifeq ($(USE_CAMERA_STUB),false)
 BOARD_CAMERA_LIBRARIES := libcamera
 endif
+
+# assert
+TARGET_OTA_ASSERT_DEVICE := janice,GT-I9070
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -72,17 +83,6 @@ BOARD_USES_GPSWRAPPER := true
 
 # Vibrator
 #BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/u8500-common/vibrator/tspdrv.c
-
-BOARD_NAND_PAGE_SIZE := 4096 -s 128
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_BASE := 0x40000000
-BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0
-TARGET_PREBUILT_KERNEL := device/samsung/janice/kernel
-
-BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 641728512
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
-BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Connectivity - Wi-Fi
 WPA_SUPPLICANT_VERSION := VER_0_6_X
@@ -101,16 +101,17 @@ BOARD_VOLD_MAX_PARTITIONS := 12
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
 # Recovery
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 641728512
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
+BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/janice/recovery/recovery_ui.c
+TARGET_RECOVERY_INITRC := device/samsung/u8500-common/recovery.rc
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/u8500-common/shbootimg.mk
-
-# assert
-TARGET_OTA_ASSERT_DEVICE := janice,GT-I9070
+TARGET_RECOVERY_FSTAB := device/samsung/janice/recovery/recovery.fstab
 
 # Include aries specific stuff
 -include device/samsung/u8500-common/Android.mk
