@@ -111,7 +111,7 @@ TARGET_RECOVERY_INITRC := device/samsung/u8500-common/recovery.rc
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := device/samsung/janice/recovery/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/janice/recovery.fstab
 
 # Include aries specific stuff
 -include device/samsung/u8500-common/Android.mk
