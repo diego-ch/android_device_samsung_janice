@@ -166,6 +166,17 @@ adb pull /system/bin/chargemode ../../../vendor/$MANUFACTURER/$COMMON/proprietar
 #Device specifics bin  (or board specifics?) from logcat
 adb pull /system/bin/admsrv ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/admsrv
 adb pull /system/bin/mediaserver ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/mediaserver
+adb pull /system/bin/modem-supervisor ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/modem-supervisor
+adb pull /system/bin/copsdaemon ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/copsdaemon
+adb pull /system/bin/chargemode ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/chargemode
+adb pull /system/bin/modem_log_relay ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/modem_log_relay
+adb pull /system/bin/npsmobex ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/npsmobex
+adb pull /system/bin/drmserver ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/drmserver
+adb pull /system/bin/geomagneticd6x ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/geomagneticd6x
+adb pull /system/bin/orientationd6x ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/orientationd6x
+adb pull /system/bin/ta_loader ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/ta_loader
+adb pull /system/bin/immvibed ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/immvibed
+
 
 #Libs for amdsrv and mediaserver
 adb pull /system/lib/libste_adm_server.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libste_adm_server.so
@@ -175,6 +186,8 @@ adb pull /system/lib/libhalaudioprocessing.so ../../../vendor/$MANUFACTURER/$COM
 adb pull /system/lib/libomxil-bellagio.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libomxil-bellagio.so
 adb pull /system/lib/libste_ensloader.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libste_ensloader.so
 adb pull /system/lib/libnmfee.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libnmfee.so
+adb pull /system/lib/libnmf.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libnmf.so
+adb pull /system/lib/liblos.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/liblos.so
 
 
 
@@ -382,6 +395,17 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/chargem
 #Device specifics bin  (or board specifics?) from logcat
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/admsrv:system/bin/admsrv
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/mediaserver:system/bin/mediaserver
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/modem-supervisor:system/bin/modem-supervisor
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/copsdaemon:system/bin/copsdaemon
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/chargemode:system/bin/chargemode
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/modem_log_relay:system/bin/modem_log_relay
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/npsmobex:system/bin/npsmobex
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/drmserver:system/bin/drmserver
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/geomagneticd6x:system/bin/geomagneticd6x
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/orientationd6x:system/bin/orientationd6x
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/ta_loader:system/bin/ta_loader
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/immvibed:system/bin/immvibed
+
 
 #Libs for amdsrv
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_adm_server.so:system/lib/libste_adm_server.so
@@ -391,6 +415,7 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libhalaudio
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libomxil-bellagio.so:system/lib/libomxil-bellagio.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_ensloader.so:system/lib/libste_ensloader.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmfee.so:system/lib/libnmfee.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmf.so:system/lib/libnmf.so
 
 EOF
 
