@@ -19,6 +19,7 @@ COMMON=u8500-common
 MANUFACTURER=samsung
 
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/etc
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/cameradata
@@ -176,6 +177,10 @@ adb pull /system/bin/geomagneticd6x ../../../vendor/$MANUFACTURER/$COMMON/propri
 adb pull /system/bin/orientationd6x ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/orientationd6x
 adb pull /system/bin/ta_loader ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/ta_loader
 adb pull /system/bin/immvibed ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/immvibed
+adb pull /system/bin/at_core ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/at_core
+adb pull /system/bin/at_distributor ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/at_distributor
+adb pull /system/etc/adm.sqlite ../../../vendor/$MANUFACTURER/$COMMON/proprietary/etc/adm.sqlite
+
 
 
 #Libs for amdsrv and mediaserver
@@ -188,7 +193,7 @@ adb pull /system/lib/libste_ensloader.so ../../../vendor/$MANUFACTURER/$COMMON/p
 adb pull /system/lib/libnmfee.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libnmfee.so
 adb pull /system/lib/libnmf.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libnmf.so
 adb pull /system/lib/liblos.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/liblos.so
-
+adb pull /system/lib/libtrace.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libtrace.so
 
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk
@@ -405,7 +410,9 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/geomagn
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/orientationd6x:system/bin/orientationd6x
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/ta_loader:system/bin/ta_loader
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/immvibed:system/bin/immvibed
-
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/at_core:system/bin/at_core
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/at_distributor:system/bin/at_distributor
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/etc/adm.sqlite:system/etc/adm.sqlite
 
 #Libs for amdsrv
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_adm_server.so:system/lib/libste_adm_server.so
@@ -416,6 +423,8 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libomxil-be
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_ensloader.so:system/lib/libste_ensloader.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmfee.so:system/lib/libnmfee.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmf.so:system/lib/libnmf.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libtrace.so:system/lib/libtrace.so
+
 
 EOF
 
