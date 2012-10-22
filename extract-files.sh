@@ -180,7 +180,26 @@ adb pull /system/bin/immvibed ../../../vendor/$MANUFACTURER/$COMMON/proprietary/
 adb pull /system/bin/at_core ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/at_core
 adb pull /system/bin/at_distributor ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/at_distributor
 adb pull /system/etc/adm.sqlite ../../../vendor/$MANUFACTURER/$COMMON/proprietary/etc/adm.sqlite
-
+adb pull /system/lib/libproduct.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libproduct.so
+adb pull /system/lib/libtee.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libtee.so
+adb pull /system/lib/libste_ens_audio_samplerateconv.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libste_ens_audio_samplerateconv.so
+adb pull /system/lib/libatparser.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libatparser.so
+adb pull /system/bin/cspsa-server ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/cspsa-server
+adb pull /system/bin/factoryreset ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/factoryreset
+adb pull /system/lib/libcn.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libcn.so
+adb pull /system/lib/libcspsa.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libcspsa.so
+adb pull /system/etc/cspsa.conf ../../../vendor/$MANUFACTURER/$COMMON/proprietary/etc/cspsa.conf
+adb pull /system/lib/libomission_avoidance.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libomission_avoidance.so
+adb pull /system/lib/libstecom.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libstecom.so
+adb pull /system/lib/libmpl.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libmpl.so
+adb pull /system/lib/libpscc.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libpscc.so
+adb pull /system/lib/libsterc.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsterc.so
+adb pull /system/lib/libsms_server.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsms_server.so
+adb pull /system/lib/libcops.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libcops.so
+adb pull /system/lib/libmalrf.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libmalrf.so
+adb pull /system/lib/libphonet.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libphonet.so
+adb pull /system/lib/libisimessage.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libisimessage.so
+adb pull /system/lib/liblos.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/liblos.so
 
 
 #Libs for amdsrv and mediaserver
@@ -413,6 +432,26 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/immvibe
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/at_core:system/bin/at_core
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/at_distributor:system/bin/at_distributor
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/etc/adm.sqlite:system/etc/adm.sqlite
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libproduct.so:system/lib/libproduct.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libtee.so:system/lib/libtee.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_ens_audio_samplerateconv.so:system/lib/libste_ens_audio_samplerateconv.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libatparser.so:system/lib/libatparser.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/cspsa-server:system/bin/cspsa-server
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/factoryreset:system/bin/factoryreset
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libcn.so:system/lib/libcn.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libcspsa.so:system/lib/libcspsa.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/etc/cspsa.conf:system/etc/cspsa.conf
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libomission_avoidance.so:system/lib/libomission_avoidance.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libstecom.so:system/lib/libstecom.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libmpl.so:system/lib/libmpl.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libpscc.so:system/lib/libpscc.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsterc.so:system/lib/libsterc.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsms_server.so:system/lib/libsms_server.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libcops.so:system/lib/libcops.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libmalrf.so:system/lib/libmalrf.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libphonet.so:system/lib/libphonet.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libisimessage.so:system/lib/libisimessage.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/liblos.so:system/lib/liblos.so
 
 #Libs for amdsrv
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_adm_server.so:system/lib/libste_adm_server.so
@@ -424,6 +463,7 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_ensl
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmfee.so:system/lib/libnmfee.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmf.so:system/lib/libnmf.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libtrace.so:system/lib/libtrace.so
+
 
 
 EOF
