@@ -108,6 +108,7 @@ adb pull /system/lib/libaudioeffect_jni.so ../../../vendor/$MANUFACTURER/$COMMON
 #adb pull /system/lib/libaudiohw_op.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudiohw_op.so
 #adb pull /system/lib/libaudiohw_sf.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudiohw_sf.so
 adb pull /system/lib/libaudiopolicy.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudiopolicy.so
+adb pull /system/lib/libmedia.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libmedia.so
 #adb pull /system/lib/liblvvefs.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/liblvvefs.so
 #adb pull /system/lib/libmediayamaha.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libmediayamaha.so
 #adb pull /system/lib/libmediayamaha_jni.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libmediayamaha_jni.so
@@ -200,6 +201,7 @@ adb pull /system/lib/libmalrf.so ../../../vendor/$MANUFACTURER/$COMMON/proprieta
 adb pull /system/lib/libphonet.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libphonet.so
 adb pull /system/lib/libisimessage.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libisimessage.so
 adb pull /system/lib/liblos.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/liblos.so
+adb pull /system/lib/libaudioflinger.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libaudioflinger.so
 
 
 #Libs for amdsrv and mediaserver
@@ -261,6 +263,7 @@ PRODUCT_COPY_FILES := vendor/__MANUFACTURER__/__COMMON__/proprietary/libcamera.s
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libril.so:obj/lib/libril.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsecril-client.so:obj/lib/libsecril-client.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudio.so:obj/lib/libaudio.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libmedia.so:obj/lib/libmedia.so
 #PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libmediayamahaservice.so:obj/lib/libmediayamahaservice.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudiopolicy.so:obj/lib/libaudiopolicy.so
 
@@ -452,6 +455,7 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libmalrf.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libphonet.so:system/lib/libphonet.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libisimessage.so:system/lib/libisimessage.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/liblos.so:system/lib/liblos.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libaudioflinger.so:system/lib/libaudioflinger.so
 
 #Libs for amdsrv
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_adm_server.so:system/lib/libste_adm_server.so
