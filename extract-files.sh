@@ -108,6 +108,7 @@ adb pull /system/lib/libaudioeffect_jni.so ../../../vendor/$MANUFACTURER/$COMMON
 #adb pull /system/lib/libaudiohw_op.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudiohw_op.so
 #adb pull /system/lib/libaudiohw_sf.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudiohw_sf.so
 adb pull /system/lib/libaudiopolicy.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudiopolicy.so
+adb pull /system/lib/libmedia.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libmedia.so
 #adb pull /system/lib/liblvvefs.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/liblvvefs.so
 #adb pull /system/lib/libmediayamaha.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libmediayamaha.so
 #adb pull /system/lib/libmediayamaha_jni.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libmediayamaha_jni.so
@@ -200,6 +201,7 @@ adb pull /system/lib/libmalrf.so ../../../vendor/$MANUFACTURER/$COMMON/proprieta
 adb pull /system/lib/libphonet.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libphonet.so
 adb pull /system/lib/libisimessage.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libisimessage.so
 adb pull /system/lib/liblos.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/liblos.so
+adb pull /system/lib/libaudioflinger.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libaudioflinger.so
 
 
 #Libs for amdsrv and mediaserver
@@ -213,7 +215,20 @@ adb pull /system/lib/libnmfee.so ../../../vendor/$MANUFACTURER/$COMMON/proprieta
 adb pull /system/lib/libnmf.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libnmf.so
 adb pull /system/lib/liblos.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/liblos.so
 adb pull /system/lib/libtrace.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libtrace.so
-
+adb pull /system/lib/libsomxaacd.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxaacd.so
+adb pull /system/lib/libsomxaace.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxaace.so
+adb pull /system/lib/libsomxac3d.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxac3d.so
+adb pull /system/lib/libsomxamrd.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxamrd.so
+adb pull /system/lib/libsomxamre.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxamre.so
+adb pull /system/lib/libsomxcmn.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxcmn.so
+adb pull /system/lib/libsomxcore.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxcore.so
+adb pull /system/lib/libsomxflacd.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxflacd.so
+adb pull /system/lib/libsomxmp3d.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxmp3d.so
+adb pull /system/lib/libsomxmp43d.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxmp43d.so
+adb pull /system/lib/libsomxsr263d.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxsr263d.so
+adb pull /system/lib/libsomxwmad.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxwmad.so
+adb pull /system/lib/libsomxwmv7d.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxwmv7d.so
+adb pull /system/lib/libsomxwmv8d.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxwmv8d.so
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk
 
@@ -261,6 +276,7 @@ PRODUCT_COPY_FILES := vendor/__MANUFACTURER__/__COMMON__/proprietary/libcamera.s
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libril.so:obj/lib/libril.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsecril-client.so:obj/lib/libsecril-client.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudio.so:obj/lib/libaudio.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libmedia.so:obj/lib/libmedia.so
 #PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libmediayamahaservice.so:obj/lib/libmediayamahaservice.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudiopolicy.so:obj/lib/libaudiopolicy.so
 
@@ -452,6 +468,7 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libmalrf.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libphonet.so:system/lib/libphonet.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libisimessage.so:system/lib/libisimessage.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/liblos.so:system/lib/liblos.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libaudioflinger.so:system/lib/libaudioflinger.so
 
 #Libs for amdsrv
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_adm_server.so:system/lib/libste_adm_server.so
@@ -459,6 +476,20 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/liblvmaserv
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_audio_hwctrl.so:system/lib/libste_audio_hwctrl.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libhalaudioprocessing.so:system/lib/libhalaudioprocessing.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libomxil-bellagio.so:system/lib/libomxil-bellagio.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxaacd.so:system/lib/libsomxaacd.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxaace.so:system/lib/libsomxaace.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxac3d.so:system/lib/libsomxac3d.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxamrd.so:system/lib/libsomxamrd.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxamre.so:system/lib/libsomxamre.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxcmn.so:system/lib/libsomxcmn.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxcore.so:system/lib/libsomxcore.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxflacd.so:system/lib/libsomxflacd.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxmp3d.so:system/lib/libsomxmp3d.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxmp43d.so:system/lib/libsomxmp43d.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxsr263d.so:system/lib/libsomxsr263d.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxwmad.so:system/lib/libsomxwmad.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxwmv7d.so:system/lib/libsomxwmv7d.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsomxwmv8d.so:system/lib/libsomxwmv8d.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_ensloader.so:system/lib/libste_ensloader.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmfee.so:system/lib/libnmfee.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmf.so:system/lib/libnmf.so
