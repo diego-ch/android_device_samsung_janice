@@ -90,9 +90,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
        persist.service.usb.setting=0 \
        dev.sfbootcomplete=0 \
        persist.sys.vold.switchexternal=1
-# MSO - 20121105 - As suggested from Shaaan
-PRODUCT_PROPERTY_OVERRIDES += \
-		dalvik.vm.dexopt-data-only=1
+
 
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
