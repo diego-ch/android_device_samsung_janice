@@ -19,7 +19,8 @@
 
 # Set this up here so that BoardVendorConfig.mk can override it
 BOARD_USES_GENERIC_AUDIO := false
-BOARD_PREBUILT_LIBAUDIO := true
+BOARD_PREBUILT_LIBAUDIO := false #MSO - 20121105 - Build from sources
+BOARD_USES_SAMSUNG_SEPARATED_STREAM := true #MSO - 20121105 - Samsung Specific code for audio libs and mediaserver
 #BOARD_USE_YAMAHAPLAYER := true
 
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
@@ -50,7 +51,7 @@ BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0
 TARGET_PREBUILT_KERNEL := device/samsung/janice/kernel
 
 # Misc
-TARGET_PROVIDES_MEDIASERVER := true
+#TARGET_PROVIDES_MEDIASERVER := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/u8500-common/shbootimg.mk
 
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
@@ -60,7 +61,7 @@ TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/u8500-common/relea
 TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/u8500-common/releasetools/u8500_img_from_target_files
 
 # Camera
-USE_CAMERA_STUB := false
+USE_CAMERA_STUB := true
 ifeq ($(USE_CAMERA_STUB),false)
 BOARD_CAMERA_LIBRARIES := libcamera
 endif

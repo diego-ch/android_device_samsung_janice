@@ -17,7 +17,11 @@
 DEVICE=janice
 COMMON=u8500-common
 MANUFACTURER=samsung
+#MSO - 20121105 - Clean the used folders to be sure nothing wrong is there
+rm -Rf ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+rm -Rf ../../../vendor/$MANUFACTURER/$COMMON/proprietary
 
+#recreate the needed folders
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/etc
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin
@@ -30,6 +34,8 @@ mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/keychars
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/wifi
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging
 
+
+
 # janice
 
 
@@ -38,8 +44,8 @@ adb pull /system/lib/libActionShot.so ../../../vendor/$MANUFACTURER/$COMMON/prop
 #adb pull /system/lib/libakm.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libakm.so
 adb pull /system/lib/libarccamera.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libarccamera.so
 adb pull /system/lib/libcamera_client.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libcamera_client.so
-adb pull /system/lib/libcameraservice.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libcameraservice.so
-adb pull /system/lib/libcamera.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libcamera.so
+#adb pull /system/lib/libcameraservice.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libcameraservice.so
+#adb pull /system/lib/libcamera.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libcamera.so
 adb pull /system/lib/libcaps.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libcaps.so
 adb pull /system/lib/libEGL.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libEGL.so
 adb pull /system/lib/libexif.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libexif.so
@@ -104,11 +110,10 @@ adb pull /system/etc/wifi/bcm4330_sta.bin ../../../vendor/$MANUFACTURER/$COMMON/
 #adb pull /system/bin/alsa_ucm ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/alsa_ucm
 adb pull /system/lib/libasound.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libasound.so
 adb pull /system/lib/libaudio.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudio.so
-adb pull /system/lib/libaudioeffect_jni.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudioeffect_jni.so
+#adb pull /system/lib/libaudioeffect_jni.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudioeffect_jni.so
 #adb pull /system/lib/libaudiohw_op.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudiohw_op.so
 #adb pull /system/lib/libaudiohw_sf.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudiohw_sf.so
 adb pull /system/lib/libaudiopolicy.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libaudiopolicy.so
-adb pull /system/lib/libmedia.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libmedia.so
 #adb pull /system/lib/liblvvefs.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/liblvvefs.so
 #adb pull /system/lib/libmediayamaha.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libmediayamaha.so
 #adb pull /system/lib/libmediayamaha_jni.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libmediayamaha_jni.so
@@ -167,7 +172,7 @@ adb pull /system/bin/chargemode ../../../vendor/$MANUFACTURER/$COMMON/proprietar
 
 #Device specifics bin  (or board specifics?) from logcat
 adb pull /system/bin/admsrv ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/admsrv
-adb pull /system/bin/mediaserver ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/mediaserver
+#adb pull /system/bin/mediaserver ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/mediaserver
 adb pull /system/bin/modem-supervisor ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/modem-supervisor
 adb pull /system/bin/copsdaemon ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/copsdaemon
 adb pull /system/bin/chargemode ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bin/chargemode
@@ -201,7 +206,6 @@ adb pull /system/lib/libmalrf.so ../../../vendor/$MANUFACTURER/$COMMON/proprieta
 adb pull /system/lib/libphonet.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libphonet.so
 adb pull /system/lib/libisimessage.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libisimessage.so
 adb pull /system/lib/liblos.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/liblos.so
-adb pull /system/lib/libaudioflinger.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libaudioflinger.so
 
 
 #Libs for amdsrv and mediaserver
@@ -229,6 +233,7 @@ adb pull /system/lib/libsomxsr263d.so ../../../vendor/$MANUFACTURER/$COMMON/prop
 adb pull /system/lib/libsomxwmad.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxwmad.so
 adb pull /system/lib/libsomxwmv7d.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxwmv7d.so
 adb pull /system/lib/libsomxwmv8d.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsomxwmv8d.so
+adb pull /system/lib/libblt_hw.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libblt_hw.so
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk
 
@@ -272,13 +277,14 @@ EOF
 
 # Prebuilt libraries that are needed to build open-source libraries
 #PRODUCT_COPY_FILES :=
-PRODUCT_COPY_FILES := vendor/__MANUFACTURER__/__COMMON__/proprietary/libcamera.so:obj/lib/libcamera.so
+#PRODUCT_COPY_FILES := vendor/__MANUFACTURER__/__COMMON__/proprietary/libcamera.so:obj/lib/libcamera.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libril.so:obj/lib/libril.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libsecril-client.so:obj/lib/libsecril-client.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudio.so:obj/lib/libaudio.so
-PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libmedia.so:obj/lib/libmedia.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudio.so:system/lib/libaudio.so
 #PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libmediayamahaservice.so:obj/lib/libmediayamahaservice.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudiopolicy.so:obj/lib/libaudiopolicy.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudiopolicy.so:system/lib/libaudiopolicy.so
 
 # All the blobs necessary for galaxys2 devices
 #PRODUCT_COPY_FILES +=
@@ -286,8 +292,8 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libau
 #    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libakm.so:system/lib/libakm.so
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libarccamera.so:system/lib/libarccamera.so
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libcamera_client.so:system/lib/libcamera_client.so
-    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libcameraservice.so:system/lib/libcameraservice.so
-    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libcamera.so:system/lib/libcamera.so
+#    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libcameraservice.so:system/lib/libcameraservice.so
+#    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libcamera.so:system/lib/libcamera.so
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libcaps.so:system/lib/libcaps.so
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libEGL.so:system/lib/libEGL.so
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libexif.so:system/lib/libexif.so
@@ -368,11 +374,9 @@ PRODUCT_COPY_FILES +=
 #    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/alsa_ctl:system/bin/alsa_ctl
 #    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/alsa_ucm:system/bin/alsa_ucm
     PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libasound.so:system/lib/libasound.so
-    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudio.so:system/lib/libaudio.so
-    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudioeffect_jni.so:system/lib/libaudioeffect_jni.so
+#    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudioeffect_jni.so:system/lib/libaudioeffect_jni.so
 #    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudiohw_op.so:system/lib/libaudiohw_op.so
 #    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudiohw_sf.so:system/lib/libaudiohw_sf.so
-    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudiopolicy.so:system/lib/libaudiopolicy.so
 #    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/liblvvefs.so:system/lib/liblvvefs.so
 #    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libmediayamaha.so:system/lib/libmediayamaha.so
 #    PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libmediayamaha_jni.so:system/lib/libmediayamaha_jni.so
@@ -434,7 +438,7 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/chargem
 
 #Device specifics bin  (or board specifics?) from logcat
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/admsrv:system/bin/admsrv
-PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/mediaserver:system/bin/mediaserver
+#PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/mediaserver:system/bin/mediaserver
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/modem-supervisor:system/bin/modem-supervisor
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/copsdaemon:system/bin/copsdaemon
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/bin/chargemode:system/bin/chargemode
@@ -468,7 +472,6 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libmalrf.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libphonet.so:system/lib/libphonet.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libisimessage.so:system/lib/libisimessage.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/liblos.so:system/lib/liblos.so
-PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libaudioflinger.so:system/lib/libaudioflinger.so
 
 #Libs for amdsrv
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_adm_server.so:system/lib/libste_adm_server.so
@@ -494,6 +497,7 @@ PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libste_ensl
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmfee.so:system/lib/libnmfee.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libnmf.so:system/lib/libnmf.so
 PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libtrace.so:system/lib/libtrace.so
+PRODUCT_COPY_FILES += vendor/__MANUFACTURER__/__COMMON__/proprietary/libblt_hw.so:system/lib/libblt_hw.so
 
 
 
