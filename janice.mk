@@ -111,7 +111,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # kernel modules for ramdisk
 RAMDISK_MODULES = $(addprefix device/samsung/janice/modules/,bthid.ko dhd.ko j4fs.ko \
-	scsi_wait_scan.ko)
+	scsi_wait_scan.ko param.ko)
 PRODUCT_COPY_FILES += $(foreach module,\
 	$(RAMDISK_MODULES),\
 	$(module):root/lib/modules/$(notdir $(module)))
@@ -123,7 +123,8 @@ PRODUCT_COPY_FILES += $(foreach module,\
 
 # kernel modules for recovery ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/janice/modules/j4fs.ko:recovery/root/lib/modules/j4fs.ko
+    device/samsung/janice/modules/j4fs.ko:recovery/root/lib/modules/j4fs.ko \
+    device/samsung/janice/modules/param.ko:recovery/root/lib/modules/param.ko
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/samsung/janice/kernel
