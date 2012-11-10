@@ -33,4 +33,4 @@ TARGET_OTA_ASSERT_DEVICE := janice,GT-I9070
 TARGET_RECOVERY_FSTAB := device/samsung/janice/recovery.fstab
 
 # Use the non-open-source parts, if they're present
-$(call inherit-product-if-exists, vendor/samsung/janice/BoardConfigVendor.mk)
+-include vendor/samsung/janice/BoardConfigVendor.mk
