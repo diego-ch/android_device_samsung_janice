@@ -91,6 +91,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
        dev.sfbootcomplete=0 \
        persist.sys.vold.switchexternal=1
 
+
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -109,20 +110,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # kernel modules for ramdisk
-RAMDISK_MODULES = $(addprefix device/samsung/janice/,bthid.ko dhd.ko j4fs.ko \
-	scsi_wait_scan.ko)
+RAMDISK_MODULES = $(addprefix device/samsung/janice/modules/,bthid.ko dhd.ko j4fs.ko \
+	scsi_wait_scan.ko param.ko)
 PRODUCT_COPY_FILES += $(foreach module,\
 	$(RAMDISK_MODULES),\
 	$(module):root/lib/modules/$(notdir $(module)))
 
 # other kernel modules not in ramdisk
 PRODUCT_COPY_FILES += $(foreach module,\
-	$(filter-out $(RAMDISK_MODULES),$(wildcard device/samsung/janice/*.ko)),\
+	$(filter-out $(RAMDISK_MODULES),$(wildcard device/samsung/janice/modules/*.ko)),\
 	$(module):system/lib/modules/$(notdir $(module)))
 
 # kernel modules for recovery ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/janice/j4fs.ko:recovery/root/lib/modules/j4fs.ko
+    device/samsung/janice/modules/j4fs.ko:recovery/root/lib/modules/j4fs.ko \
+    device/samsung/janice/modules/param.ko:recovery/root/lib/modules/param.ko
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/samsung/janice/kernel
