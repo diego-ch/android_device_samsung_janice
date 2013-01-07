@@ -15,8 +15,8 @@
 # limitations under the License.
 
 VENDOR=samsung
-COMMON=galaxys2-common
-DEVICE=i9100
+COMMON=u8500-common
+DEVICE=janice
 COMMONOUTDIR=vendor/$VENDOR/$COMMON
 COMMONBASE=../../../$COMMONOUTDIR/proprietary
 COMMONMAKEFILE=../../../$COMMONOUTDIR/common-vendor-blobs.mk
@@ -33,7 +33,7 @@ for FILE in `cat proprietary-common-files.txt | grep -v ^# | grep -v ^$`; do
     adb pull /$FILE $COMMONBASE/$FILE
 done
 
-adb pull /system/lib/hw/vendor-camera.exynos4.so $COMMONBASE/system/lib/hw/camera.exynos4.so
+adb pull /system/lib/hw/camera.montblanc.so $COMMONBASE/system/lib/hw/camera.montblanc.so
 
 echo "Pulling device specific files..."
 for FILE in `cat proprietary-$DEVICE-files.txt | grep -v ^# | grep -v ^$`; do
@@ -60,15 +60,15 @@ done
 # limitations under the License.
 
 PRODUCT_PACKAGES += \\
-	libTVOut \\
-	libfimc \\
-	libhdmi \\
-	libhdmiclient \\
-    libmediayamahaservice \\
-	libsecion
+#	libTVOut \\
+#	libfimc \\
+#	libhdmi \\
+#	libhdmiclient \\
+#       libmediayamahaservice \\
+#	libsecion
 
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__COMMON__/proprietary/system/lib/hw/camera.exynos4.so:system/lib/hw/vendor-camera.exynos4.so \\
+    vendor/__VENDOR__/__COMMON__/proprietary/system/lib/hw/camera.montblanc.so:system/lib/hw/camera.montblanc.so \\
 EOF
 
 LINEEND=" \\"
@@ -98,69 +98,69 @@ done
 
 LOCAL_PATH := \$(call my-dir)
 
-ifneq (\$(filter i777 i9100 n7000,\$(TARGET_DEVICE)),)
+#ifneq (\$(filter janice codina,\$(TARGET_DEVICE)),)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := libTVOut
-LOCAL_MODULE_OWNER := samsung
-LOCAL_SRC_FILES := system/lib/libTVOut.so
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-include \$(BUILD_PREBUILT)
+#include \$(CLEAR_VARS)
+#LOCAL_MODULE := libTVOut
+#LOCAL_MODULE_OWNER := samsung
+#LOCAL_SRC_FILES := system/lib/libTVOut.so
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE_SUFFIX := .so
+#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
+#include \$(BUILD_PREBUILT)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := libsecion
-LOCAL_MODULE_OWNER := samsung
-LOCAL_SRC_FILES := system/lib/libsecion.so
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-include \$(BUILD_PREBUILT)
+#include \$(CLEAR_VARS)
+#LOCAL_MODULE := libsecion
+#LOCAL_MODULE_OWNER := samsung
+#LOCAL_SRC_FILES := system/lib/libsecion.so
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE_SUFFIX := .so
+#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
+#include \$(BUILD_PREBUILT)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := libfimc
-LOCAL_MODULE_OWNER := samsung
-LOCAL_SRC_FILES := system/lib/libfimc.so
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-include \$(BUILD_PREBUILT)
+#include \$(CLEAR_VARS)
+#LOCAL_MODULE := libfimc
+#LOCAL_MODULE_OWNER := samsung
+#LOCAL_SRC_FILES := system/lib/libfimc.so
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE_SUFFIX := .so
+#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
+#include \$(BUILD_PREBUILT)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := libhdmi
-LOCAL_MODULE_OWNER := samsung
-LOCAL_SRC_FILES := system/lib/libhdmi.so
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-include \$(BUILD_PREBUILT)
+#include \$(CLEAR_VARS)
+#LOCAL_MODULE := libhdmi
+#LOCAL_MODULE_OWNER := samsung
+#LOCAL_SRC_FILES := system/lib/libhdmi.so
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE_SUFFIX := .so
+#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
+#include \$(BUILD_PREBUILT)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := libhdmiclient
-LOCAL_MODULE_OWNER := samsung
-LOCAL_SRC_FILES := system/lib/libhdmiclient.so
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-include \$(BUILD_PREBUILT)
+#include \$(CLEAR_VARS)
+#LOCAL_MODULE := libhdmiclient
+#LOCAL_MODULE_OWNER := samsung
+#LOCAL_SRC_FILES := system/lib/libhdmiclient.so
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE_SUFFIX := .so
+#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
+#include \$(BUILD_PREBUILT)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := libmediayamahaservice
-LOCAL_MODULE_OWNER := samsung
-LOCAL_SRC_FILES := system/lib/libmediayamahaservice.so
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-include \$(BUILD_PREBUILT)
+#include \$(CLEAR_VARS)
+#LOCAL_MODULE := libmediayamahaservice
+#LOCAL_MODULE_OWNER := samsung
+#LOCAL_SRC_FILES := system/lib/libmediayamahaservice.so
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE_SUFFIX := .so
+#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
+#include \$(BUILD_PREBUILT)
 
-endif
+#endif
 
 EOF
 
