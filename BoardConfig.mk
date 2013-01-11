@@ -23,13 +23,12 @@ TARGET_BOARD_INFO_FILE := device/samsung/janice/board-info.txt
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/u8500
-TARGET_KERNEL_CONFIG := cyanogenmod_janice_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_i9070_defconfig
 
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/janice/overlay/include
-#EXYNOS4210_ENHANCEMENTS := true
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := janice,GT-I9070
+TARGET_OTA_ASSERT_DEVICE := janice,i9070,GT-I9070
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/janice/BoardConfigVendor.mk
