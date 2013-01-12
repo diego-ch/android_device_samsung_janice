@@ -4,7 +4,7 @@
         "target_path": "device/samsung/u8500-common"
     },
     {
-        "repository": "android_kernel_samsung_u8500-common",
+        "repository": "android_kernel_samsung_u8500",
         "target_path": "kernel/samsung/u8500"
     },
     {
