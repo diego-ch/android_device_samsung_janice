@@ -59,14 +59,6 @@ done
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_PACKAGES += \\
-#	libTVOut \\
-#	libfimc \\
-#	libhdmi \\
-#	libhdmiclient \\
-#       libmediayamahaservice \\
-#	libsecion
-
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__COMMON__/proprietary/system/lib/hw/camera.montblanc.so:system/lib/hw/camera.montblanc.so \\
 EOF
@@ -97,70 +89,6 @@ done
 # limitations under the License.
 
 LOCAL_PATH := \$(call my-dir)
-
-#ifneq (\$(filter janice codina,\$(TARGET_DEVICE)),)
-
-#include \$(CLEAR_VARS)
-#LOCAL_MODULE := libTVOut
-#LOCAL_MODULE_OWNER := samsung
-#LOCAL_SRC_FILES := system/lib/libTVOut.so
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_MODULE_SUFFIX := .so
-#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-#include \$(BUILD_PREBUILT)
-
-#include \$(CLEAR_VARS)
-#LOCAL_MODULE := libsecion
-#LOCAL_MODULE_OWNER := samsung
-#LOCAL_SRC_FILES := system/lib/libsecion.so
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_MODULE_SUFFIX := .so
-#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-#include \$(BUILD_PREBUILT)
-
-#include \$(CLEAR_VARS)
-#LOCAL_MODULE := libfimc
-#LOCAL_MODULE_OWNER := samsung
-#LOCAL_SRC_FILES := system/lib/libfimc.so
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_MODULE_SUFFIX := .so
-#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-#include \$(BUILD_PREBUILT)
-
-#include \$(CLEAR_VARS)
-#LOCAL_MODULE := libhdmi
-#LOCAL_MODULE_OWNER := samsung
-#LOCAL_SRC_FILES := system/lib/libhdmi.so
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_MODULE_SUFFIX := .so
-#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-#include \$(BUILD_PREBUILT)
-
-#include \$(CLEAR_VARS)
-#LOCAL_MODULE := libhdmiclient
-#LOCAL_MODULE_OWNER := samsung
-#LOCAL_SRC_FILES := system/lib/libhdmiclient.so
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_MODULE_SUFFIX := .so
-#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-#include \$(BUILD_PREBUILT)
-
-#include \$(CLEAR_VARS)
-#LOCAL_MODULE := libmediayamahaservice
-#LOCAL_MODULE_OWNER := samsung
-#LOCAL_SRC_FILES := system/lib/libmediayamahaservice.so
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_MODULE_SUFFIX := .so
-#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-#LOCAL_MODULE_PATH := \$(TARGET_OUT)/lib
-#include \$(BUILD_PREBUILT)
-
-#endif
 
 EOF
 
