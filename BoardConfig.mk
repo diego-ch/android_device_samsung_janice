@@ -16,5 +16,11 @@ TARGET_BOOTLOADER_BOARD_NAME := montblanc
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
+TARGET_PROVIDES_INIT := true
+TARGET_PROVIDES_INIT_TARGET_RC := true
+TARGET_RECOVERY_INITRC := device/samsung/janice/rootdir/recovery.rc
+
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/overlay/include
+
 # Inherit from the proprietary version
 -include vendor/samsung/janice/BoardConfigVendor.mk
