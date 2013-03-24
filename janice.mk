@@ -27,5 +27,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
+
 # Use non-open-source parts if present
 $(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor.mk)
