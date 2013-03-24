@@ -91,5 +91,17 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=131072 \
+    hwui.render_dirty_regions=false
+
+PRODUCT_TAGS += dalvik.gc.type-precise
+
+# Set default USB interface
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp
+
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+
 # Use non-open-source parts if present
 $(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor.mk)
