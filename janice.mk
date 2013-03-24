@@ -19,6 +19,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab
 
+# Gps
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/sirfgps.conf:system/etc/sirfgps.conf
+
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
