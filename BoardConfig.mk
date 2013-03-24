@@ -22,5 +22,11 @@ TARGET_RECOVERY_INITRC := device/samsung/janice/rootdir/recovery.rc
 
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/overlay/include
 
+BOARD_KERNEL_CMDLINE := "console=ttySAC2,115200"
+BOARD_KERNEL_BASE := 0x40000000
+BOARD_KERNEL_PAGESIZE := 4096
+TARGET_KERNEL_SOURCE := kernel/samsung/u8500
+TARGET_KERNEL_CONFIG := cyanogenmod_i9070_defconfig
+
 # Inherit from the proprietary version
 -include vendor/samsung/janice/BoardConfigVendor.mk
