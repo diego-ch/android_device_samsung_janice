@@ -72,6 +72,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
     $(LOCAL_PATH)/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
 
+# Packages
+PRODUCT_PACKAGES := \
+    com.android.future.usb.accessory \
+    macloader \
+    Torch
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     static_busybox \
