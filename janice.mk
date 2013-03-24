@@ -15,6 +15,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/prerecovery.rc:root/prerecovery.rc \
     $(LOCAL_PATH)/rootdir/ueventd.samsungjanice.rc:root/ueventd.samsungjanice.rc
 
+# Vold and Storage
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab
+
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf

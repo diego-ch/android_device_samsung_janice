@@ -91,5 +91,10 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/devices/virtual/power_supply/battery/bat
 BOARD_BATTERY_DEVICE_NAME := "battery"
 BOARD_CHARGER_RES := device/samsung/janice/res/charger
 
+# Releasetools
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/janice/releasetools/u8500_ota_from_target_files
+TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := device/samsung/janice/releasetools/u8500_img_from_target_files
+TARGET_OTA_ASSERT_DEVICE := janice,i9070,GT-I9070
+
 # Inherit from the proprietary version
 -include vendor/samsung/janice/BoardConfigVendor.mk
