@@ -5,21 +5,15 @@ on init
     export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
-    export ANDROID_CACHE /cache
-    export SECONDARY_STORAGE /emmc
     export EXTERNAL_STORAGE /sdcard
 
-    symlink /misc /etc
+    symlink /system/etc /etc
 
-    mkdir /emmc
     mkdir /sdcard
-    mkdir /usbdisk
+    mkdir /sdcard1
     mkdir /system
     mkdir /data
     mkdir /cache
-    mkdir /preload
-    mkdir /tmp
-
     mount /tmp /tmp tmpfs
 
     write /sys/devices/platform/mcde_fb/graphics/fb0/bits_per_pixel 16
@@ -41,7 +35,7 @@ on early-fs
     mkdir /efs
     mount ext4 /dev/block/mmcblk0p7 /efs nosuid nodev noatime wait
 
-    # Install Kernel Module
+# Install Kernel Module
     # J4FS(lfs) mount points.
     mkdir /mnt 0775 root root
     mkdir /mnt/.lfs 0755 root root
@@ -63,15 +57,6 @@ on boot
     
 service ueventd /sbin/ueventd
     critical
-
-service console /sbin/sh
-    class core
-    console
-    disabled
-    group log
-
-on property:ro.debuggable=1
-    start console
 
 service recovery /sbin/recovery
 

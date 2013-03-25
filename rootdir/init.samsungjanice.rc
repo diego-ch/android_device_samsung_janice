@@ -123,6 +123,8 @@ on post-fs
     chown radio system /sys/class/sec/sec_touchkey/touch_sensitivity
     chown system radio /sys/class/sec/sec_touchscreen/tsp_firm_version_panel
     chown system radio /sys/class/sec/sec_touchscreen/tsp_firm_version_phone
+    chown system radio /sys/class/sec/tsp_noise_test/disp_all_refdata
+    chown system radio /sys/class/sec/tsp_noise_test/disp_all_deltadata
 
     # DVFS LOCK
     chown radio system /sys/power/cpufreq_table
@@ -334,6 +336,7 @@ on boot
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
     chown bluetooth bluetooth ro.bt.bdaddr_path
     chown bluetooth bluetooth /system/etc/bt_addr
+    chmod 0644 /efs/bluetooth/addr.txt
 
     # Permissions for LCD
     chown system system /sys/class/backlight/panel/brightness
@@ -359,9 +362,6 @@ on boot
     setprop persist.debug.extcamera.level 777
     setprop persist.debug.mmiocamera.level 777
     setprop debug.libcamera.trace 666
-
-    # init.d script
-    start sysinit
 
     # Battery
     chown system system /sys/class/power_supply/battery/batt_vol_adc_cal
@@ -411,8 +411,8 @@ service bluetoothd /system/bin/bluetoothd -n
     disabled
 
 # for bluetooth
-service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --no2bytes --tosleep 5000 \
-    --baudrate 3000000 -use_baudrate_for_download --patchram /system/bin/bcm4330.hcd /dev/ttyAMA0 -d
+service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --no2bytes --tosleep 5000 \
+    --baudrate 3000000 -use_baudrate_for_download --patchram /system/bin/bcm4330.hcd /dev/ttyAMA0
     class main
     user bluetooth
     group bluetooth net_bt_admin
@@ -618,3 +618,4 @@ service iprenew_bnep0 /system/bin/dhcpcd -n
     class core
     user graphics
     group input graphics
+    oneshot
