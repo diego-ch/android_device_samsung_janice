@@ -2,29 +2,25 @@ import /init.samsungjanice.usb.rc
 
 on early-init
     export EXTERNAL_STORAGE /storage/sdcard0
-    mkdir /storage 0550 system sdcard_r
-    mkdir /storage/sdcard0 0000 system system
+    export SECONDARY_STORAGE /storage/sdcard1
+    mkdir /storage 0775 system system
+    mkdir /storage/sdcard0 0775 system system
+    mkdir /storage/sdcard1 0775 system system
+    mkdir /storage/usbdisk 0775 system system
 
+    mkdir /efs 0771 radio system
+    mkdir /preload 0771 system system
+    mkdir /modemfs 0771 system system
+    mkdir /mnt 0755 root system
+    mkdir /mnt/.lfs 0755 root root
+
+    # for backwards compatibility
     symlink /storage/sdcard0 /sdcard
     symlink /storage/sdcard0 /mnt/sdcard
-
-    # map "real" external storages paths also in same way. backwards compatibility.
-    symlink /storage/extSdCard /mnt/extSdCard
-    symlink /storage/UsbDriveA /mnt/UsbDriveA
-    symlink /storage/UsbDriveB /mnt/UsbDriveB
-    symlink /storage/UsbDriveC /mnt/UsbDriveC
-    symlink /storage/UsbDriveD /mnt/UsbDriveD
-    symlink /storage/UsbDriveE /mnt/UsbDriveE
-    symlink /storage/UsbDriveF /mnt/UsbDriveF
-
-    export SECONDARY_STORAGE /storage/extSdCard:/storage/UsbDriveA:/storage/UsbDriveB:/storage/UsbDriveC:/storage/UsbDriveD:/storage/UsbDriveE:/storage/UsbDriveF
-    mkdir /storage/extSdCard 0000 system system
-    mkdir /storage/UsbDriveA 0000 system system
-    mkdir /storage/UsbDriveB 0000 system system
-    mkdir /storage/UsbDriveC 0000 system system
-    mkdir /storage/UsbDriveD 0000 system system
-    mkdir /storage/UsbDriveE 0000 system system
-    mkdir /storage/UsbDriveF 0000 system system
+    symlink /storage/sdcard1 /extSdCard
+    symlink /storage/sdcard1 /mnt/extSdCard
+    symlink /storage/usbdisk /usbdisk0
+    symlink /storage/usbdisk /mnt/usbdisk0
 
 on init
 
@@ -38,19 +34,12 @@ on init
     export VIBE_PIPE_PATH /dev/pipes
     mkdir /dev/pipes 0771 shell shell
 
-    mkdir /system 0775 system system
-    mkdir /modemfs 0771 system system
-    mkdir /efs 0775 radio system
-    mkdir /preload 0771 system system
     # Shared memory file system
     mkdir /dev/shm 0700 root system
     mount tmpfs tmpfs /dev/shm mode=0755,gid=1000
 
     # create /tmp directory needed by psccd and CSPSA
     mkdir /tmp
-
-    # J4FS(lfs) mount points.
-    mkdir /mnt/.lfs 0755 root root
 
     # mount debugfs in order for Audio ADM component to retrieve debug information
     mkdir /debug
