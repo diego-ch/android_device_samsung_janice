@@ -15,6 +15,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/prerecovery.rc:root/prerecovery.rc \
     $(LOCAL_PATH)/rootdir/ueventd.samsungjanice.rc:root/ueventd.samsungjanice.rc
 
+# STE
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/usbid_init.sh:system/bin/usbid_init.sh
+
 # Vold and Storage
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab
