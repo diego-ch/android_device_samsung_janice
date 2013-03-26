@@ -1,12 +1,4 @@
-# NOTE: This file contains ST-Ericsson related additions/modifications/deletions to init.rc
-#       Commented out lines are kept for reference.
-
-import /init.${ro.hardware}.usb.rc
-
-on early-init
-
-    # Set init and its forked children's oom_adj.
-    write /proc/1/oom_score_adj -16
+import /init.samsungjanice.usb.rc
 
 on init
 
@@ -24,9 +16,6 @@ on init
     mkdir /dev/shm 0700 root system
     mount tmpfs tmpfs /dev/shm mode=0755,gid=1000
 
-    write /proc/sys/kernel/sched_rt_period_us 10000000
-    write /proc/sys/kernel/sched_rt_runtime_us 9500000
-
     # create /tmp directory needed by psccd and CSPSA
     mkdir /tmp
 
@@ -43,16 +32,6 @@ on fs
     mount_all /fstab.samsungjanice
     setprop ro.crypto.fuse_sdcard false
 	
-# for LogMeIn
-    mount ext4 /dev/block/mmcblk0p3 /system rw wait noatime errors=panic remount
-
-    chown graphics /system/bin/RescueStarter
-    chmod 0755 /system/bin/RescueStarter
-    chown graphics /system/bin/RescueServer
-    chmod 0755 /system/bin/RescueServer
-
-    mount ext4 /dev/block/mmcblk0p3 /system ro wait noatime errors=panic remount
-
     # Start CSPSA before synchronously running the factory reset utility that
     # checks the factory reset triggers in sysfs and CSPSA and then formats
     # the block device belonging to /data.
@@ -60,10 +39,6 @@ on fs
     exec /system/bin/logwrapper /system/bin/factoryreset -f /sys/socinfo/reset_reason -r factory-reset -c CSPSA0 -p 0xfffffffc:31 /dev/block/mmcblk0p5
 
 on post-fs
-
-    # once everything is setup, no need to modify /
-    chown system system /system
-    chmod 0775 /system
 
     chown radio radio /modemfs
     chmod 0771 /modemfs
@@ -90,15 +65,6 @@ on post-fs
     chmod 0770 /efs/imei
     chown radio system /efs/bluetooth
     chown system system /efs/wifi
-
-    # Set permissions for wake locks before services are launched that use them
-    chown system system /sys/power/state
-    chown system system /sys/power/wakeup_count
-    chown radio system /sys/power/wake_lock
-    chown radio system /sys/power/wake_unlock
-    chmod 0660 /sys/power/state
-    chmod 0660 /sys/power/wake_lock
-    chmod 0660 /sys/power/wake_unlock
 
     # Samsung Device permissions
     chown root system /dev/mmc328x
@@ -198,10 +164,6 @@ on post-fs
 
     # Install Kernel Module
     insmod /lib/modules/j4fs.ko
-    # We need to decide j4fs's partition number(mmcblk0pX)
-    # loke4
-    #mount j4fs /dev/block/mmcblk0p19 /mnt/.lfs wait
-    # loke3
     mount j4fs /dev/block/mmcblk0p1 /mnt/.lfs wait
 
     insmod /lib/modules/param.ko
@@ -258,9 +220,6 @@ on post-fs-data
     # Change permissions for modem_log_relay config file
     chmod 666 /modemfs/trace_auto.conf
 
-    # Set permission rights for ping
-    chmod 4755 /system/bin/ping
-
     # If there is no fs-post-data action in the init.<device>.rc file, you
     # must uncomment this line, otherwise encrypted filesystems
     # won't work.
@@ -268,9 +227,6 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on early-boot
-
-    # Enable line below if you want console in charging mode
-#   start console
 
     # Launch core services in case charging mode is entered
     start watchdog-kicker
@@ -347,8 +303,8 @@ on boot
     chown system system /sys/class/sec/sec_touchkey/brightness
 
 # MTP device permission
-	chmod 0660 /dev/usb_mtp_gadget
-	chown system system /dev/usb_mtp_gadget
+    chmod 0660 /dev/usb_mtp_gadget
+    chown system system /dev/usb_mtp_gadget
 
     # camera factory
     chown system system /sys/class/sec/sec_cam/camtype
@@ -371,45 +327,6 @@ on boot
     class_start modem
     class_start default
 
-service console /system/bin/sh
-    class core
-    console
-    disabled
-#    user shell
-#    group log
-
-service netd /system/bin/netd
-    class main
-    socket netd stream 0660 root system dbus_access
-    socket dnsproxyd stream 0660 root inet
-    socket mdns stream 0660 root system
-
-service media /system/bin/logwrapper /system/bin/mediaserver
-    class main
-    user media
-    group system audio camera inet net_bt net_bt_admin net_bw_acct drmrpc sdcard_rw sdcard_r
-    ioprio rt 4
-
-service powersnd /system/bin/samsungpowersoundplay
-    class main
-    user media
-    group system
-    oneshot
-
-service dbus /system/bin/logwrapper /system/bin/dbus-daemon --system --nofork
-    class main
-    socket dbus stream 660 bluetooth bluetooth
-    socket dbus_ste stream 660 bluetooth dbus_access
-    user bluetooth
-    group bluetooth net_bt_admin dbus_access
-
-service bluetoothd /system/bin/bluetoothd -n
-    class main
-    socket bluetooth stream 660 bluetooth bluetooth
-    socket dbus_bluetooth stream 660 bluetooth bluetooth
-    group bluetooth net_bt_admin misc
-    disabled
-
 # for bluetooth
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --no2bytes --tosleep 5000 \
     --baudrate 3000000 -use_baudrate_for_download --patchram /system/bin/bcm4330.hcd /dev/ttyAMA0
@@ -425,10 +342,6 @@ service bt_dut_cmd /system/bin/bcm_dut
     disabled
     oneshot
 
-service flash_recovery /system/bin/logwrapper /system/etc/install-recovery.sh
-    class main
-    oneshot
-
 # Crash Safe Parameter Storage Area, serving production parameter requests from clients.
 # Configuration is read from file "/etc/cspsa.conf" and each found area spawns a CSPSA server
 # process.
@@ -436,11 +349,6 @@ service cspsa /system/bin/logwrapper /system/bin/cspsa-server
     class parameter_storage
     user root
     oneshot
-
-# init shrm net device required for Phonet communication with Modem
-#service shrm-netdev /system/bin/ifconfig svnet0 up
-#    class modem-u8500
-#    oneshot
 
 # init Phonet net device required for Phonet communication with Modem
 service phonet-netdev /system/bin/ifconfig upnlink0 up
@@ -481,11 +389,6 @@ service stedump /system/bin/logwrapper /system/bin/stedump
     class main
     user root
 
-#service hdmid /system/bin/hdmid
-#    class main
-#    socket hdmid stream 0660 root system graphics
-#    oneshot
-
 service geomagneticd /system/bin/geomagneticd6x
     user compass
     group system input
@@ -494,61 +397,11 @@ service orientationd /system/bin/orientationd6x
     user compass
     group system input    group system input
 
-#service thermald /system/bin/thermald
-#    class main
-#    user root
-#    group root dbus_access
-
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
 on property:init.svc.dhcpcd=stopped
     stop dhcpcd
-
-# C&N service daemon
-#service cn_server /system/bin/cn_server
-#    class modem-core
-#    user root
-#    group radio misc
-
-# PS connection control
-#service init_stepscc /system/bin/sh /data/misc/psdata/stepscc_init.sh
-#    class main
-#    oneshot
-
-#service psccd /system/bin/psccd -f -c /data/misc/psdata/stepscc_conf
-#    class modem
-#    user root
-#    group radio inet
-
-# PS routing control
-#service init_sterc /system/bin/sh /data/misc/psdata/sterc_init.sh
-#    class main
-#    oneshot
-
-#service stercd /system/bin/stercd -d 9 -r /data/misc/psdata/sterc_script_connect -s /data/misc/psdata/sterc_script_disconnect -c /data/misc/psdata/sterc_conf
-#    class modem
-#    user root
-#    group radio
-#    oneshot
-
-# SIM daemon
-#service simd /system/bin/simd
-#    class modem-core
-#    user root
-#    group radio
-
-# SIMPB daemon
-#service simpbd /system/bin/simpbd
-#    class modem-core
-#    user root
-#    group radio
-
-# SMS Server control
-#service sms_server /system/bin/sms_server
-#    class modem
-#    user root
-#    group radio
 
 # AT daemon
 service atd /system/bin/at_core -mode normal -serial ttyAMA2
@@ -566,27 +419,6 @@ service at_distributor /system/bin/at_distributor
     user root
     group radio log
 
-# Modem Access daemon
-#service mad /system/bin/ste_mad
-#    class modem
-#    user radio
-#    group radio dbus_access misc
-
-# Avahi Autoip daemon
-#service avahi-autoipd /system/bin/avahi-autoipd usb0 -D
-#    class main
-#    user root
-
-# Avahi daemon
-#service avahi-daemon /system/bin/avahi-daemon
-#    class main
-#    user root
-
-# Avahi-publish
-#service avahi-publish /system/bin/avahi-publish -s READY _mobile._tcp 5353
-#    class main
-#    user root
-
 service watchdog-kicker /system/xbin/watchdog-kicker -d /dev/watchdog -t 120
     class main
     oneshot
@@ -599,10 +431,6 @@ service usbid_init /system/bin/usbid_init.sh
     class main
     oneshot
 
-# RTC Calibration daemon
-#service rtc_calibration /system/bin/rtc_calibration
-#    user root
-
 service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
 	class main
 	disabled
@@ -612,10 +440,3 @@ service iprenew_bnep0 /system/bin/dhcpcd -n
 	class main
 	disabled
 	oneshot
-
-# for LogMeIn
-    service RescueStarter /system/bin/RescueStarter
-    class core
-    user graphics
-    group input graphics
-    oneshot
