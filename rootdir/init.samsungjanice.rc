@@ -1,5 +1,31 @@
 import /init.samsungjanice.usb.rc
 
+on early-init
+    export EXTERNAL_STORAGE /storage/sdcard0
+    mkdir /storage 0550 system sdcard_r
+    mkdir /storage/sdcard0 0000 system system
+
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+
+    # map "real" external storages paths also in same way. backwards compatibility.
+    symlink /storage/extSdCard /mnt/extSdCard
+    symlink /storage/UsbDriveA /mnt/UsbDriveA
+    symlink /storage/UsbDriveB /mnt/UsbDriveB
+    symlink /storage/UsbDriveC /mnt/UsbDriveC
+    symlink /storage/UsbDriveD /mnt/UsbDriveD
+    symlink /storage/UsbDriveE /mnt/UsbDriveE
+    symlink /storage/UsbDriveF /mnt/UsbDriveF
+
+    export SECONDARY_STORAGE /storage/extSdCard:/storage/UsbDriveA:/storage/UsbDriveB:/storage/UsbDriveC:/storage/UsbDriveD:/storage/UsbDriveE:/storage/UsbDriveF
+    mkdir /storage/extSdCard 0000 system system
+    mkdir /storage/UsbDriveA 0000 system system
+    mkdir /storage/UsbDriveB 0000 system system
+    mkdir /storage/UsbDriveC 0000 system system
+    mkdir /storage/UsbDriveD 0000 system system
+    mkdir /storage/UsbDriveE 0000 system system
+    mkdir /storage/UsbDriveF 0000 system system
+
 on init
 
     # setup the global environment
@@ -7,6 +33,10 @@ on init
     export LD_LIBRARY_PATH /system/lib:/lib:/usr/lib:/system/lib/ste_omxcomponents/:/vendor/lib
     export OMX_STE_ENS_COMPONENTS_DIR /system/lib/ste_omxcomponents/
     export OMX_BELLAGIO_LOADER_REGISTRY /system/omxloaders
+
+    # Vibetonz
+    export VIBE_PIPE_PATH /dev/pipes
+    mkdir /dev/pipes 0771 shell shell
 
     mkdir /system 0775 system system
     mkdir /modemfs 0771 system system
@@ -166,6 +196,8 @@ on post-fs
     insmod /lib/modules/j4fs.ko
     mount j4fs /dev/block/mmcblk0p1 /mnt/.lfs wait
 
+    symlink /dev/block/mmcblk0p1 /dev/block/param
+
     insmod /lib/modules/param.ko
     write /sys/class/power_supply/battery/batt_reinit_capacity 1
     insmod /lib/modules/bthid.ko
@@ -175,6 +207,64 @@ on post-fs
     insmod /lib/modules/exfat_fs.ko
 
 on post-fs-data
+
+    # give system access to wpa_supplicant.conf for backup and restore
+    mkdir /data/misc/wifi 0770 wifi system
+    mkdir /efs/wifi 0775 radio system
+    mkdir /efs/bluetooth 0775 radio system
+    mkdir /efs/imei 0775 radio system
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0775 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+    chown system system /efs/wifi/.mac.info
+    chmod 0664 /efs/wifi/.mac.info
+
+    # FactoryTest files permission
+    mkdir /efs/FactoryApp 0775
+    chown radio system /efs/FactoryApp
+    chmod 0775 /efs/FactoryApp
+    write /efs/FactoryApp/factorymode ON
+    chown system system /efs/FactoryApp/factorymode
+    chmod 0744 /efs/FactoryApp/factorymode
+
+    # SA, System SW, SAMSUNG create log directory
+    mkdir /data/log 0775 system log
+    chown system log /data/log
+    chmod 0775 /data/log
+    chmod 0775 /data/anr
+
+#[ SEC_MM_DRM
+    # DRM directory creation
+    mkdir /system/etc/security/.drm 0775
+    chown root root /system/etc/security/.drm
+    chmod 0775 /system/etc/security/.drm
+
+    # Added for Playready DRM Support
+    mkdir /data/data/.drm 0775
+    chown drm system /data/data/.drm
+    chmod 0775 /data/data/.drm
+    mkdir /data/data/.drm/.playready 0775
+    chown drm system /data/data/.drm/.playready
+    chmod 0775 /data/data/.drm/.playready
+
+    # Added drm folder to copy drm plugins
+    mkdir /system/lib/drm 0775
+    chown root root /system/lib/drm
+    chmod 0775 /system/lib/drm
+
+    # DivX DRM
+    mkdir /efs/.files 0775
+    mkdir /efs/.files/.dx1 0775
+    mkdir /efs/.files/.dm33 0775
+    mkdir /efs/.files/.mp301 0775
+    chown media system /efs/.files/.dx1
+    chown media system /efs/.files/.dm33
+    chown media system /efs/.files/.mp301
+    chmod 0775 /efs/.files/.dx1
+    chmod 0775 /efs/.files/.dm33
+    chmod 0775 /efs/.files/.mp301
+#]
 
     # create basic filesystem structure
     mkdir /data/misc/psdata
@@ -240,6 +330,9 @@ on early-boot
 
 on boot
 
+    # debugfs
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
     # Set timeout value for rmnet stats.
     write /sys/devices/virtual/net/rmnet0/timeout_suspend 5000000
 
@@ -278,10 +371,39 @@ on boot
     chown radio system /sys/devices/platform/gpio-keys.0/wakeup_keys
     write /sys/devices/platform/gpio-keys.0/wakeup_keys 172
 
+# Vibetonz
+    chmod 0660 /dev/tspdrv
+    chown root shell /dev/tspdrv
+
+# GPS
+    chown root system /dev/ttyAMA1
+    chmod 0660 dev/ttyAMA1
+
+    chown root system sys/class/sec/gps/GPS_ON_OFF/value
+    chmod 0664 sys/class/sec/gps/GPS_ON_OFF/value
+
+    chown root system sys/class/sec/gps/GPS_nRST/value
+    chmod 0664 sys/class/sec/gps/GPS_nRST/value
+
+# permissions for FMRadio of Broadcom
+    chmod 0777 /system/bin/btld
+
 # Peremissions for bluetooth
     # UART device
     chown bluetooth bluetooth /dev/ttyAMA0
     chmod 0660 /dev/ttyAMA0
+
+# for bluetooth. change access rights as btld runs as bluetooth user
+    chown root bluetooth /sys/class/rfkill/rfkill0
+    chown root bluetooth /sys/class/rfkill/rfkill0/state
+    chown root bluetooth /sys/class/rfkill/rfkill0/claim	
+    chown root bluetooth /sys/class/rfkill/rfkill0/soft
+    chown root bluetooth /sys/class/rfkill/rfkill0/type
+    chmod 0664 /sys/class/rfkill/rfkill0/state
+    chmod 0664 /sys/class/rfkill/rfkill0/claim
+    chmod 0664 /sys/class/rfkill/rfkill0/soft
+    chmod 0664 /sys/class/rfkill/rfkill0/type
+    setprop service.brcm.bt.pbap_mode btld
 
 # power up/down interface
     chmod 0660 /sys/class/rfkill/rfkill0/state
@@ -293,6 +415,9 @@ on boot
     chown bluetooth bluetooth ro.bt.bdaddr_path
     chown bluetooth bluetooth /system/etc/bt_addr
     chmod 0644 /efs/bluetooth/addr.txt
+
+    chown bluetooth /dev/ttyAMA0
+    chmod 0660 /dev/ttyAMA0
 
     # Permissions for LCD
     chown system system /sys/class/backlight/panel/brightness
@@ -322,6 +447,9 @@ on boot
     # Battery
     chown system system /sys/class/power_supply/battery/batt_vol_adc_cal
     chown system radio /sys/class/power_supply/battery/fg_reset_soc
+
+#Set property to change the decoder profile level to 4.1
+    setprop ste.video.decoder.h264.def.lev 4.1   
 
     # Modem
     class_start modem
@@ -431,12 +559,129 @@ service usbid_init /system/bin/usbid_init.sh
     class main
     oneshot
 
+service DR-daemon /system/bin/ddexe
+    class main
+    user root
+    group system radio inet net_raw
+
+service KIES-daemon /system/bin/kiesexe
+    class main
+    user root
+    group system radio inet net_raw
+
+service SMD-daemon /system/bin/smdexe
+    class main
+    user root
+    group system radio inet net_raw
+
+service DTT-daemon /system/bin/dttexe
+    class main
+    user root
+    group system radio inet net_raw
+
+service BCS-daemon /system/bin/connfwexe
+    class main
+    user root
+    group system radio inet net_raw
+
+service mobex-daemon /system/bin/npsmobex
+    class main
+    user system
+    group system radio inet sdcard_rw
+
+service drm /system/bin/drmserver
+    class main
+    user drm
+# [ SEC_MM_DRM
+# fix
+    group system drm inet drmrpc sdcard_r sdcard_rw media_rw radio
+# org
+#   group drm system inet drmrpc sdcard_r
+# ]
+
+# Make sure we startup btld before hcid
+service btld /system/bin/logwrapper /system/bin/btld -hb 3000000 -hp /dev/ttyAMA0 -lpm 1
+    user root
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+# SA, System SW, SAMSUNG
+service bugreport /system/bin/bugmailer.sh -v
+    class main
+    disabled
+    oneshot
+    keycodes 114 115 116
+
+# Vibetonz
+service immvibed /system/bin/immvibed
+    class core
+    user shell
+    group shell
+    oneshot
+
+on property:ro.dumpstate.dmesg=1
+    write /proc/sys/kernel/dmesg_restrict 0
+
+service p2p_supplicant /system/bin/p2p_supplicant \
+        -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
+        -e/data/misc/wifi/entropy.bin -puse_p2p_group_interface=1
+    class main
+    disabled
+    oneshot
+
+service wpa_supplicant /system/bin/wpa_supplicant \
+        -Dnl80211 -iwlan0 -e/data/misc/wifi/entropy.bin \
+        -c/data/misc/wifi/wpa_supplicant.conf
+    class main
+    socket wpa_wlan0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
+    class main
+    disabled
+    oneshot
+
+service dhcpcd_p2p /system/bin/dhcpcd -aABKL
+    class main
+    disabled
+    oneshot
+
 service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
-	class main
-	disabled
-	oneshot
+    class main
+    disabled
+    oneshot
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+
+service iprenew_p2p /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
 
 service iprenew_bnep0 /system/bin/dhcpcd -n
-	class main
-	disabled
-	oneshot
+    class main
+    disabled
+    oneshot
+
+#for WiFi MFG(TestMode)
+service mfgloader /system/bin/mfgloader
+    class main
+    disabled
+    oneshot
+
+service wlandutservice /system/bin/wlandutservice
+    class main
+    user system
+    group wifi net_raw net_admin system inet
+    disabled
+    oneshot
+
+service macloader /system/bin/macloader
+    class main
+    oneshot
+# end of wifi
