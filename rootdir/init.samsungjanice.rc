@@ -181,19 +181,19 @@ on post-fs
     # Change permission for gyro_sensor
     chown system system /sys/class/sensors/gyro_sensor/temperature
 
-    # Install Kernel Module
-    insmod /lib/modules/j4fs.ko
-    mount j4fs /dev/block/mmcblk0p1 /mnt/.lfs wait
-
     symlink /dev/block/mmcblk0p1 /dev/block/param
 
-    insmod /lib/modules/param.ko
+    # Install Kernel Module
+    insmod /system/lib/modules/j4fs.ko
+    mount j4fs /dev/block/mmcblk0p1 /mnt/.lfs wait
+
+    insmod /system/lib/modules/param.ko
     write /sys/class/power_supply/battery/batt_reinit_capacity 1
-    insmod /lib/modules/bthid.ko
+    insmod /system/lib/modules/bthid.ko
 
     # loading exFAT-fs drivers
-    insmod /lib/modules/exfat_core.ko
-    insmod /lib/modules/exfat_fs.ko
+    insmod /system/lib/modules/exfat_core.ko
+    insmod /system/lib/modules/exfat_fs.ko
 
 on post-fs-data
 
