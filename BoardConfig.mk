@@ -51,6 +51,10 @@ ENABLE_WEBGL := true
 # HWComposer
 BOARD_USES_HWCOMPOSER := true
 
+# RIL
+BOARD_USES_LIBSECRIL_STUB := true
+BOARD_MOBILEDATA_INTERFACE_NAME := "pdp0"
+
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd
 BOARD_WLAN_DEVICE_REV            := bcm4330
