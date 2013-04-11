@@ -444,6 +444,13 @@ on boot
     class_start modem
     class_start default
 
+# Make sure we startup btld before hcid
+service btld /system/bin/logwrapper /system/bin/btld -hb 3000000 -hp /dev/ttyAMA0 -lpm 1
+    user root
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
 # for bluetooth
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --no2bytes --tosleep 5000 \
     --baudrate 3000000 -use_baudrate_for_download --patchram /system/bin/bcm4330.hcd /dev/ttyAMA0
@@ -512,13 +519,7 @@ service geomagneticd /system/bin/geomagneticd6x
 
 service orientationd /system/bin/orientationd6x
     user compass
-    group system input    group system input
-
-on property:init.svc.wpa_supplicant=stopped
-    stop dhcpcd
-
-on property:init.svc.dhcpcd=stopped
-    stop dhcpcd
+    group system input group system input
 
 # AT daemon
 service atd /system/bin/at_core -mode normal -serial ttyAMA2
@@ -548,52 +549,10 @@ service usbid_init /system/bin/usbid_init.sh
     class main
     oneshot
 
-service DR-daemon /system/bin/ddexe
-    class main
-    user root
-    group system radio inet net_raw
-
-service KIES-daemon /system/bin/kiesexe
-    class main
-    user root
-    group system radio inet net_raw
-
-service SMD-daemon /system/bin/smdexe
-    class main
-    user root
-    group system radio inet net_raw
-
-service DTT-daemon /system/bin/dttexe
-    class main
-    user root
-    group system radio inet net_raw
-
-service BCS-daemon /system/bin/connfwexe
-    class main
-    user root
-    group system radio inet net_raw
-
 service mobex-daemon /system/bin/npsmobex
     class main
     user system
     group system radio inet sdcard_rw
-
-service drm /system/bin/drmserver
-    class main
-    user drm
-# [ SEC_MM_DRM
-# fix
-    group system drm inet drmrpc sdcard_r sdcard_rw media_rw radio
-# org
-#   group drm system inet drmrpc sdcard_r
-# ]
-
-# Make sure we startup btld before hcid
-service btld /system/bin/logwrapper /system/bin/btld -hb 3000000 -hp /dev/ttyAMA0 -lpm 1
-    user root
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
 
 # SA, System SW, SAMSUNG
 service bugreport /system/bin/bugmailer.sh -v
