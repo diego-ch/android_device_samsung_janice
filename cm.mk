@@ -29,6 +29,8 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/janice/full_janice.mk)
+$(call inherit-product, vendor/samsung/janice/janice-vendor.mk)
+$(call inherit-product, vendor/samsung/u8500-common/common-vendor.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := janice
