@@ -39,7 +39,8 @@ on init
     mount tmpfs tmpfs /dev/shm mode=0755,gid=1000
 
     # create /tmp directory needed by psccd and CSPSA
-    mkdir /tmp
+    # ...but make it a symlink so that sysmon may use it also
+    symlink /dev/socket /tmp
 
     # mount debugfs in order for Audio ADM component to retrieve debug information
     mkdir /debug
