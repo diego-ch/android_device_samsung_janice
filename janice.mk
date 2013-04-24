@@ -94,6 +94,8 @@ PRODUCT_PACKAGES := \
     audio.a2dp.default \
     audio.usb.default \
     com.android.future.usb.accessory \
+    libaudioutils \
+    libtinyalsa \
     Torch
 
 # RIL
