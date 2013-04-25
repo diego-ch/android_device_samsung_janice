@@ -1,4 +1,4 @@
-# USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 BOARD_USES_GENERIC_AUDIO := false
 
 TARGET_CPU_ABI := armeabi-v7a
