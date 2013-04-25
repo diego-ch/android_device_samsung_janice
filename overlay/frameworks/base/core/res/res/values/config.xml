@@ -123,7 +123,8 @@
 	<!-- Enables or disables fading edges when marquee is enabled in TextView. -->
     <bool name="config_ui_enableFadingMarquee">true</bool>
 	
-	<!-- Experimental haptic feedback patterns, (trying to fix the vibrator being stuck) -->
+	<!-- Experimental haptic feedback patterns, (trying to fix the vibrator being stuck)
+	testing some workarounds that could work -->
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
@@ -131,6 +132,7 @@
         <item>1</item>
         <item>20</item>
         <item>21</item>
+        <item>0</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about touching a virtual key -->
@@ -139,11 +141,13 @@
         <item>1</item>
         <item>20</item>
         <item>21</item>
+        <item>0</item>
     </integer-array>
 
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
         <item>20</item>
+        <item>0</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
@@ -152,6 +156,7 @@
         <item>1</item>
         <item>20</item>
         <item>21</item>
+        <item>0</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
@@ -162,6 +167,7 @@
         <item>21</item>
         <item>500</item>
         <item>600</item>
+        <item>0</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about hitting a scroll barrier -->
@@ -170,6 +176,7 @@
         <item>15</item>
         <item>10</item>
         <item>10</item>
+        <item>0</item>
     </integer-array>
 
     <!-- The default iface on which to monitor data use -->
