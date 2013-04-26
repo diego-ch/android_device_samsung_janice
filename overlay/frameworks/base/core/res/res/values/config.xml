@@ -207,5 +207,8 @@
 	<!-- True will enable the electron beam screen-off animation. -->
 	<!-- (just to make sure it's on for debugging purposes only, it will be removed in the future) -->
     <bool name="config_screenOffAnimation">true</bool>
-	
+    
+        <!-- enable screen saver feature -->
+    <bool name="config_enableDreams">true</bool>
+    
 </resources>
