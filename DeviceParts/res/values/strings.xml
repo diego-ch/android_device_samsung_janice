@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Galaxy S Advance Settings</string>
+    
+    <string name="category_radio_title">Radio</string>
+    <string name="hspa_title_head">HSPA</string>
+    <string name="hspa_summary_head">Enable HSDPA/HSUPA</string>
+
+    <string name="category_vibration_title">Vibration</string>
+    <string name="vibration_intensity_title">Vibration Intensity</string>
+    <string name="vibration_intensity_summary">Adjust Vibration Intensity</string>
+    
+    <string name="category_touchkey_title">Touch Keys</string>
+    <string name="backlight_timeout_title_head">Backlight Timeout</string>
+    <string name="backlight_timeout_summary_head">Adjust the delay before the touch key backlight automatically turns off</string>
+    
+</resources>
