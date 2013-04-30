@@ -214,4 +214,9 @@
     <!-- Name of screensaver components to look for if none has been chosen by the user -->
     <string name="config_defaultDreamComponent" translatable="false">com.android.deskclock/com.android.deskclock.Screensaver</string>
     
+        <!-- LUN file to be used by legacy USB manager.
+         The existence of this file will be used to determine in the
+         legacy USB manager should be started. -->
+    <string name="config_legacyUmsLunFile">/sys/devices/virtual/android_usb/android0/f_mass_storage/lun0/file</string>
+    
 </resources>
