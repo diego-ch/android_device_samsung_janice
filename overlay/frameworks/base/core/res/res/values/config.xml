@@ -194,21 +194,24 @@
     <!-- Boolean to enable stk functionality on Samsung phones -->
     <bool name="config_samsung_stk">true</bool>
 	
-	<!-- Indicate whether the SD card is accessible without removing the battery. -->
+    <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>
 	
-	<!-- The VoiceMail default value is displayed to my own number if it is true -->
+    <!-- The VoiceMail default value is displayed to my own number if it is true -->
     <bool name="config_telephony_use_own_number_for_voicemail">true</bool>
 	
-	<!-- Values greater or equal to 0 will enable electronbeam screen-on
+    <!-- Values greater or equal to 0 will enable electronbeam screen-on
     animation with the specified delay (in milliseconds), -1 will disable the animation -->
     <integer name="config_screenOnAnimation">350</integer>
 	
-	<!-- True will enable the electron beam screen-off animation. -->
-	<!-- (just to make sure it's on for debugging purposes only, it will be removed in the future) -->
+    <!-- True will enable the electron beam screen-off animation. -->
+    <!-- (just to make sure it's on for debugging purposes only, it will be removed in the future) -->
     <bool name="config_screenOffAnimation">true</bool>
     
-        <!-- enable screen saver feature -->
+    <!-- enable screen saver feature -->
     <bool name="config_enableDreams">true</bool>
+    
+    <!-- Name of screensaver components to look for if none has been chosen by the user -->
+    <string name="config_defaultDreamComponent" translatable="false">com.android.deskclock/com.android.deskclock.Screensaver</string>
     
 </resources>
