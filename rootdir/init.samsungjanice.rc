@@ -423,11 +423,14 @@ on boot
 
     # camera factory
     chown system system /sys/class/sec/sec_cam/camtype
-    chown system system /sys/class/sec/flash/enable
+    chown system system /sys/class/sec/flash/enable    
     chown system system /sys/class/camera/rear/rear_flash
     chown system system /sys/class/camera/front/front_camtype
     chown system system /sys/class/camera/rear/rear_camtype
     chown system system /sys/class/camera/flash/rear_flash
+
+    # temp Torch workaround
+    chmod 0222 /sys/class/sec/flash/enable
 
     # camera debug
     setprop persist.debug.extcamera.level 777
