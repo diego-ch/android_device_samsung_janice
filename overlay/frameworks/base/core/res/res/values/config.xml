@@ -50,17 +50,19 @@
          does not require auto-restore. -->
     <!-- the 6th element indicates boot-time dependency-met value. -->
 	
-	
-	 <!-- Experimental / Network Attributes -->
     <string-array translatable="false" name="networkAttributes">
-        <item>"wifi,1,1,1,-1,true"</item>
-        <item>"mobile,0,0,0,-1,true"</item>
-        <item>"mobile_mms,2,0,2,60000,true"</item>
-        <item>"mobile_supl,3,0,2,60000,true"</item>
-        <item>"mobile_dun,4,0,3,60000,true"</item>
-        <item>"mobile_hipri,5,0,3,60000,true"</item>
-        <item>"mobile_bluetooth,7,7,1,-1,true"</item>
-        <item>"wifi_p2p,13,1,0,-1,true"</item>
+        <item>wifi,1,1,1,-1,true</item>
+        <item>mobile,0,0,0,-1,true</item>
+        <item>mobile_mms,2,0,2,60000,true</item>
+        <item>mobile_supl,3,0,2,60000,true</item>
+        <item>mobile_dun,4,0,2,60000,true</item>
+        <item>mobile_hipri,5,0,3,60000,true</item>
+        <item>bluetooth,7,7,2,-1,true</item>
+        <item>mobile_fota,10,0,2,60000,true</item>
+        <item>mobile_ims,11,0,2,60000,true</item>
+        <item>mobile_cbs,12,0,2,60000,true</item>
+        <item>wifi_p2p,13,1,0,-1,true</item>
+        <item>mobile_bip,17,0,2,60000,true</item>
     </string-array>
 
     <!-- An Array of "[ConnectivityManager connectionType],
@@ -77,10 +79,10 @@
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
 		 
-	<!-- Experimental / USB tethering -->
-		<string-array translatable="false" name="config_tether_usb_regexs">
-        <item>"rndis0"</item>
-		</string-array>
+     <!-- Experimental / USB tethering -->
+     <string-array translatable="false" name="config_tether_usb_regexs">
+         <item>"rndis0"</item>
+     </string-array>
 
 		
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
@@ -107,6 +109,7 @@
     <integer-array translatable="false" name="config_tether_upstream_types">
         <item>0</item>
         <item>1</item>
+        <item>4</item>
         <item>5</item>
         <item>7</item>
     </integer-array>
@@ -132,22 +135,19 @@
         <item>1</item>
         <item>20</item>
         <item>21</item>
-        <item>0</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about touching a virtual key -->
     <integer-array name="config_virtualKeyVibePattern">
         <item>0</item>
-        <item>1</item>
+        <item>10</item>
         <item>20</item>
-        <item>21</item>
-        <item>0</item>
+        <item>30</item>
     </integer-array>
 
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
-        <item>20</item>
-        <item>0</item>
+        <item>40</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
@@ -156,7 +156,6 @@
         <item>1</item>
         <item>20</item>
         <item>21</item>
-        <item>0</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
@@ -167,7 +166,6 @@
         <item>21</item>
         <item>500</item>
         <item>600</item>
-        <item>0</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about hitting a scroll barrier -->
@@ -176,7 +174,6 @@
         <item>15</item>
         <item>10</item>
         <item>10</item>
-        <item>0</item>
     </integer-array>
 
     <!-- The default iface on which to monitor data use -->
@@ -203,10 +200,6 @@
     <!-- Values greater or equal to 0 will enable electronbeam screen-on
     animation with the specified delay (in milliseconds), -1 will disable the animation -->
     <integer name="config_screenOnAnimation">350</integer>
-	
-    <!-- True will enable the electron beam screen-off animation. -->
-    <!-- (just to make sure it's on for debugging purposes only, it will be removed in the future) -->
-    <bool name="config_screenOffAnimation">true</bool>
     
     <!-- enable screen saver feature -->
     <bool name="config_enableDreams">true</bool>
@@ -214,9 +207,54 @@
     <!-- Name of screensaver components to look for if none has been chosen by the user -->
     <string name="config_defaultDreamComponent" translatable="false">com.android.deskclock/com.android.deskclock.Screensaver</string>
     
-        <!-- LUN file to be used by legacy USB manager.
-         The existence of this file will be used to determine in the
-         legacy USB manager should be started. -->
+    <!-- LUN file to be used by legacy USB manager.
+    The existence of this file will be used to determine in the
+    legacy USB manager should be started. -->
     <string name="config_legacyUmsLunFile">/sys/devices/virtual/android_usb/android0/f_mass_storage/lun0/file</string>
+    
+    <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
+    Software implementation will be used if config_hardware_auto_brightness_available is not set -->
+    <bool name="config_automatic_brightness_available">true</bool>
+    
+     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
+     The N entries of this array define N + 1 zones as follows:
+
+     Zone 0:        0 <= LUX < array[0]
+     Zone 1:        array[0] <= LUX < array[1]
+     ...
+     Zone N:        array[N - 1] <= LUX < array[N]
+     Zone N + 1:    array[N] <= LUX < infinity
+
+     Must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessLevels">
+        <item>15</item>
+        <item>150</item>
+        <item>1500</item>
+        <item>15000</item>
+    </integer-array>
+    
+    <!-- Array of output values for LCD backlight corresponding to the LUX values
+    in the config_autoBrightnessLevels array.  This array should have size one greater
+    than the size of the config_autoBrightnessLevels array.
+    This must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>34</item>
+        <item>101</item>
+        <item>168</item>
+        <item>204</item>
+        <item>255</item>
+    </integer-array>
+    
+    <!-- Array of output values for button backlight corresponding to the LUX values
+    in the config_autoBrightnessLevels array.  This array should have size one greater
+    than the size of the config_autoBrightnessLevels array.
+    This must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessButtonBacklightValues">
+        <item>255</item>
+        <item>255</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
     
 </resources>
