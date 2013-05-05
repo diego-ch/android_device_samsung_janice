@@ -1,5 +1,9 @@
 USE_CAMERA_STUB := false
 BOARD_USES_GENERIC_AUDIO := false
+BOARD_USES_STE_HARDWARE := true
+
+# OMX
+BOARD_USES_PROPRIETARY_OMX := samsung
 
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -44,6 +48,7 @@ BOARD_USES_ALSA_AUDIO := true
 # Graphics
 BOARD_EGL_CFG := device/samsung/janice/configs/egl.cfg
 USE_OPENGL_RENDERER := true
+COMMON_GLOBAL_CFLAGS += -DSTE_HARDWARE
 
 # Enable WEBGL in WebKit
 ENABLE_WEBGL := true
