@@ -1,6 +1,9 @@
 USE_CAMERA_STUB := false
 BOARD_USES_GENERIC_AUDIO := false
 
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/include
+
+# Architecture
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
@@ -9,9 +12,12 @@ TARGET_ARCH_VARIANT_CPU := cortex-a9
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
+# Platform
 TARGET_BOARD_PLATFORM := montblanc
 TARGET_SOC := u8500
 TARGET_BOOTLOADER_BOARD_NAME := montblanc
+BOARD_USES_STE_HARDWARE := true
+COMMON_GLOBAL_CFLAGS += -DSTE_HARDWARE
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -20,7 +26,12 @@ TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
 TARGET_RECOVERY_INITRC := device/samsung/janice/rootdir/recovery.rc
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/include
+# Flags
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+
+# OMX
+BOARD_USES_PROPRIETARY_OMX := samsung
 
 # Kernel
 BOARD_KERNEL_CMDLINE := "console=ttySAC2,115200"
