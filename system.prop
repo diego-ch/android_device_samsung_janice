@@ -30,3 +30,6 @@ ste.special_fast_dormancy=false
 # STE: camera orientation front & back
 ste.cam.front.orientation=270
 ste.cam.back.orientation=90
+
+# STE: Camera file path configuration
+ste.cam.ext.cfg.path.secondary=/system/usr/share/camera/config_file/samsung_s5k4ecgx_janice.dat
