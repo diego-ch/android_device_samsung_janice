@@ -106,9 +106,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.gprsclass=10
 
 PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/configs/manuf_id.cfg:/system/etc/manuf_id.cfg \
-   $(LOCAL_PATH)/configs/model_id.cfg:/system/etc/model_id.cfg \
-   $(LOCAL_PATH)/configs/system_id.cfg:/system/etc/system_id.cfg
+   $(LOCAL_PATH)/configs/manuf_id.cfg:/system/etc/AT/manuf_id.cfg \
+   $(LOCAL_PATH)/configs/model_id.cfg:/system/etc/AT/model_id.cfg \
+   $(LOCAL_PATH)/configs/system_id.cfg:/system/etc/AT/system_id.cfg
 
 # OMX
 PRODUCT_COPY_FILES += \
