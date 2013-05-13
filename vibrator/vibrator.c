@@ -68,7 +68,6 @@ static int sendit(int timeout_ms)
     return (ret == nwr) ? 0 : -1;
 }
 
-#endif
 
 int vibrator_on(int timeout_ms)
 {
@@ -80,3 +79,5 @@ int vibrator_off()
 {
     return sendit(1);
 }
+
+#endif

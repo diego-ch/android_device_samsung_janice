@@ -25,7 +25,7 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
 TARGET_RECOVERY_INITRC := device/samsung/janice/rootdir/recovery.rc
-BOARD_HAS_VIBRATOR_IMPLEMENTATION := device/samsung/janice/vibrator/vibrator.c
+BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/janice/vibrator/vibrator.c
 
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
