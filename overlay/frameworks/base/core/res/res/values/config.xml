@@ -21,8 +21,8 @@
      for different hardware and product builds. -->
 <resources>
 
-    <!-- Our amoled doesn't animate well. -->
-    <bool name="config_animateScreenLights">false</bool>
+    <!-- Our amoled doesn't animate well. (?) -->
+    <bool name="config_animateScreenLights">true</bool>
 
     <integer name="config_deskDockKeepsScreenOn">0</integer>
     <integer name="config_carDockKeepsScreenOn">1</integer>
@@ -147,7 +147,7 @@
 
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
-        <item>40</item>
+        <item>20</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
@@ -202,7 +202,7 @@
     <integer name="config_screenOnAnimation">350</integer>
     
     <!-- enable screen saver feature -->
-    <bool name="config_enableDreams">true</bool>
+    <bool name="config_enableDreams">false</bool>
     
     <!-- Name of screensaver components to look for if none has been chosen by the user -->
     <string name="config_defaultDreamComponent" translatable="false">com.android.deskclock/com.android.deskclock.Screensaver</string>
@@ -239,8 +239,9 @@
     than the size of the config_autoBrightnessLevels array.
     This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>34</item> <!-- Very dark room -->
-        <item>101</item> <!-- Poor light ambient -->
+        <item>34</item>
+        <item>64</item> <!-- Very dark room -->
+        <item>110</item> <!-- Poor light ambient -->
         <item>168</item> <!-- Indoor / shadows -->
         <item>204</item> <!-- Outdoor-->
         <item>255</item> <!-- Sunlight outdoor -->
@@ -252,10 +253,11 @@
     This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
         <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>0</item>
-        <item>0</item>
+        <item>255</item> <!-- Very dark room -->
+        <item>255</item> <!-- Poor light ambient -->
+        <item>0</item> <!-- Indoor / shadows -->
+        <item>0</item> <!-- Outdoor-->
+        <item>0</item> <!-- Sunlight outdoor -->
     </integer-array>
     
 </resources>
