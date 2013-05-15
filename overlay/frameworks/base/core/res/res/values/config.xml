@@ -21,8 +21,8 @@
      for different hardware and product builds. -->
 <resources>
 
-    <!-- Our amoled doesn't animate well. (?) -->
-    <bool name="config_animateScreenLights">true</bool>
+    <!-- Disabled to activate electron beam animation (CRT-OFF) -->
+    <bool name="config_animateScreenLights">false</bool>
 
     <integer name="config_deskDockKeepsScreenOn">0</integer>
     <integer name="config_carDockKeepsScreenOn">1</integer>
@@ -68,7 +68,7 @@
     <!-- An Array of "[ConnectivityManager connectionType],
          [# simultaneous connection types]"  -->
 		 
-	<!-- Experimental / Radio Attributes -->
+	<!-- Radio Attributes -->
     <string-array translatable="false" name="radioAttributes">
         <item>"1,1"</item>
         <item>"0,1"</item>
@@ -79,7 +79,7 @@
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
 		 
-     <!-- Experimental / USB tethering -->
+     <!-- USB tethering -->
      <string-array translatable="false" name="config_tether_usb_regexs">
          <item>"rndis0"</item>
      </string-array>
@@ -125,9 +125,6 @@
 
 	<!-- Enables or disables fading edges when marquee is enabled in TextView. -->
     <bool name="config_ui_enableFadingMarquee">true</bool>
-	
-	<!-- Experimental haptic feedback patterns, (trying to fix the vibrator being stuck)
-	testing some workarounds that could work -->
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
@@ -227,11 +224,10 @@
 
      Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>7</item> <!-- Very dark room -->
-        <item>75</item> <!-- Poor light ambient -->
-        <item>1000</item> <!-- Indoor / shadows -->
-        <item>10000</item> <!-- Outdoor-->
-        <item>16000</item> <!-- Sunlight outdoor -->
+        <item>7</item> <!-- (0 - 7) Very dark room -->
+        <item>75</item> <!-- (7 - 75) Poor light ambient -->
+        <item>1000</item> <!-- (75 - 1000) Indoor / shadows -->
+        <item>10000</item> <!--(1000 - 10000) Outdoor, (10000 - 16000 (max lux value)) Sunlight outdoor -->
     </integer-array>
     
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -239,12 +235,11 @@
     than the size of the config_autoBrightnessLevels array.
     This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>34</item>
-        <item>64</item> <!-- Very dark room -->
-        <item>110</item> <!-- Poor light ambient -->
-        <item>168</item> <!-- Indoor / shadows -->
-        <item>204</item> <!-- Outdoor-->
-        <item>255</item> <!-- Sunlight outdoor -->
+        <item>20</item> <!-- (0 - 7) Very dark room -->
+        <item>30</item> <!-- (7 - 75) Poor light ambient -->
+        <item>110</item> <!-- (75 - 1000) Indoor / shadows -->
+        <item>175</item> <!-- (1000 - 10000) Outdoor-->
+        <item>255</item> <!-- (10000 - 16000) Sunlight outdoor -->
     </integer-array>
     
     <!-- Array of output values for button backlight corresponding to the LUX values
@@ -252,12 +247,11 @@
     than the size of the config_autoBrightnessLevels array.
     This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>255</item>
-        <item>255</item> <!-- Very dark room -->
-        <item>255</item> <!-- Poor light ambient -->
-        <item>0</item> <!-- Indoor / shadows -->
-        <item>0</item> <!-- Outdoor-->
-        <item>0</item> <!-- Sunlight outdoor -->
+        <item>255</item> <!-- (0 - 7) Very dark room -->
+        <item>255</item> <!-- (7 - 75) Poor light ambient -->
+        <item>0</item> <!-- (75 - 1000) Indoor / shadows -->
+        <item>0</item> <!-- (1000 - 10000) Outdoor-->
+        <item>0</item> <!-- (10000 - 16000) Sunlight outdoor -->
     </integer-array>
     
 </resources>
