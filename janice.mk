@@ -89,8 +89,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
     $(LOCAL_PATH)/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
 
+# Samsung Packages
+PRODUCT_PACKAGES += \
+    GalaxyS2Settings \
+    SamsungServiceMode
+
 # Packages
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     com.android.future.usb.accessory \
