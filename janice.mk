@@ -125,10 +125,6 @@ PRODUCT_PACKAGES += \
     static_busybox \
     make_ext4fs \
     setup_fs
-	
-# Device Parts
-PRODUCT_PACKAGES += \
-    DeviceParts
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
