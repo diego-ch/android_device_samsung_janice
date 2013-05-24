@@ -30,12 +30,12 @@ PRODUCT_LOCALES += hdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240
 
-# Misc Build.prop defines
+# RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-     ro.ril.hsxpa=1 \
-     ro.ril.gprsclass=10 \
-     ro.adb.qemud=1 \
-     ro.adb.secure=0
+    ro.telephony.ril_class=Smdk4210RIL \
+    mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
+    ro.ril.hsxpa=1 \
+    ro.ril.gprsclass=10
  
 # Keylayout
 PRODUCT_COPY_FILES += \
