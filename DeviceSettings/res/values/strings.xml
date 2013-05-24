@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Galaxy S Advance Settings</string>
+    
+    
+    <string name="category_general_title">General</string>
+       
+    <string name="radio_subcat_title">Radio mode</string>
+    <string name="hspa_title_head">HSPA</string>
+    <string name="hspa_summary_head">Enable HSDPA/HSUPA</string>
+    
+    <string name="vibrator_subcat_title">Vibrator</string>
+    <string name="vibrator_intensity_title_head">Vibrator Intensity</string>
+    <string name="vibrator_intensity_summary_head">Set vibrator intensity</string>
+    
+    <string name="advanced_subcat_title">Advanced</string>
+    <string name="deepest_sleep_title_head">Deepest sleep state</string>
+    <string name="deepest_sleep_summary_head">Specify the highest deep sleep level</string>
 
     <string name="category_screen_title">Screen</string>
+    
     <string name="screen_colors_title">Colors</string>
-    <string name="mdnie_scenario_title_head">Scenario</string>
-    <string name="mdnie_scenario_summary_head">Set the mDNIe Scenario</string>
-    <string name="mdnie_mode_title_head">Mode</string>
-    <string name="mdnie_mode_summary_head">Set the mDNIe Mode</string>
-    <string name="mdnie_negative_title_head">Negative Mode</string>
-    <string name="mdnie_negative_summary_head">Enable/Disable inverted colors</string>
-    <string name="mdnie_outdoor_title_head">Outdoor Mode</string>
-    <string name="mdnie_outdoor_summary_head">Enable/Disable outdoor mode</string>
     <string name="panel_gamma_title_head">Screen Gamma</string>
     <string name="panel_gamma_summary_head">Set screen gamma value</string>
 
@@ -24,8 +32,13 @@
     <string name="touchkey_light_summary_head">Light up touchkeys when screen is on</string> 
     <string name="touchkey_timeout_title_head">Backlight timeout</string>
     <string name="touchkey_timeout_summary_head">Delay after a keypress before backlight turns off</string>
+    
+    <string name="crt_off_subcat_title">CRT-OFF Effect</string>
+    <string name="crt_off_title_head">FB Early Suspend Delay</string>
+    <string name="crt_off_summary_head">Enable / Disable framebuffer early suspend delay, it will enable the crt-off effect</string>
+    <string name="crt_off_delay_title_head">Delay in ms</string>
+    <string name="crt_off_delay_summary_head">Amount in milliseconds to wait before the screen turns off</string>
 
-    <string name="category_sensors_title">Sensors</string>
     <string name="accelerometer_subcat_title">Accelerometer</string>
     <string name="use_accelerometer_calibration_title_head">Use calibration data</string>
     <string name="use_accelerometer_calibration_summary_head">Use the accelerometer calibration values. Do a calibration after checking this!</string>
@@ -34,17 +47,7 @@
     <string name="accelerometer_dialog_head">Calibration done</string>
     <string name="accelerometer_dialog_message">The sensor has been successfully calibrated.</string>
 
-    <string name="category_haptic_title">Haptic</string>
-    <string name="vibrator_subcat_title">Vibrator</string>
-    <string name="vibrator_intensity_title_head">Vibrator Intensity</string>
-    <string name="vibrator_intensity_summary_head">Set vibrator intensity</string>
 
-    <string name="category_radio_title">Radio</string>
-    <string name="hspa_title_head">HSPA</string>
-    <string name="hspa_summary_head">Enable HSDPA/HSUPA</string>
 
-    <string name="category_dock_title">Dock</string>
-    <string name="dockaudio_subcat_title">Audio</string>
-    <string name="use_dock_audio_title_head">Use Dock USB Audio</string>
-    <string name="use_dock_audio_summary_head">Use the passive audio out on the dock</string>
+    
 </resources>

@@ -32,7 +32,7 @@ public class PanelGamma extends ListPreference implements OnPreferenceChangeList
         this.setOnPreferenceChangeListener(this);
     }
 
-    private static final String FILE = "/sys/class/lcd/panel/gamma_mode";
+    private static final String FILE = "/sys/class/lcd/panel/device/gamma_mode";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);

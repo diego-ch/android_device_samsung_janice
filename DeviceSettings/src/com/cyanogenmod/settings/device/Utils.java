@@ -29,9 +29,9 @@ import android.content.Context;
 
 public class Utils {
 
-    private static final String TAG = "GalaxyS2Settings_Utils";
-    private static final String TAG_READ = "GalaxyS2Settings_Utils_Read";
-    private static final String TAG_WRITE = "GalaxyS2Settings_Utils_Write";
+    private static final String TAG = "GalaxySAdvance_Settings_Utils";
+    //private static final String TAG_READ = "GalaxySAdvance_Settings_Utils_Read";
+    private static final String TAG_WRITE = "GalaxySAdvance_Settings_Utils_Write";
 
     /**
      * Write a string value to the specified file.
@@ -128,12 +128,11 @@ public class Utils {
         return new File(filename).exists();
     }
 
-
     public static void showDialog(Context ctx, String title, String message) {
         final AlertDialog alertDialog = new AlertDialog.Builder(ctx).create();
         alertDialog.setTitle(title);
         alertDialog.setMessage(message);
-        alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL,"OK", new DialogInterface.OnClickListener() {
            public void onClick(DialogInterface dialog, int which) {
               alertDialog.dismiss();
            }

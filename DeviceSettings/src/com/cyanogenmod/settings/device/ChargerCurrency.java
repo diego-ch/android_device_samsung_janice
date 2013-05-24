@@ -16,7 +16,6 @@
 
 package com.cyanogenmod.settings.device;
 
-import java.io.IOException;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.content.SharedPreferences;
@@ -25,21 +24,21 @@ import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class mDNIeNegative extends ListPreference implements OnPreferenceChangeListener {
+public class ChargerCurrency extends ListPreference implements OnPreferenceChangeListener {
 
-    public mDNIeNegative(Context context, AttributeSet attrs) {
+    public ChargerCurrency(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setOnPreferenceChangeListener(this);
     }
 
-    private static final String FILE = "/sys/class/mdnie/mdnie/negative";
+    private static final String FILE = "/sys/module/abb_charger/parameters/max_ac_current";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);
     }
 
     /**
-     * Restore mdnie user mode setting from SharedPreferences. (Write to kernel.)
+     * Restore currency setting from SharedPreferences. (Write to kernel.)
      * @param context       The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
@@ -48,7 +47,7 @@ public class mDNIeNegative extends ListPreference implements OnPreferenceChangeL
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_MDNIE_NEGATIVE, "0"));
+        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_AC_CURRENCY, "600"));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

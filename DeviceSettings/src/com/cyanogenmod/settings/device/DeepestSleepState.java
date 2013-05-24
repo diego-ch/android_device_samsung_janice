@@ -17,29 +17,28 @@
 package com.cyanogenmod.settings.device;
 
 import android.content.Context;
-
-import android.content.SharedPreferences;
 import android.util.AttributeSet;
+import android.content.SharedPreferences;
 import android.preference.Preference;
 import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class mDNIeScenario extends ListPreference implements OnPreferenceChangeListener {
+public class DeepestSleepState extends ListPreference implements OnPreferenceChangeListener {
 
-    public mDNIeScenario(Context context, AttributeSet attrs) {
-        super(context,attrs);
+    public DeepestSleepState(Context context, AttributeSet attrs) {
+        super(context, attrs);
         this.setOnPreferenceChangeListener(this);
     }
 
-    private static final String FILE = "/sys/class/mdnie/mdnie/scenario";
+    private static final String FILE = "/d/cpuidle/deepest_state";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);
     }
 
     /**
-     * Restore mdnie "camera" setting from SharedPreferences. (Write to kernel.)
+     * Restore deepest sleep state from SharedPreferences.
      * @param context       The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
@@ -48,7 +47,7 @@ public class mDNIeScenario extends ListPreference implements OnPreferenceChangeL
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_MDNIE_SCENARIO, "4"));
+        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_DEEPEST_SLEEP_STATE, "3"));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

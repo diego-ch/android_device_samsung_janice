@@ -16,7 +16,6 @@
 
 package com.cyanogenmod.settings.device;
 
-import java.io.IOException;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.content.SharedPreferences;

@@ -24,21 +24,21 @@ import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class mDNIeOutdoor extends ListPreference implements OnPreferenceChangeListener {
+public class UsbCurrency extends ListPreference implements OnPreferenceChangeListener {
 
-    public mDNIeOutdoor(Context context, AttributeSet attrs) {
+    public UsbCurrency(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setOnPreferenceChangeListener(this);
     }
 
-    private static final String FILE = "/sys/class/mdnie/mdnie/outdoor";
+    private static final String FILE = "/sys/module/abb_charger/parameters/max_usb_current";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);
     }
 
     /**
-     * Restore mdnie user mode setting from SharedPreferences. (Write to kernel.)
+     * Restore currency setting from SharedPreferences. (Write to kernel.)
      * @param context       The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
@@ -47,7 +47,7 @@ public class mDNIeOutdoor extends ListPreference implements OnPreferenceChangeLi
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_MDNIE_OUTDOOR, "0"));
+        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_USB_CURRENCY, "600"));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

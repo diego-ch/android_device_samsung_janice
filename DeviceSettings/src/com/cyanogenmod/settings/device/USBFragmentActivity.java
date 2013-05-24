@@ -17,12 +17,8 @@
 package com.cyanogenmod.settings.device;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
@@ -30,25 +26,24 @@ import android.util.Log;
 
 import com.cyanogenmod.settings.device.R;
 
-public class HapticFragmentActivity extends PreferenceFragment {
+public class USBFragmentActivity extends PreferenceFragment {
 
-    private static final String PREF_ENABLED = "1";
-    private static final String TAG = "GalaxyS2Settings_Haptic";
+    private static final String TAG = "GalaxySAdvanceSettings_Usb";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.haptic_preferences);
+        addPreferencesFromResource(R.xml.usb_preferences);
 
-        PreferenceScreen prefSet = getPreferenceScreen();
+        //PreferenceScreen prefSet = getPreferenceScreen();
 
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 
-        String boxValue;
+        //String boxValue;
         String key = preference.getKey();
 
         Log.w(TAG, "key: " + key);
@@ -61,6 +56,6 @@ public class HapticFragmentActivity extends PreferenceFragment {
     }
 
     public static void restore(Context context) {
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        PreferenceManager.getDefaultSharedPreferences(context);
     }
 }

@@ -28,18 +28,14 @@ import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
-import com.cyanogenmod.settings.device.R;
-
 import java.util.ArrayList;
+
+import com.cyanogenmod.settings.device.R;
 
 public class DeviceSettings extends FragmentActivity {
 
     public static final String SHARED_PREFERENCES_BASENAME = "com.cyanogenmod.settings.device";
     public static final String ACTION_UPDATE_PREFERENCES = "com.cyanogenmod.settings.device.UPDATE";
-    public static final String KEY_MDNIE_SCENARIO = "mdnie_scenario";
-    public static final String KEY_MDNIE_MODE = "mdnie_mode";
-    public static final String KEY_MDNIE_NEGATIVE = "mdnie_negative";
-    public static final String KEY_MDNIE_OUTDOOR = "mdnie_outdoor";
     public static final String KEY_PANEL_GAMMA = "panel_gamma";
     public static final String KEY_HSPA = "hspa";
     public static final String KEY_USE_ACCELEROMETER_CALIBRATION = "use_accelerometer_calibration";
@@ -49,6 +45,12 @@ public class DeviceSettings extends FragmentActivity {
     public static final String KEY_TOUCHKEY_TIMEOUT = "touchkey_timeout";
     public static final String KEY_VIBRATOR_INTENSITY = "vibrator_intensity";
     public static final String KEY_USE_DOCK_AUDIO = "dock_audio";
+    public static final String KEY_USB_OTG_POWER = "usb_otg_power";
+    public static final String KEY_FB_EARLYSUSPEND_DELAY = "fb_earlysuspend_delay";
+    public static final String KEY_FB_EARLYSUSPEND_DELAY_MS = "fb_earlysuspend_delay_ms";
+    public static final String KEY_DEEPEST_SLEEP_STATE = "deepest_sleep_state";
+    public static final String KEY_AC_CURRENCY = "ac_currency";
+    public static final String KEY_USB_CURRENCY = "usb_currency";
 
     ViewPager mViewPager;
     TabsAdapter mTabsAdapter;
@@ -68,16 +70,12 @@ public class DeviceSettings extends FragmentActivity {
         bar.setDisplayHomeAsUpEnabled(true);
 
         mTabsAdapter = new TabsAdapter(this, mViewPager);
-        mTabsAdapter.addTab(bar.newTab().setText(R.string.category_radio_title),
-                RadioFragmentActivity.class, null);
+        mTabsAdapter.addTab(bar.newTab().setText(R.string.category_general_title),
+                GeneralFragmentActivity.class, null);
         mTabsAdapter.addTab(bar.newTab().setText(R.string.category_screen_title),
                 ScreenFragmentActivity.class, null);
-        mTabsAdapter.addTab(bar.newTab().setText(R.string.category_sensors_title),
-                SensorsFragmentActivity.class, null);
-        mTabsAdapter.addTab(bar.newTab().setText(R.string.category_haptic_title),
-                HapticFragmentActivity.class, null);
-        mTabsAdapter.addTab(bar.newTab().setText(R.string.category_dock_title),
-                DockFragmentActivity.class, null);
+        mTabsAdapter.addTab(bar.newTab().setText("USB"),
+                USBFragmentActivity.class, null);
 
         if (savedInstanceState != null) {
             bar.setSelectedNavigationItem(savedInstanceState.getInt("tab", 0));

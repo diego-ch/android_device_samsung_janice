@@ -4,51 +4,15 @@
 
     <PreferenceCategory
                 android:title="@string/screen_colors_title">
-    
-    <!-- mDNIe Scenario modes -->
-    <com.cyanogenmod.settings.device.mDNIeScenario
-	        android:key="mdnie_scenario"
-	        android:title="@string/mdnie_scenario_title_head"
-	        android:summary="@string/mdnie_scenario_summary_head"
-	        android:entries="@array/mdnie_scenario_entries"
-  			android:entryValues="@array/mdnie_scenario_entries_values"
-  			android:defaultValue="4" />
-
-    <!-- mDNIe Mode -->
-    <com.cyanogenmod.settings.device.mDNIeMode
-	        android:key="mdnie_mode"
-	        android:title="@string/mdnie_mode_title_head"
-	        android:summary="@string/mdnie_mode_summary_head"
-	        android:entries="@array/mdnie_mode_entries"
-  			android:entryValues="@array/mdnie_mode_entries_values"
-  			android:defaultValue="1" />
-
-    <!-- mDNIe Negative mode -->
-    <com.cyanogenmod.settings.device.mDNIeNegative
-	        android:key="mdnie_negative"
-	        android:title="@string/mdnie_negative_title_head"
-	        android:summary="@string/mdnie_negative_summary_head"
-	        android:entries="@array/mdnie_negative_entries"
-  			android:entryValues="@array/mdnie_negative_entries_values"
-  			android:defaultValue="0" />
-
-    <!-- mDNIe Outdoor mode -->
-    <com.cyanogenmod.settings.device.mDNIeOutdoor
-	        android:key="mdnie_outdoor"
-	        android:title="@string/mdnie_outdoor_title_head"
-	        android:summary="@string/mdnie_outdoor_summary_head"
-	        android:entries="@array/mdnie_outdoor_entries"
-  			android:entryValues="@array/mdnie_outdoor_entries_values"
-  			android:defaultValue="0" />
 
     <!-- Panel gamma -->
     <com.cyanogenmod.settings.device.PanelGamma
-                android:key="panel_gamma"
-                android:title="@string/panel_gamma_title_head"
-                android:summary="@string/panel_gamma_summary_head"
-                android:entries="@array/panel_gamma_entries"
-                        android:entryValues="@array/panel_gamma_entries_values"
-                        android:defaultValue="0" />
+        android:defaultValue="0"
+        android:entries="@array/panel_gamma_entries"
+        android:entryValues="@array/panel_gamma_entries_values"
+        android:key="panel_gamma"
+        android:summary="@string/panel_gamma_summary_head"
+        android:title="@string/panel_gamma_title_head" />
 
     </PreferenceCategory>
     <PreferenceCategory
@@ -71,7 +35,9 @@
                 android:summary="@string/touchkey_light_summary_head"
                 android:defaultValue="true"
                 />
-    <com.cyanogenmod.settings.device.TouchkeyTimeout
+ 
+   
+     <com.cyanogenmod.settings.device.TouchkeyTimeout
                 android:key="touchkey_timeout"
                 android:title="@string/touchkey_timeout_title_head"
                 android:summary="@string/touchkey_timeout_summary_head"
@@ -79,5 +45,27 @@
                 android:entryValues="@array/touchkey_timeout_entries_values"
                 android:defaultValue="3"
                 />
+     
+    </PreferenceCategory> 
+    
+    
+       <PreferenceCategory
+                android:title="@string/crt_off_subcat_title">
+    <!-- CRT-OFF effect -->
+    <CheckBoxPreference
+                android:key="fb_earlysuspend_delay"
+                android:title="@string/crt_off_title_head"
+                android:summary="@string/crt_off_summary_head"
+                android:defaultValue="true"
+                />
+    <com.cyanogenmod.settings.device.FbDelay
+                android:key="fb_earlysuspend_delay_ms"
+                android:title="@string/crt_off_delay_title_head"
+                android:summary="@string/crt_off_delay_summary_head"
+                android:entries="@array/fb_earlysuspend_delay_entries"
+                android:entryValues="@array/fb_earlysuspend_delay_entries_values"
+                android:defaultValue="1"
+                />
     </PreferenceCategory>
+    
 </PreferenceScreen>
