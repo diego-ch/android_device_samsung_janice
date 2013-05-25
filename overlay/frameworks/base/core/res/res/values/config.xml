@@ -249,7 +249,7 @@
     <integer-array name="config_autoBrightnessButtonBacklightValues">
         <item>255</item> <!-- (0 - 7) Very dark room -->
         <item>255</item> <!-- (7 - 75) Poor light ambient -->
-        <item>0</item> <!-- (75 - 1000) Indoor / shadows -->
+        <item>255</item> <!-- (75 - 1000) Indoor / shadows -->
         <item>0</item> <!-- (1000 - 10000) Outdoor-->
         <item>0</item> <!-- (10000 - 16000) Sunlight outdoor -->
     </integer-array>
