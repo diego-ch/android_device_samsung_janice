@@ -331,8 +331,8 @@ on boot
     chown system radio /sys/class/backlight/pwm-backlight/device/lcd_power
     chown system system /sys/class/backlight/pwm-backlight/device/panel_id
     chown system system /sys/class/backlight/pwm-backlight/device/acl_set
-    chown system system /sys/class/backlight/pwm-backlight/device/gamma_mode
-    chown system system /sys/class/backlight/pwm-backlight/device/gamma_table
+    chown system system /sys/class/lcd/panel/device/gamma_mode
+    chown system system /sys/class/lcd/panel/device/gamma_table
     chown system system /sys/class/leds/button-backlight/brightness
     chown radio radio /sys/class/usb_switch/FSA_SWITCH/jig_smd
     chown radio system /sys/class/usb_switch/FSA_SWITCH/smd_wakelock
@@ -431,6 +431,12 @@ on boot
 
     # temp Torch workaround
     chmod 0222 /sys/class/sec/flash/enable
+    
+    # fbearlysuspend module parameters permissions
+    chown system system /sys/module/fbearlysuspend/parameters/fbdelay
+    chown system system /sys/module/fbearlysuspend/parameters/fbdelay_ms
+    chown system system /sys/module/fbearlysuspend/parameters/fbdelay_first
+    chown system system /sys/module/fbearlysuspend/parameters/fbdelay_first_ms
 
     # camera debug
     setprop persist.debug.extcamera.level 777
