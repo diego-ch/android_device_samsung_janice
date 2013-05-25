@@ -28,7 +28,8 @@ import com.cyanogenmod.settings.device.R;
 
 public class USBFragmentActivity extends PreferenceFragment {
 
-    private static final String TAG = "GalaxySAdvanceSettings_Usb";
+    private static final String TAG = "GalaxySAdvance_Settings_Usb";
+    private final String FILE = "/sys/kernel/abb-regu/VOTG";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,11 @@ public class USBFragmentActivity extends PreferenceFragment {
 
         addPreferencesFromResource(R.xml.usb_preferences);
 
-        //PreferenceScreen prefSet = getPreferenceScreen();
+        PreferenceScreen prefSet = getPreferenceScreen();
+        
+        prefSet.findPreference(DeviceSettings.KEY_AC_CURRENCY).setEnabled(ChargerCurrency.isSupported());
+        prefSet.findPreference(DeviceSettings.KEY_USB_CURRENCY).setEnabled(UsbCurrency.isSupported());
+        prefSet.findPreference(DeviceSettings.KEY_USB_OTG_POWER).setEnabled(isSupported(FILE));
 
     }
 

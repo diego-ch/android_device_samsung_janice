@@ -74,7 +74,7 @@ public class DeviceSettings extends FragmentActivity {
                 GeneralFragmentActivity.class, null);
         mTabsAdapter.addTab(bar.newTab().setText(R.string.category_screen_title),
                 ScreenFragmentActivity.class, null);
-        mTabsAdapter.addTab(bar.newTab().setText("USB"),
+        mTabsAdapter.addTab(bar.newTab().setText(R.string.category_usb_title),
                 USBFragmentActivity.class, null);
 
         if (savedInstanceState != null) {

@@ -37,6 +37,7 @@ public class ScreenFragmentActivity extends PreferenceFragment {
 
     
     private TouchscreenSensitivity mTouchscreenSensitivity;
+    private TouchkeyTimeout mTouchkeyTimeout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,9 @@ public class ScreenFragmentActivity extends PreferenceFragment {
 
         mTouchscreenSensitivity = (TouchscreenSensitivity) findPreference(DeviceSettings.KEY_TOUCHSCREEN_SENSITIVITY);
         mTouchscreenSensitivity.setEnabled(TouchscreenSensitivity.isSupported());
+        
+        mTouchkeyTimeout = (TouchkeyTimeout) findPreference(DeviceSettings.KEY_TOUCHKEY_TIMEOUT);
+        mTouchkeyTimeout.setEnabled(TouchkeyTimeout.isSupported());
 
    /* TEMP DISABLED FEATURE
     * 

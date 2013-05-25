@@ -47,7 +47,19 @@
     <string name="accelerometer_dialog_head">Calibration done</string>
     <string name="accelerometer_dialog_message">The sensor has been successfully calibrated.</string>
 
+    <string name="category_usb_title">Usb</string>
+       
+    <string name="otg_subcat_title">USB OTG Settings</string>
+    <string name="otg_power_title_head">USB-OTG Power</string>
+    <string name="otg_power_summary_head">Enables output voltage to the USB port</string>
+    
+    <string name="cc_subcat_title">Charger control</string>
+    
+    <string name="ac_cc_title_head">Wall charger currency</string>
+    <string name="ac_cc_summary_head">Wall charger currency in mAh, low levels protect battery but takes longer to charge, high levels may damage the battery life</string>
 
-
+    <string name="usb_cc_title_head">USB cable currency</string>
+    <string name="usb_cc_summary_head">USB cable currency in mAh, useful to implement Fast Charge, low levels protect battery but takes longer to charge, high levels may damage the battery life</string>
+    
     
 </resources>
