@@ -25,7 +25,7 @@
     <!-- Samsung Camera Settings -->
     <bool name="hasSamsungCamSettings">true</bool>
     <!-- Restart the preview on picture taken -->
-    <bool name="restartPreviewOnPictureTaken">true</bool>
+    <bool name="restartPreviewOnPictureTaken">false</bool>
     <!-- The camera removes the focus modes by default when touch-to-focus
      exists. Use this option to change that behavior -->
     <bool name="wantsFocusModes">true</bool>
