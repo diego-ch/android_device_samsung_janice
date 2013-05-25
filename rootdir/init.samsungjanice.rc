@@ -111,6 +111,7 @@ on post-fs
     chown system radio /sys/class/sec/sec_touchscreen/tsp_firm_version_phone
     chown system radio /sys/class/sec/tsp_noise_test/disp_all_refdata
     chown system radio /sys/class/sec/tsp_noise_test/disp_all_deltadata
+    chown system system /sys/class/sec/sec_touchscreen/tsp_threshold
 
     # DVFS LOCK
     chown radio system /sys/power/cpufreq_table
