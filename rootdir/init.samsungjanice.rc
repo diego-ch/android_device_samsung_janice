@@ -438,6 +438,9 @@ on boot
     chown system system /sys/module/fbearlysuspend/parameters/fbdelay_ms
     chown system system /sys/module/fbearlysuspend/parameters/fbdelay_first
     chown system system /sys/module/fbearlysuspend/parameters/fbdelay_first_ms
+    
+    # deepest sleep state fix for device parts
+    chown system system /d/cpuidle/deepest_state
 
     # camera debug
     setprop persist.debug.extcamera.level 777
