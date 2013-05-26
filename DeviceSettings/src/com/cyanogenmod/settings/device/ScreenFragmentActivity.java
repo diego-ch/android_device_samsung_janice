@@ -44,7 +44,7 @@ public class ScreenFragmentActivity extends PreferenceFragment {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.screen_preferences);
-        //PreferenceScreen prefSet = getPreferenceScreen();
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         mTouchscreenSensitivity = (TouchscreenSensitivity) findPreference(DeviceSettings.KEY_TOUCHSCREEN_SENSITIVITY);
         mTouchscreenSensitivity.setEnabled(TouchscreenSensitivity.isSupported());
@@ -52,16 +52,17 @@ public class ScreenFragmentActivity extends PreferenceFragment {
         mTouchkeyTimeout = (TouchkeyTimeout) findPreference(DeviceSettings.KEY_TOUCHKEY_TIMEOUT);
         mTouchkeyTimeout.setEnabled(TouchkeyTimeout.isSupported());
 
-   /* TEMP DISABLED FEATURE
-    * 
-    *      if (((CheckBoxPreference)prefSet.findPreference(DeviceSettings.KEY_TOUCHKEY_LIGHT)).isChecked()) {
+        if (((CheckBoxPreference)prefSet.findPreference(DeviceSettings.KEY_TOUCHKEY_LIGHT)).isChecked()) {
             prefSet.findPreference(DeviceSettings.KEY_TOUCHKEY_TIMEOUT).setEnabled(true);
         } else {
             prefSet.findPreference(DeviceSettings.KEY_TOUCHKEY_TIMEOUT).setEnabled(false);
         }
         
-        
-        */
+        if (((CheckBoxPreference)prefSet.findPreference(DeviceSettings.KEY_FB_EARLYSUSPEND_DELAY)).isChecked()) {
+            prefSet.findPreference(DeviceSettings.KEY_FB_EARLYSUSPEND_DELAY_MS).setEnabled(true);
+        } else {
+            prefSet.findPreference(DeviceSettings.KEY_FB_EARLYSUSPEND_DELAY_MS).setEnabled(false);
+        }
     }
     
     @Override
