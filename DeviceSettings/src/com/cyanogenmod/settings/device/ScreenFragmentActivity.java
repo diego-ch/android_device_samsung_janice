@@ -86,10 +86,10 @@ public class ScreenFragmentActivity extends PreferenceFragment {
         if(key.equals(DeviceSettings.KEY_FB_EARLYSUSPEND_DELAY)) {
         	 if (((CheckBoxPreference)preference).isChecked()) {
         	        Utils.writeValue(FILE_FB_DELAY, "1");
-                 preferenceScreen.findPreference(DeviceSettings.KEY_TOUCHKEY_TIMEOUT).setEnabled(true);
+                 preferenceScreen.findPreference(DeviceSettings.KEY_FB_EARLYSUSPEND_DELAY_MS).setEnabled(true);
              } else {
                  Utils.writeValue(FILE_FB_DELAY, "0");
-                 preferenceScreen.findPreference(DeviceSettings.KEY_TOUCHKEY_TIMEOUT).setEnabled(false);
+                 preferenceScreen.findPreference(DeviceSettings.KEY_FB_EARLYSUSPEND_DELAY_MS).setEnabled(false);
              }
         }
 
