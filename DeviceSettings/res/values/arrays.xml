@@ -3,7 +3,7 @@
     <string-array name="fb_earlysuspend_delay_entries">
         <item>600 ms</item>
         <item>400 ms</item>
-        <item>350 ms</item>
+        <item>350 ms (default)</item>
         <item>200 ms</item>
         <item>100 ms</item>
     </string-array>
@@ -16,7 +16,7 @@
     </string-array>
     <string-array name="cc_currency_usb_entries">
         <item>750 mAh *WARNING*</item>
-        <item>600 mAh</item>
+        <item>600 mAh (fast charge)</item>
         <item>450 mAh</item>
     </string-array>
     <string-array name="cc_currency_usb_entries_values" translatable="false">
