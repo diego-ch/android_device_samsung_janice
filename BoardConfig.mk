@@ -51,7 +51,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-COMMON_GLOBAL_CFLAGS += -DSTE_AUDIO
+#COMMON_GLOBAL_CFLAGS += -DSTE_AUDIO
 
 # Graphics
 BOARD_EGL_CFG := device/samsung/janice/configs/egl.cfg
