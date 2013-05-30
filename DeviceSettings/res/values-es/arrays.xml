@@ -1,28 +1,4 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string-array name="mdnie_scenario_entries">
-        <item>Cámara (por defecto)</item>
-        <item>Vídeo</item>
-        <item>Vídeo cálido</item>
-        <item>Vídeo frío</item>
-        <item>UI</item>
-        <item>Navegación</item>
-        <item>Galería</item>
-        <item>VT</item>
-    </string-array>
-    <string-array name="mdnie_mode_entries">
-        <item>Estándar (por defecto)</item>
-        <item>Dinámico</item>
-        <item>Natural</item>
-        <item>Película</item>
-    </string-array>
-    <string-array name="mdnie_negative_entries">
-        <item>Normal</item>
-        <item>Invertido</item>
-    </string-array>
-    <string-array name="mdnie_outdoor_entries">
-        <item>Apagado (por defecto)</item>
-        <item>Encendido</item>
-    </string-array>
     <string-array name="panel_gamma_entries">
         <item>2.2 (por defecto)</item>
         <item>1.9</item>

@@ -2,13 +2,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     
     <PreferenceCategory
-                android:title="USB OTG Settings">
+                android:title="@string/otg_subcat_title">
     
     <!-- USB OTG Power -->
         <CheckBoxPreference
                 android:key="usb_otg_power"
-                android:title="USB-OTG Power"
-                android:summary="Enables output voltage to the USB port"
+                android:title="@string/otg_power_title_head"
+                android:summary="@string/otg_power_summary_head"
                 android:defaultValue="true" />
     
     </PreferenceCategory>
@@ -20,9 +20,9 @@
             android:defaultValue="1"
             android:entries="@array/cc_currency_charger_entries"
             android:entryValues="@array/cc_currency_charger_entries_values"
-            android:key="charger_currency"
-            android:summary="Wall charger currency in mAh, low levels protect battery but takes longer to charge, high levels may damage the battery life"
-            android:title="Wall charger currency" />
+            android:key="ac_currency"
+            android:summary="@string/ac_cc_summary_head"
+            android:title="@string/ac_cc_title_head" />
         
     
                 <!-- USB cable charge control -->
@@ -30,9 +30,9 @@
             android:defaultValue="1"
             android:entries="@array/cc_currency_usb_entries"
             android:entryValues="@array/cc_currency_usb_entries_values"
-            android:key="charger_currency"
-            android:summary="USB cable currency in mAh, useful to implement Fast Charge, low levels protect battery but takes longer to charge, high levels may damage the battery life"
-            android:title="USB cable currency" />
+            android:key="usb_currency"
+            android:summary="@string/usb_cc_summary_head"
+            android:title="@string/usb_cc_title_head" />
     </PreferenceCategory>
     
 </PreferenceScreen>
