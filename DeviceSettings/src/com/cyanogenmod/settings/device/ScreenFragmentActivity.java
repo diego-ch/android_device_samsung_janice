@@ -105,9 +105,9 @@ public class ScreenFragmentActivity extends PreferenceFragment {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         
         boolean light = sharedPrefs.getBoolean(DeviceSettings.KEY_TOUCHKEY_LIGHT, true);
-        Utils.writeValue(FILE_TOUCHKEY_BRIGHTNESS, light ? "0" : "1");
+        Utils.writeValue(FILE_TOUCHKEY_BRIGHTNESS, light ? "1" : "0");
         
         boolean fbdelay = sharedPrefs.getBoolean(DeviceSettings.KEY_FB_EARLYSUSPEND_DELAY, true);
-        Utils.writeValue(FILE_FB_DELAY, fbdelay ? "0" : "1");
+        Utils.writeValue(FILE_FB_DELAY, fbdelay ? "1" : "0");
     }
 }
