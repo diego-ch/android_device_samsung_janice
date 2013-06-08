@@ -28,7 +28,7 @@ on init
     export PATH /system/sbin:/system/bin:/system/xbin:/sbin:/bin:/vendor/bin
     export LD_LIBRARY_PATH /system/lib:/lib:/usr/lib:/system/lib/ste_omxcomponents/:/vendor/lib
     export OMX_STE_ENS_COMPONENTS_DIR /system/lib/ste_omxcomponents/
-    export OMX_BELLAGIO_LOADER_REGISTRY /system/omxloaders
+    export OMX_BELLAGIO_LOADER_REGISTRY /system/etc/omxloaders
 
     # Vibetonz
     export VIBE_PIPE_PATH /dev/pipes

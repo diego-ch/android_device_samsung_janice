@@ -17,7 +17,7 @@ PRODUCT_COPY_FILES += \
 
 # STE
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/omxloaders:system/omxloaders \
+    $(LOCAL_PATH)/configs/omxloaders:system/etc/omxloaders \
     $(LOCAL_PATH)/configs/cspsa.conf:system/etc/cspsa.conf \
     $(LOCAL_PATH)/configs/ste_modem.sh:system/etc/ste_modem.sh \
     $(LOCAL_PATH)/configs/usbid_init.sh:system/bin/usbid_init.sh
