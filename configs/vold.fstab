@@ -1,8 +1,0 @@
-# internal sdcard
-dev_mount sdcard0 /storage/sdcard0 8 /devices/sdi2/mmc_host/mmc0/mmc0 nonremovable,encryptable
-
-# external sdcard
-dev_mount sdcard1 /storage/sdcard1 auto /devices/sdi0/mmc_host/mmc1/mmc1
-
-# usbdisk
-dev_mount usbdisk0 /storage/usbdisk0 auto /devices/platform/msm_hsusb_host.0
