@@ -1,4 +1,4 @@
--include device/samsung/galaxys2-common/BoardCommonConfig.mk
+-include device/samsung/u8500-common/BoardCommonConfig.mk
 
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/include
 
