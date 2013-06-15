@@ -10,14 +10,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-# Init files
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.samsungjanice:root/fstab.samsungjanice \
-    $(LOCAL_PATH)/rootdir/init.samsungjanice.rc:root/init.samsungjanice.rc \
-    $(LOCAL_PATH)/rootdir/init.samsungjanice.usb.rc:root/init.samsungjanice.usb.rc \
-    $(LOCAL_PATH)/rootdir/prerecovery.rc:root/prerecovery.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.samsungjanice.rc:root/ueventd.samsungjanice.rc
-
 # Packages
 PRODUCT_PACKAGES += \
     GalaxyS2Settings
