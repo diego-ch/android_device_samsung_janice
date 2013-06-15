@@ -1,7 +1,5 @@
 -include device/samsung/u8500-common/BoardCommonConfig.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/include
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/janice/bluetooth
 
