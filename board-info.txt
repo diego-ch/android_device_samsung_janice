@@ -1,0 +1,2 @@
+require board=montblanc
+require version-bootloader=I9070XXLQB
