@@ -21,11 +21,6 @@
 #include <fcntl.h>
 #include <errno.h>
 
-
-#ifdef USE_ALTERNATIVE_VIBRATOR
-extern int sendit(int timeout_ms);
-#else
-
 #define THE_DEVICE "/sys/class/timed_output/vibrator/enable"
 
 int vibrator_exists()
@@ -33,10 +28,10 @@ int vibrator_exists()
     int fd;
 
     fd = open(THE_DEVICE, O_RDWR);
-    if(fd != 0)
-        return 1;
+    if(fd < 0)
+        return 0;
     close(fd);
-    return 0;
+    return 1;
 }
 
 static int sendit(int timeout_ms)
@@ -61,7 +56,7 @@ int vibrator_on(int timeout_ms)
 {
     /* constant on, up to maximum allowed time */
 	if(timeout_ms < 0)
-		return sendit(5000);
+		return sendit(10000);
 	return sendit(timeout_ms);
 }
 
@@ -71,4 +66,3 @@ int vibrator_off()
 	return (vibrator_exists() == 0) ? 0 : 1;
 }
 
-#endif
