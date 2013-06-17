@@ -611,8 +611,8 @@ service stedump /system/bin/stedump
     user root
 
 service geomagneticd /system/bin/geomagneticd6x
-    user compass
-    group system input
+    user root
+    group root
 
 service orientationd /system/bin/orientationd6x
     user compass
