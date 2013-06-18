@@ -51,7 +51,7 @@ BOARD_LEGACY_NL80211_STA_EVENTS  := true
 BOARD_HAVE_SAMSUNG_WIFI := true
 
 # Vibrator
-BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/janice/vibrator/vibrator.c
+#BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/janice/vibrator/vibrator.c
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/u8500
