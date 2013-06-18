@@ -54,7 +54,7 @@ BOARD_HAVE_SAMSUNG_WIFI := true
 BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/janice/vibrator/vibrator.c
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/janice
+TARGET_KERNEL_SOURCE := kernel/samsung/u8500
 TARGET_KERNEL_CONFIG := cyanogenmod_i9070_defconfig
 
 
