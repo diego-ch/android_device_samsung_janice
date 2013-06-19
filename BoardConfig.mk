@@ -4,17 +4,6 @@ TARGET_BOARD_INFO_FILE := device/samsung/janice/board-info.txt
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/janice/bluetooth
-BOARD_USES_BLUETOOTH_HACK := true
-
-# Graphics
-BOARD_USES_CUSTOM_REFRESHRATE := false
-
-# Camera
-BOARD_USES_CAMERA_FIXES := true
-
-# Audio
-BOARD_HAS_MR0_STE_AUDIO := true
-TARGET_USES_STE_AUDIO := true
 
 # Kernel
 BOARD_KERNEL_PAGESIZE := 4096
@@ -50,8 +39,21 @@ WIFI_BAND                        := 802_11_ABG
 BOARD_LEGACY_NL80211_STA_EVENTS  := true
 BOARD_HAVE_SAMSUNG_WIFI := true
 
+# Platform
+TARGET_SOC := u8500
+TARGET_BOARD_PLATFORM := montblanc
+TARGET_BOOTLOADER_BOARD_NAME := montblanc
+COMMON_GLOBAL_CFLAGS += -DSTE_HARDWARE
+
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+
+TARGET_PROVIDES_INIT := true
+TARGET_PROVIDES_INIT_TARGET_RC := true
+
+
 # Vibrator
-#BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/janice/vibrator/vibrator.c
+# BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/janice/vibrator/vibrator.c
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/u8500
@@ -63,18 +65,14 @@ BOARD_VOLD_MAX_PARTITIONS := 12
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 
-# RIL
-BOARD_USES_COMMON_RIL := true
 
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/janice/recovery/recovery_keys.c
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/janice/recovery/graphics.c
-BOARD_USES_COMMON_RECOVERY := true
+TARGET_RECOVERY_INITRC := device/samsung/janice/rootdir/recovery.rc
 # Assert
 TARGET_OTA_ASSERT_DEVICE := janice,i9070,GT-I9070
 
-# Battery
-BOARD_USES_COMMON_BATERY := true
 
 # Inherit from the proprietary version
--include vendor/samsung/janice/BoardConfigVendor.mk
+-include vendor/samsung/u8500-common/BoardConfigVendor.mk
