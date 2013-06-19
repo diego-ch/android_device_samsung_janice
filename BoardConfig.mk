@@ -6,6 +6,7 @@ TARGET_BOARD_INFO_FILE := device/samsung/janice/board-info.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/janice/bluetooth
 
 # Resolution
+DEVICE_RESOLUTION := 800x480
 
 # Kernel
 BOARD_KERNEL_PAGESIZE := 4096
