@@ -69,7 +69,7 @@ BOARD_USES_COMMON_RIL := true
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/janice/recovery/recovery_keys.c
 BOARD_USES_COMMON_RECOVERY_GRAPHICS := true
-BOARD_CUSTOM_GRAPHICS := ../../device/samsung/u8500-common/recovery/graphics.c
+BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/u8500-common/recovery/graphics.c
 BOARD_USES_COMMON_RECOVERY := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := janice,i9070,GT-I9070
