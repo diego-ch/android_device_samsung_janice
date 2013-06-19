@@ -1,6 +1,9 @@
 # Include common makefile
 $(call inherit-product, device/samsung/u8500-common/common.mk)
 
+# Call cm.mk because somehow it's not being called!
+$(call inherit-product, device/samsung/janice/cm.mk)
+
 LOCAL_PATH := device/samsung/janice
 
 # Overlay
