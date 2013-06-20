@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <hardware_legacy/vibrator.h>
 #include "qemu.h"
 
 #include <stdio.h>
