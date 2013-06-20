@@ -55,7 +55,7 @@ int vibrator_on(int timeout_ms)
 {
     /* constant on, up to maximum allowed time */
 	if(timeout_ms < 0)
-		return sendit(10000);
+		return sendit(15000);
 	return sendit(timeout_ms);
 }
 
