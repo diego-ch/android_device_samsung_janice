@@ -20,7 +20,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
     ro.ril.hsxpa=1 \
-    ro.ril.gprsclass=10
+    ro.ril.gprsclass=10 \
     ro.telephony.ril_class=SamsungU8500RIL \
     ro.telephony.sends_barcount=1
 
@@ -38,9 +38,9 @@ PRODUCT_COPY_FILES += \
 
 # RIL
 PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/configs/manuf_id.cfg:/system/etc/AT/manuf_id.cfg \
-   $(LOCAL_PATH)/configs/model_id.cfg:/system/etc/AT/model_id.cfg \
-   $(LOCAL_PATH)/configs/system_id.cfg:/system/etc/AT/system_id.cfg
+   $(LOCAL_PATH)/configs/manuf_id.cfg:system/etc/AT/manuf_id.cfg \
+   $(LOCAL_PATH)/configs/model_id.cfg:system/etc/AT/model_id.cfg \
+   $(LOCAL_PATH)/configs/system_id.cfg:system/etc/AT/system_id.cfg
 
 # Keylayout
 PRODUCT_COPY_FILES += \
