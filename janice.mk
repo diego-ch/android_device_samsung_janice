@@ -16,6 +16,14 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
+# RIL
+PRODUCT_PROPERTY_OVERRIDES += \
+    mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
+    ro.ril.hsxpa=1 \
+    ro.ril.gprsclass=10
+    ro.telephony.ril_class=SamsungU8500RIL \
+    ro.telephony.sends_barcount=1
+
 # Packages
 PRODUCT_PACKAGES += \
     GalaxyS2Settings
