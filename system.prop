@@ -5,6 +5,12 @@
 rild.libpath=/system/lib/libsec-ril.so
 rild.libargs=-d /dev/ttyS0
 
+# RIL
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
+ro.telephony.ril_class=SamsungU8500RIL
+ro.telephony.sends_barcount=1
+
 ro.sf.lcd_density=240
 ro.lcd_min_brightness=30
 
