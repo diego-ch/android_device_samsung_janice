@@ -3,7 +3,7 @@
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/include
 
 # Vibrator
-#BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/janice/vibrator/vibrator.c
+BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/janice/vibrator/vibrator.c
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/u8500
