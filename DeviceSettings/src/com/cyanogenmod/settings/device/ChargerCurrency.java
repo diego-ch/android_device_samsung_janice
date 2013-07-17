@@ -31,7 +31,7 @@ public class ChargerCurrency extends ListPreference implements OnPreferenceChang
         this.setOnPreferenceChangeListener(this);
     }
 
-    private static final String FILE = "/sys/module/abb_charger/parameters/max_ac_current";
+    private static final String FILE = "/sys/kernel/abb_charger/max_ac_c";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);
