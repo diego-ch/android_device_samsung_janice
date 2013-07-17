@@ -22,7 +22,9 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
+import android.preference.CheckBoxPreference;
 import android.util.Log;
+
 
 import com.cyanogenmod.settings.device.R;
 
