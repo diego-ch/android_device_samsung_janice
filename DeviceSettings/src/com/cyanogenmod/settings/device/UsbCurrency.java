@@ -31,7 +31,7 @@ public class UsbCurrency extends ListPreference implements OnPreferenceChangeLis
         this.setOnPreferenceChangeListener(this);
     }
 
-    private static final String FILE = "/sys/module/abb_charger/parameters/max_usb_current";
+    private static final String FILE = "/sys/kernel/abb_charger/max_usb_c";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);
