@@ -52,6 +52,14 @@ public class USBFragmentActivity extends PreferenceFragment {
         String key = preference.getKey();
 
         Log.w(TAG, "key: " + key);
+        
+        if (key.equals(DeviceSettings.KEY_USB_OTG_POWER)) {
+            if (((CheckBoxPreference)preference).isChecked()) {
+                Utils.writeValue(FILE, "1");
+            } else {
+                Utils.writeValue(FILE, "0");
+            }
+        }
 
         return true;
     }
