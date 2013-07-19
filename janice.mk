@@ -33,7 +33,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Packages
 PRODUCT_PACKAGES += \
-    GalaxyS2Settings
+    GalaxySAdvanceSettings
 
 # Init files
 PRODUCT_COPY_FILES += \
