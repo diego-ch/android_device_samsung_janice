@@ -15,14 +15,14 @@
         <item>100</item>
     </string-array>
     <string-array name="cc_currency_usb_entries">
-        <item>750 mAh *WARNING*</item>
+        <item>800 mAh *WARNING*</item>
         <item>600 mAh (fast charge)</item>
-        <item>450 mAh</item>
+        <item>400 mAh</item>
     </string-array>
     <string-array name="cc_currency_usb_entries_values" translatable="false">
-        <item>750</item>
+        <item>800</item>
         <item>600</item>
-        <item>450</item>
+        <item>400</item>
     </string-array>
     
     <string-array name="deepest_sleep_states_entries">
@@ -36,14 +36,14 @@
         <item>3</item>
     </string-array>
     <string-array name="cc_currency_charger_entries">
-        <item>750 mAh   *WARNING*</item>
+        <item>800 mAh   *WARNING*</item>
         <item>600 mAh (default)</item>
-        <item>450 mAh</item>
+        <item>400 mAh</item>
     </string-array>
     <string-array name="cc_currency_charger_entries_values" translatable="false">
-        <item>750</item>
+        <item>800</item>
         <item>600</item>
-        <item>450</item>
+        <item>400</item>
     </string-array>
     <string-array name="panel_gamma_entries">
         <item>2.2 (Default)</item>
