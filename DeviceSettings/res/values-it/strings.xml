@@ -41,7 +41,6 @@
     <string name="crt_off_delay_summary_head">Millisecondi da aspettare prima di spegnere lo schermo</string>
 	
 	
-	<string name="cc_subcat_title">Charger control</string>
 	<string name="otg_subcat_title">Impostazioni USB OTG</string>
     <string name="otg_power_title_head">Attivazione USB-OTG</string>
     <string name="otg_power_summary_head">Abilita alimentazione (in uscita) della porta USB</string>
@@ -50,25 +49,5 @@
     <string name="ac_cc_summary_head">Voltaggio caricabatterie in mAh, bassi livelli proteggono la batteria ma è richiesto maggior tempo per la ricarica, alte frequenze potrebbero danneggiare la durata della batteria</string>
 	<string name="usb_cc_title_head">Voltaggio Caricabatterie USB</string>
     <string name="usb_cc_summary_head">Voltaggio carica USB in mAh, utile per implementare la ricarica veloce, bassi livelli proteggono la batteria ma è richiesto maggior tempo per la ricarica, alte frequenze potrebbero danneggiare la durata della batteria</string>
-
-	
-	
-	
-	
-    <string name="mdnie_scenario_title_head">Scenario</string>
-    <string name="mdnie_scenario_summary_head">Imposta lo scenario mDNIe</string>
-    <string name="mdnie_mode_title_head">Modalità</string>
-    <string name="mdnie_mode_summary_head">Imposta la modalità mDNIe</string>
-    <string name="mdnie_negative_title_head">Negativo</string>
-    <string name="mdnie_negative_summary_head">Abilita/disabilita i colori invertiti</string>
-    <string name="mdnie_outdoor_title_head">Esterno</string>
-    <string name="mdnie_outdoor_summary_head">Abilita/disabilita la modalità esterno</string>
-    <string name="category_sensors_title">Sensori</string>
-    <string name="category_haptic_title">Feedback tattile</string>
-    <string name="category_radio_title">Radio</string>
-    <string name="category_dock_title">Dock</string>
-    <string name="dockaudio_subcat_title">Audio</string>
-    <string name="use_dock_audio_title_head">Usa USB audio in dock</string>
-    <string name="use_dock_audio_summary_head">Usa l\'uscita audio passiva quando in dock</string>
 </resources>
 
