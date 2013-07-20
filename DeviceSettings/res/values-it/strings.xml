@@ -36,7 +36,7 @@
     <string name="touchkey_timeout_summary_head">Imposta l\'intervallo dopo cui la retroilluminazione dei tasti si spegne</string>
 	<string name="crt_off_subcat_title">Effetto CRT Spegnimento Schermo</string>
     <string name="crt_off_title_head">Ritarda Sospensione</string>
-    <string name="crt_off_summary_head">Abilita / Disabilita il ritardamento della sospensione dello schermo, abiliterà l'effetto CRT</string>
+    <string name="crt_off_summary_head">Abilita / Disabilita il ritardamento della sospensione dello schermo, abiliterà l\'effetto CRT</string>
     <string name="crt_off_delay_title_head">Ritardo in ms</string>
     <string name="crt_off_delay_summary_head">Millisecondi da aspettare prima di spegnere lo schermo</string>
 	
