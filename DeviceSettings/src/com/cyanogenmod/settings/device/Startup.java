@@ -31,5 +31,6 @@ public class Startup extends BroadcastReceiver {
 		DeepestSleepState.restore(context);
 		GeneralFragmentActivity.restore(context);
 		PanelGamma.restore(context);
+		FsyncMode.restore(context);
 	}
 }
