@@ -24,35 +24,40 @@ import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class ChargerCurrency extends ListPreference implements OnPreferenceChangeListener {
+public class ChargerCurrency extends ListPreference implements
+		OnPreferenceChangeListener {
 
-    public ChargerCurrency(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        this.setOnPreferenceChangeListener(this);
-    }
+	public ChargerCurrency(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		this.setOnPreferenceChangeListener(this);
+	}
 
-    private static final String FILE = "/sys/kernel/abb-charger/max_ac_c";
+	private static final String FILE = "/sys/kernel/abb-charger/max_ac_c";
 
-    public static boolean isSupported() {
-        return Utils.fileExists(FILE);
-    }
+	public static boolean isSupported() {
+		return Utils.fileExists(FILE);
+	}
 
-    /**
-     * Restore currency setting from SharedPreferences. (Write to kernel.)
-     * @param context       The context to read the SharedPreferences from
-     */
-    public static void restore(Context context) {
-        if (!isSupported()) {
-            return;
-        }
+	/**
+	 * Restore currency setting from SharedPreferences. (Write to kernel.)
+	 * 
+	 * @param context
+	 *            The context to read the SharedPreferences from
+	 */
+	public static void restore(Context context) {
+		if (!isSupported()) {
+			return;
+		}
 
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_AC_CURRENCY, "600"));
-    }
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
+		Utils.writeValue(FILE,
+				sharedPrefs.getString(DeviceSettings.KEY_AC_CURRENCY, "600"));
+	}
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Utils.writeValue(FILE, (String) newValue);
-        return true;
-    }
+	public boolean onPreferenceChange(Preference preference, Object newValue) {
+		Utils.writeValue(FILE, (String) newValue);
+		return true;
+	}
 
 }

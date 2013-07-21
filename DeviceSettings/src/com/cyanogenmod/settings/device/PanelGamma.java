@@ -25,36 +25,41 @@ import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class PanelGamma extends ListPreference implements OnPreferenceChangeListener {
+public class PanelGamma extends ListPreference implements
+		OnPreferenceChangeListener {
 
-    public PanelGamma(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        this.setOnPreferenceChangeListener(this);
-    }
+	public PanelGamma(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		this.setOnPreferenceChangeListener(this);
+	}
 
-    private static final String FILE = "/sys/class/lcd/panel/device/gamma_mode";
+	private static final String FILE = "/sys/class/lcd/panel/device/gamma_mode";
 
-    public static boolean isSupported() {
-        return Utils.fileExists(FILE);
-    }
+	public static boolean isSupported() {
+		return Utils.fileExists(FILE);
+	}
 
-    /**
-     * Restore panel gamma setting from SharedPreferences. (Write to kernel.)
-     * @param context       The context to read the SharedPreferences from
-     */
-    public static void restore(Context context) {
-        if (!isSupported()) {
-            return;
-        }
+	/**
+	 * Restore panel gamma setting from SharedPreferences. (Write to kernel.)
+	 * 
+	 * @param context
+	 *            The context to read the SharedPreferences from
+	 */
+	public static void restore(Context context) {
+		if (!isSupported()) {
+			return;
+		}
 
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_PANEL_GAMMA, "0"));
-    }
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
+		Utils.writeValue(FILE,
+				sharedPrefs.getString(DeviceSettings.KEY_PANEL_GAMMA, "0"));
+	}
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Log.d("SGS2","Writing " + ((String)newValue) + " to " + FILE);
-        Utils.writeValue(FILE, (String) newValue);
-        return true;
-    }
+	public boolean onPreferenceChange(Preference preference, Object newValue) {
+		Log.d("SGS2", "Writing " + ((String) newValue) + " to " + FILE);
+		Utils.writeValue(FILE, (String) newValue);
+		return true;
+	}
 
 }

@@ -24,35 +24,41 @@ import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class TouchscreenSensitivity extends ListPreference implements OnPreferenceChangeListener {
+public class TouchscreenSensitivity extends ListPreference implements
+		OnPreferenceChangeListener {
 
-    public TouchscreenSensitivity(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        this.setOnPreferenceChangeListener(this);
-    }
+	public TouchscreenSensitivity(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		this.setOnPreferenceChangeListener(this);
+	}
 
-    private static final String FILE = "/sys/class/sec/sec_touchscreen/tsp_threshold";
+	private static final String FILE = "/sys/class/sec/sec_touchscreen/tsp_threshold";
 
-    public static boolean isSupported() {
-        return Utils.fileExists(FILE);
-    }
+	public static boolean isSupported() {
+		return Utils.fileExists(FILE);
+	}
 
-    /**
-     * Restore touchscreen sensitivity setting from SharedPreferences. (Write to kernel.)
-     * @param context       The context to read the SharedPreferences from
-     */
-    public static void restore(Context context) {
-        if (!isSupported()) {
-            return;
-        }
+	/**
+	 * Restore touchscreen sensitivity setting from SharedPreferences. (Write to
+	 * kernel.)
+	 * 
+	 * @param context
+	 *            The context to read the SharedPreferences from
+	 */
+	public static void restore(Context context) {
+		if (!isSupported()) {
+			return;
+		}
 
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_TOUCHSCREEN_SENSITIVITY, "50"));
-    }
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
+		Utils.writeValue(FILE, sharedPrefs.getString(
+				DeviceSettings.KEY_TOUCHSCREEN_SENSITIVITY, "50"));
+	}
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Utils.writeValue(FILE, (String) newValue);
-        return true;
-    }
+	public boolean onPreferenceChange(Preference preference, Object newValue) {
+		Utils.writeValue(FILE, (String) newValue);
+		return true;
+	}
 
 }

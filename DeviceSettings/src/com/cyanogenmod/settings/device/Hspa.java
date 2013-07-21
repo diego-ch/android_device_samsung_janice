@@ -27,41 +27,45 @@ import android.preference.PreferenceManager;
 
 public class Hspa extends ListPreference implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/system/app/SamsungServiceMode.apk";
-    private Context mCtx;
+	private static final String FILE = "/system/app/SamsungServiceMode.apk";
+	private Context mCtx;
 
-    public Hspa(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        this.setOnPreferenceChangeListener(this);
-        mCtx = context;
-    }
+	public Hspa(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		this.setOnPreferenceChangeListener(this);
+		mCtx = context;
+	}
 
-    public static boolean isSupported() {
-        return Utils.fileExists(FILE);
-    }
+	public static boolean isSupported() {
+		return Utils.fileExists(FILE);
+	}
 
-    /**
-     * Restore hspa setting from SharedPreferences. (Write to kernel.)
-     * @param context       The context to read the SharedPreferences from
-     */
-    public static void restore(Context context) {
-        if (!isSupported()) {
-            return;
-        }
+	/**
+	 * Restore hspa setting from SharedPreferences. (Write to kernel.)
+	 * 
+	 * @param context
+	 *            The context to read the SharedPreferences from
+	 */
+	public static void restore(Context context) {
+		if (!isSupported()) {
+			return;
+		}
 
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        sendIntent(context, sharedPrefs.getString(DeviceSettings.KEY_HSPA, "23"));
-    }
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
+		sendIntent(context,
+				sharedPrefs.getString(DeviceSettings.KEY_HSPA, "23"));
+	}
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        sendIntent(mCtx, (String) newValue);
-        return true;
-    }
+	public boolean onPreferenceChange(Preference preference, Object newValue) {
+		sendIntent(mCtx, (String) newValue);
+		return true;
+	}
 
-    private static void sendIntent(Context context, String value) {
-        Intent i = new Intent("com.cyanogenmod.SamsungServiceMode.EXECUTE");
-        i.putExtra("sub_type", 20); // HSPA Setting
-        i.putExtra("data", value);
-        context.sendBroadcast(i);
-    }
+	private static void sendIntent(Context context, String value) {
+		Intent i = new Intent("com.cyanogenmod.SamsungServiceMode.EXECUTE");
+		i.putExtra("sub_type", 20); // HSPA Setting
+		i.putExtra("data", value);
+		context.sendBroadcast(i);
+	}
 }

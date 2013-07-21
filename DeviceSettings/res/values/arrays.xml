@@ -1,18 +1,14 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string-array name="fb_earlysuspend_delay_entries">
-        <item>600 ms</item>
-        <item>400 ms</item>
-        <item>350 ms (default)</item>
-        <item>200 ms</item>
-        <item>100 ms</item>
+    <string-array name="fsync_mode_entries">
+        <item>Disabled</item>
+        <item>Enabled (default)</item>
+        <item>Dynamic</item>
     </string-array>
-    <string-array name="fb_earlysuspend_delay_entries_values" translatable="false">
-        <item>600</item>
-        <item>400</item>
-        <item>350</item>
-        <item>200</item>
-        <item>100</item>
+    <string-array name="fsync_mode_entries_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
     <string-array name="cc_currency_usb_entries">
         <item>800 mAh *WARNING*</item>
@@ -24,7 +20,6 @@
         <item>600</item>
         <item>400</item>
     </string-array>
-    
     <string-array name="deepest_sleep_states_entries">
         <item>State 5</item>
         <item>State 4</item>
@@ -69,7 +64,7 @@
         <item>70</item>
         <item>100</item>
     </string-array>
-        <string-array name="vibrator_intensity_entries">
+    <string-array name="vibrator_intensity_entries">
         <item>0%</item>
         <item>25%</item>
         <item>50% (default)</item>

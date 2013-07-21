@@ -24,22 +24,22 @@ import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class UsbCurrency extends ListPreference implements
+public class FsyncMode extends ListPreference implements
 		OnPreferenceChangeListener {
 
-	public UsbCurrency(Context context, AttributeSet attrs) {
+	public FsyncMode(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.setOnPreferenceChangeListener(this);
 	}
 
-	private static final String FILE = "/sys/kernel/abb-charger/max_usb_c";
+	private static final String FILE = "/sys/kernel/fsync/mode";
 
 	public static boolean isSupported() {
 		return Utils.fileExists(FILE);
 	}
 
 	/**
-	 * Restore currency setting from SharedPreferences. (Write to kernel.)
+	 * Restore deepest sleep state from SharedPreferences.
 	 * 
 	 * @param context
 	 *            The context to read the SharedPreferences from
@@ -52,7 +52,7 @@ public class UsbCurrency extends ListPreference implements
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 		Utils.writeValue(FILE,
-				sharedPrefs.getString(DeviceSettings.KEY_USB_CURRENCY, "600"));
+				sharedPrefs.getString(DeviceSettings.KEY_FSYNC_MODE, "1"));
 	}
 
 	public boolean onPreferenceChange(Preference preference, Object newValue) {

@@ -27,27 +27,5 @@
             android:title="@string/calibrate_accelerometer_title_head" />
     </PreferenceCategory>
 
-   
-    <PreferenceCategory android:title="@string/vibrator_subcat_title" >
-        <com.cyanogenmod.settings.device.VibratorIntensity
-            android:defaultValue="50"
-            android:entries="@array/vibrator_intensity_entries"
-            android:entryValues="@array/vibrator_intensity_entries_values"
-            android:key="vibrator_intensity"
-            android:summary="@string/vibrator_intensity_summary_head"
-            android:title="@string/vibrator_intensity_title_head" />
-    </PreferenceCategory>
-
-<PreferenceCategory android:title="@string/advanced_subcat_title" >
-
-    <com.cyanogenmod.settings.device.DeepestSleepState
-        android:defaultValue="2"
-        android:entries="@array/deepest_sleep_states_entries"
-        android:entryValues="@array/deepest_sleep_states_entries_values"
-        android:key="deepest_sleep_state"
-        android:summary="@string/deepest_sleep_summary_head"
-        android:title="@string/deepest_sleep_title_head" />
-
-</PreferenceCategory>
 
 </PreferenceScreen>

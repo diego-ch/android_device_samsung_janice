@@ -24,35 +24,40 @@ import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class DeepestSleepState extends ListPreference implements OnPreferenceChangeListener {
+public class DeepestSleepState extends ListPreference implements
+		OnPreferenceChangeListener {
 
-    public DeepestSleepState(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        this.setOnPreferenceChangeListener(this);
-    }
+	public DeepestSleepState(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		this.setOnPreferenceChangeListener(this);
+	}
 
-    private static final String FILE = "/d/cpuidle/deepest_state";
+	private static final String FILE = "/d/cpuidle/deepest_state";
 
-    public static boolean isSupported() {
-        return Utils.fileExists(FILE);
-    }
+	public static boolean isSupported() {
+		return Utils.fileExists(FILE);
+	}
 
-    /**
-     * Restore deepest sleep state from SharedPreferences.
-     * @param context       The context to read the SharedPreferences from
-     */
-    public static void restore(Context context) {
-        if (!isSupported()) {
-            return;
-        }
+	/**
+	 * Restore deepest sleep state from SharedPreferences.
+	 * 
+	 * @param context
+	 *            The context to read the SharedPreferences from
+	 */
+	public static void restore(Context context) {
+		if (!isSupported()) {
+			return;
+		}
 
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_DEEPEST_SLEEP_STATE, "3"));
-    }
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
+		Utils.writeValue(FILE, sharedPrefs.getString(
+				DeviceSettings.KEY_DEEPEST_SLEEP_STATE, "3"));
+	}
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Utils.writeValue(FILE, (String) newValue);
-        return true;
-    }
+	public boolean onPreferenceChange(Preference preference, Object newValue) {
+		Utils.writeValue(FILE, (String) newValue);
+		return true;
+	}
 
 }

@@ -22,17 +22,14 @@ import android.content.Intent;
 
 public class Startup extends BroadcastReceiver {
 
-    @Override
-    public void onReceive(final Context context, final Intent bootintent) {
-        ScreenFragmentActivity.restore(context);
-        TouchkeyTimeout.restore(context);
-        VibratorIntensity.restore(context);
-        USBFragmentActivity.restore(context);
-        ChargerCurrency.restore(context);
-        UsbCurrency.restore(context);
-        FbDelay.restore(context);
-        DeepestSleepState.restore(context);
-        GeneralFragmentActivity.restore(context);
-        PanelGamma.restore(context);
-    }
+	@Override
+	public void onReceive(final Context context, final Intent bootintent) {
+		ScreenFragmentActivity.restore(context);
+		USBFragmentActivity.restore(context);
+		ChargerCurrency.restore(context);
+		UsbCurrency.restore(context);
+		DeepestSleepState.restore(context);
+		GeneralFragmentActivity.restore(context);
+		PanelGamma.restore(context);
+	}
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/deepsleep_subcat_title" >
+        <com.cyanogenmod.settings.device.DeepestSleepState
+            android:defaultValue="2"
+            android:entries="@array/deepest_sleep_states_entries"
+            android:entryValues="@array/deepest_sleep_states_entries_values"
+            android:key="deepest_sleep_state"
+            android:summary="@string/deepest_sleep_summary_head"
+            android:title="@string/deepest_sleep_title_head" />
+    </PreferenceCategory>
+    
+    
+    <PreferenceCategory android:title="@string/fsync_subcat_title" >
+        <com.cyanogenmod.settings.device.FsyncMode
+            android:defaultValue="2"
+            android:entries="@array/fsync_mode_entries"
+            android:entryValues="@array/fsync_mode_entries_values"
+            android:key="fsync_mode"
+            android:summary="@string/fsync_summary_head"
+            android:title="@string/fsync_title_head" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

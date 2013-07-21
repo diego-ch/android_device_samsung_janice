@@ -25,52 +25,55 @@ import android.preference.PreferenceScreen;
 import android.preference.CheckBoxPreference;
 import android.util.Log;
 
-
 import com.cyanogenmod.settings.device.R;
 
 public class USBFragmentActivity extends PreferenceFragment {
 
-    private static final String TAG = "GalaxySAdvance_Settings_Usb";
-    private final String FILE = "/sys/kernel/abb-regu/VOTG";
+	private static final String TAG = "GalaxySAdvance_Settings_Usb";
+	private final String FILE = "/sys/kernel/abb-regu/VOTG";
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.usb_preferences);
+		addPreferencesFromResource(R.xml.usb_preferences);
 
-        PreferenceScreen prefSet = getPreferenceScreen();
-        
-        prefSet.findPreference(DeviceSettings.KEY_AC_CURRENCY).setEnabled(ChargerCurrency.isSupported());
-        prefSet.findPreference(DeviceSettings.KEY_USB_CURRENCY).setEnabled(UsbCurrency.isSupported());
-        prefSet.findPreference(DeviceSettings.KEY_USB_OTG_POWER).setEnabled(isSupported(FILE));
+		PreferenceScreen prefSet = getPreferenceScreen();
 
-    }
+		prefSet.findPreference(DeviceSettings.KEY_AC_CURRENCY).setEnabled(
+				ChargerCurrency.isSupported());
+		prefSet.findPreference(DeviceSettings.KEY_USB_CURRENCY).setEnabled(
+				UsbCurrency.isSupported());
+		prefSet.findPreference(DeviceSettings.KEY_USB_OTG_POWER).setEnabled(
+				isSupported(FILE));
 
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+	}
 
-        //String boxValue;
-        String key = preference.getKey();
+	@Override
+	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+			Preference preference) {
 
-        Log.w(TAG, "key: " + key);
-        
-        if (key.equals(DeviceSettings.KEY_USB_OTG_POWER)) {
-            if (((CheckBoxPreference)preference).isChecked()) {
-                Utils.writeValue(FILE, "1");
-            } else {
-                Utils.writeValue(FILE, "0");
-            }
-        }
+		// String boxValue;
+		String key = preference.getKey();
 
-        return true;
-    }
+		Log.w(TAG, "key: " + key);
 
-    public static boolean isSupported(String FILE) {
-        return Utils.fileExists(FILE);
-    }
+		if (key.equals(DeviceSettings.KEY_USB_OTG_POWER)) {
+			if (((CheckBoxPreference) preference).isChecked()) {
+				Utils.writeValue(FILE, "1");
+			} else {
+				Utils.writeValue(FILE, "0");
+			}
+		}
 
-    public static void restore(Context context) {
-        PreferenceManager.getDefaultSharedPreferences(context);
-    }
+		return true;
+	}
+
+	public static boolean isSupported(String FILE) {
+		return Utils.fileExists(FILE);
+	}
+
+	public static void restore(Context context) {
+		PreferenceManager.getDefaultSharedPreferences(context);
+	}
 }

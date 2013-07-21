@@ -19,38 +19,33 @@ package com.cyanogenmod.settings.device;
 import com.cyanogenmod.settings.device.R;
 
 import android.content.Context;
-//import android.content.SharedPreferences;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-//import android.preference.CheckBoxPreference;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
-//import android.preference.PreferenceManager;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
-public class ScreenFragmentActivity extends PreferenceFragment {
+public class AdvancedFragmentActivity extends PreferenceFragment {
 
-	private static final String TAG = "GalaxySAdvance_Settings_Screen";
-
-	private TouchscreenSensitivity mTouchscreenSensitivity;
+	private static final String TAG = "GalaxySAdvance_Settings_General";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		addPreferencesFromResource(R.xml.screen_preferences);
+		addPreferencesFromResource(R.xml.advanced_preferences);
+
 		// PreferenceScreen prefSet = getPreferenceScreen();
-
-		mTouchscreenSensitivity = (TouchscreenSensitivity) findPreference(DeviceSettings.KEY_TOUCHSCREEN_SENSITIVITY);
-		mTouchscreenSensitivity
-				.setEnabled(TouchscreenSensitivity.isSupported());
-
 	}
 
 	@Override
 	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
 			Preference preference) {
 
+		// String boxValue;
 		String key = preference.getKey();
 
 		Log.w(TAG, "key: " + key);
@@ -58,13 +53,9 @@ public class ScreenFragmentActivity extends PreferenceFragment {
 		return true;
 	}
 
-	public static boolean isSupported(String FILE) {
-		return Utils.fileExists(FILE);
-	}
-
 	public static void restore(Context context) {
-		// SharedPreferences sharedPrefs =
-		// PreferenceManager.getDefaultSharedPreferences(context);
-
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
 	}
+
 }

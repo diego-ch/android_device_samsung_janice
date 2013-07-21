@@ -13,7 +13,7 @@
     
     </PreferenceCategory>
     
-        <PreferenceCategory android:title="Charger control" >
+        <PreferenceCategory android:title="@string/cc_subcat_title" >
 
         <!-- Wall charger control -->
         <com.cyanogenmod.settings.device.ChargerCurrency

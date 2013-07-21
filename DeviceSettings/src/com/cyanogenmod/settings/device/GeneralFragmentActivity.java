@@ -34,18 +34,13 @@ public class GeneralFragmentActivity extends PreferenceFragment {
 
 	private static final String FILE_ACCELEROMETER_CALIB = "/sys/class/sensors/accelerometer_sensor/calibration";
 
-	VibratorIntensity mVibratorIntensity;
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		addPreferencesFromResource(R.xml.general_preferences);
 
-		PreferenceScreen prefSet = getPreferenceScreen();
-		
-		mVibratorIntensity = (VibratorIntensity)findPreference(DeviceSettings.KEY_VIBRATOR_INTENSITY);
-		prefSet.findPreference(DeviceSettings.KEY_VIBRATOR_INTENSITY).setEnabled(VibratorIntensity.isSupported());
+		// PreferenceScreen prefSet = getPreferenceScreen();
 	}
 
 	@Override
