@@ -21,5 +21,26 @@
             android:summary="@string/fsync_summary_head"
             android:title="@string/fsync_title_head" />
     </PreferenceCategory>
+    
+    
+   <PreferenceCategory android:title="@string/gpu_subcat_title" >
+
+        <com.cyanogenmod.settings.device.MaliL2MaxReads
+            android:defaultValue="2"
+            android:entries="@array/mali_l2_mr_entries"
+            android:entryValues="@array/mali_l2_mr_entries_values"
+            android:key="mali_l2_mr"
+            android:summary="@string/mali_l2_mr_summary_head"
+            android:title="@string/mali_l2_mr_title_head" />
+        
+         <com.cyanogenmod.settings.device.MaliPreAllocMem
+            android:defaultValue="2"
+            android:entries="@array/mali_pam_entries"
+            android:entryValues="@array/mali_pam_entries_values"
+            android:key="mali_pam"
+            android:summary="@string/mali_pam_summary_head"
+            android:title="@string/mali_pam_title_head" />
+        
+    </PreferenceCategory>
 
 </PreferenceScreen>

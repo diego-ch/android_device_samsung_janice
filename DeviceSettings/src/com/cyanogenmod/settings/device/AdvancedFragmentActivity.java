@@ -19,12 +19,12 @@ package com.cyanogenmod.settings.device;
 import com.cyanogenmod.settings.device.R;
 
 import android.content.Context;
-import android.content.SharedPreferences;
+//import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+//import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
+//import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
@@ -54,8 +54,8 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 	}
 
 	public static void restore(Context context) {
-		SharedPreferences sharedPrefs = PreferenceManager
-				.getDefaultSharedPreferences(context);
+		//SharedPreferences sharedPrefs = PreferenceManager
+		//	.getDefaultSharedPreferences(context);
 	}
 
 }

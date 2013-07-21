@@ -32,5 +32,7 @@ public class Startup extends BroadcastReceiver {
 		GeneralFragmentActivity.restore(context);
 		PanelGamma.restore(context);
 		FsyncMode.restore(context);
+		MaliL2MaxReads.restore(context);
+		MaliPreAllocMem.restore(context);
 	}
 }

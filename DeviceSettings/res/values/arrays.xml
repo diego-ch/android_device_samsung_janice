@@ -1,6 +1,26 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string-array name="fsync_mode_entries">
+    <string-array name="mali_l2_mr_entries">
+        <item>28kb (stock)</item>
+        <item>48kb (default)</item>
+    </string-array>
+    <string-array name="mali_l2_mr_entries_values" translatable="false">
+        <item>28</item>
+        <item>48</item>
+    </string-array>
+    
+        <string-array name="mali_pam_entries">
+        <item>16mb</item>
+    </string-array>
+    <string-array name="mali_pam_entries_values" translatable="false">
+        <item>16777216</item>
+    </string-array>
+    
+    
+    
+    
+    
+     <string-array name="fsync_mode_entries">
         <item>Enabled (default)</item>
         <item>Disabled</item>
         <item>Dynamic</item>
@@ -64,20 +84,6 @@
         <item>70</item>
         <item>100</item>
     </string-array>
-    <string-array name="vibrator_intensity_entries">
-        <item>0%</item>
-        <item>25%</item>
-        <item>50% (default)</item>
-        <item>75%</item>
-        <item>100%</item>
-    </string-array>
-    <string-array name="vibrator_intensity_entries_values" translatable="false">
-        <item>0</item>
-        <item>25</item>
-        <item>50</item>
-        <item>75</item>
-        <item>100</item>
-    </string-array>
     <string-array name="hspa_entries">
         <item>UMTS Only</item>
         <item>HSDPA Only</item>
@@ -87,24 +93,6 @@
         <item>21</item>
         <item>22</item>
         <item>23</item>
-    </string-array>
-    <string-array name="touchkey_timeout_entries">
-        <item>Never</item>
-        <item>1 second</item>
-        <item>2 seconds</item>
-        <item>3 seconds (default)</item>
-        <item>4 seconds</item>
-        <item>5 seconds</item>
-        <item>6 seconds</item>
-    </string-array>
-    <string-array name="touchkey_timeout_entries_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
     </string-array>
 
 </resources>

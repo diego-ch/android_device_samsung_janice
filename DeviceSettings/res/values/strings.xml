@@ -3,12 +3,8 @@
 
     <string name="app_name">Galaxy S Advance Settings</string>
     <string name="category_general_title">General</string>
-    <string name="radio_subcat_title">Radio mode</string>
     <string name="hspa_title_head">HSPA</string>
     <string name="hspa_summary_head">Enable HSDPA/HSUPA</string>
-    <string name="vibrator_subcat_title">Vibrator</string>
-    <string name="vibrator_intensity_title_head">Vibrator Intensity</string>
-    <string name="vibrator_intensity_summary_head">Set vibrator intensity</string>
     <string name="deepsleep_subcat_title">Deep Sleep</string>
     <string name="deepest_sleep_title_head">Deepest sleep state</string>
     <string name="deepest_sleep_summary_head">Specify the highest deep sleep level</string>
@@ -40,4 +36,13 @@
     <string name="fsync_title_head">FSync mode</string>
     <string name="fsync_summary_head">Disabling fsync can improve IO performace, but it may cause data corruption. Dynamic fsync will sync all buffers when screen turns off.</string>
 
+    
+    <string name="gpu_subcat_title">GPU</string>
+    <string name="mali_l2_mr_title_head">Mali L2 Max Reads</string>
+    <string name="mali_l2_mr_summary_head">Increasing it may improve graphics performance.</string>
+    
+    <string name="mali_pam_title_head">Mali Pre-allocated memory size</string>
+    <string name="mali_pam_summary_head">Increasing it may improve graphics performance.</string>
+    
+    
 </resources>
