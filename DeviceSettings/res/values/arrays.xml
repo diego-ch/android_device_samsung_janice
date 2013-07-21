@@ -1,8 +1,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string-array name="fsync_mode_entries">
-        <item>Disabled</item>
         <item>Enabled (default)</item>
+        <item>Disabled</item>
         <item>Dynamic</item>
     </string-array>
     <string-array name="fsync_mode_entries_values" translatable="false">

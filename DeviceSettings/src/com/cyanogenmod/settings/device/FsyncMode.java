@@ -52,7 +52,7 @@ public class FsyncMode extends ListPreference implements
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 		Utils.writeValue(FILE,
-				sharedPrefs.getString(DeviceSettings.KEY_FSYNC_MODE, "1"));
+				sharedPrefs.getString(DeviceSettings.KEY_FSYNC_MODE, "0"));
 	}
 
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
