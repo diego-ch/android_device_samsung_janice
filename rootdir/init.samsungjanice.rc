@@ -460,10 +460,8 @@ on boot
     chmod 0222 /sys/class/sec/flash/enable
     
     # system permissions for device parts
-    chown system system /sys/module/fbearlysuspend/parameters/fbdelay
-    chown system system /sys/module/fbearlysuspend/parameters/fbdelay_ms
-    chown system system /sys/module/fbearlysuspend/parameters/fbdelay_first
-    chown system system /sys/module/fbearlysuspend/parameters/fbdelay_first_ms
+    chown system system /sys/module/mali/parameters/mali_l2_max_reads
+    chown system system /sys/module/mali/parameters/pre_allocated_memory_size_max
     chown system system /d/cpuidle/deepest_state
     chown system system /sys/kernel/abb-regu/VOTG
     chown system system /sys/kernel/abb-charger/max_ac_c
