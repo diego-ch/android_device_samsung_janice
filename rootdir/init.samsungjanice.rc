@@ -468,6 +468,7 @@ on boot
     chown system system /sys/kernel/abb-regu/VOTG
     chown system system /sys/kernel/abb-charger/max_ac_c
     chown system system /sys/kernel/abb-charger/max_usb_c
+    chown system system /sys/kernel/fsync/mode
     
 
  # Define TCP buffer sizes for various networks
