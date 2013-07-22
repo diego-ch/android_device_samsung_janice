@@ -21,6 +21,12 @@
             android:key="touchscreen_sensitivity"
             android:summary="@string/touchscreen_sensitivity_summary_head"
             android:title="@string/touchscreen_sensitivity_title_head" />
+
+        <!-- Swipe2Wake settings -->
+        <CheckBoxPreference
+            android:key="use_sweep2wake"
+            android:summary="@string/use_sweep2wake_summary_head"
+            android:title="@string/use_sweep2wake_title_head" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -19,12 +19,12 @@ package com.cyanogenmod.settings.device;
 import com.cyanogenmod.settings.device.R;
 
 import android.content.Context;
-//import android.content.SharedPreferences;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-//import android.preference.CheckBoxPreference;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
-//import android.preference.PreferenceManager;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
@@ -33,6 +33,8 @@ public class ScreenFragmentActivity extends PreferenceFragment {
 	private static final String TAG = "GalaxySAdvance_Settings_Screen";
 
 	private TouchscreenSensitivity mTouchscreenSensitivity;
+
+	public static final String FILE_SWEEP2WAKE = "/sys/kernel/mxt224e/sweep2wake";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -51,20 +53,29 @@ public class ScreenFragmentActivity extends PreferenceFragment {
 	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
 			Preference preference) {
 
+		String boxValue;
 		String key = preference.getKey();
 
 		Log.w(TAG, "key: " + key);
 
+		if (key.equals(DeviceSettings.KEY_USE_SWEEP2WAKE)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
+					: "off");
+			Utils.writeValue(FILE_SWEEP2WAKE, boxValue);
+
+		}
+
 		return true;
 	}
 
-	public static boolean isSupported(String FILE) {
-		return Utils.fileExists(FILE);
-	}
-
 	public static void restore(Context context) {
-		// SharedPreferences sharedPrefs =
-		// PreferenceManager.getDefaultSharedPreferences(context);
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
+		sharedPrefs.getBoolean(DeviceSettings.KEY_USE_SWEEP2WAKE, false);
+
+		String value = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USE_SWEEP2WAKE, false) ? "on" : "off";
+		Utils.writeValue(FILE_SWEEP2WAKE, value);
 
 	}
 }

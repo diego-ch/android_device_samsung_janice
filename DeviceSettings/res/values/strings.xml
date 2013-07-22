@@ -33,7 +33,12 @@
     <string name="touchscreen_subcat_title">Touchscreen</string>
     <string name="touchscreen_sensitivity_title_head">Touch sensitivity</string>
     <string name="touchscreen_sensitivity_summary_head">Set touch panel sensitivity</string>
-
+    
+    <string name="use_sweep2wake_title_head">Sweep2Wake</string>
+    <string name="use_sweep2wake_summary_head">Unlock device with a swype</string>
+    
+    
+    
     <!-- TAB: USB -->
     <string name="category_usb_title">Usb</string>
 

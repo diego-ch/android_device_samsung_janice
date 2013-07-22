@@ -26,6 +26,10 @@
     <!-- CATEGORY: Radio mode -->
     <string name="radio_subcat_title">Radio mode</string>
 
+    <!-- TAB: SCREEN (Sweep2Wake) -->
+    <string name="use_sweep2wake_title_head">Sweep2Wake</string>
+    <string name="use_sweep2wake_summary_head">Unlock device with a swype</string>
+
     <!-- TAB: USB -->
     <string name="category_usb_title">Usb</string>
 
