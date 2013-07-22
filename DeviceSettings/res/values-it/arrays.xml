@@ -32,12 +32,9 @@
         <item>Solo HSDPA</item>
         <item>HSDPA + HSUPA</item>
     </string-array>
-
-    <!-- NOT TRANSLATED YET: -->
-
     <string-array name="mali_l2_mr_entries">
         <item>28kb (stock)</item>
-        <item>48kb (default)</item>
+        <item>48kb (predefinito)</item>
     </string-array>
     <string-array name="mali_pam_entries">
         <item>16mb</item>
@@ -46,9 +43,9 @@
         <item>48mb</item>
     </string-array>
     <string-array name="fsync_mode_entries">
-        <item>Enabled (default)</item>
-        <item>Disabled</item>
-        <item>Dynamic</item>
+        <item>Abilitato (predefinito)</item>
+        <item>Disabilitato</item>
+        <item>Dinamico</item>
     </string-array>
 
 </resources>
