@@ -5,7 +5,6 @@
         <item>600 mAh (Ricarica Veloce)</item>
         <item>400 mAh</item>
     </string-array>
-    
     <string-array name="deepest_sleep_states_entries">
         <item>Stato 5</item>
         <item>Stato 4</item>
@@ -28,26 +27,28 @@
         <item>70</item>
         <item>100</item>
     </string-array>
-        <string-array name="vibrator_intensity_entries">
-        <item>0%</item>
-        <item>25%</item>
-        <item>50% (Predefinito)</item>
-        <item>75%</item>
-        <item>100%</item>
-    </string-array>
     <string-array name="hspa_entries">
         <item>Solo UMTS</item>
         <item>Solo HSDPA</item>
         <item>HSDPA + HSUPA</item>
     </string-array>
-    <string-array name="touchkey_timeout_entries">
-        <item>Mai</item>
-        <item>1 secondo</item>
-        <item>2 secondi</item>
-        <item>3 secondi (Predefinito)</item>
-        <item>4 secondi</item>
-        <item>5 secondi</item>
-        <item>6 secondi</item>
+
+    <!-- NOT TRANSLATED YET: -->
+
+    <string-array name="mali_l2_mr_entries">
+        <item>28kb (stock)</item>
+        <item>48kb (default)</item>
+    </string-array>
+    <string-array name="mali_pam_entries">
+        <item>16mb</item>
+        <item>24mb</item>
+        <item>32mb</item>
+        <item>48mb</item>
+    </string-array>
+    <string-array name="fsync_mode_entries">
+        <item>Enabled (default)</item>
+        <item>Disabled</item>
+        <item>Dynamic</item>
     </string-array>
 
 </resources>

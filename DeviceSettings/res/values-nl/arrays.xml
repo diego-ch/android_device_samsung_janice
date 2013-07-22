@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 The CyanogenMod Project
+<!--
+     Copyright (C) 2012 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -11,34 +12,10 @@
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
-     limitations under the License.
- -->
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string-array name="mdnie_scenario_entries">
-        <item>Camera (standaard)</item>
-        <item>Video</item>
-        <item>Video (warm)</item>
-        <item>Video (koud)</item>
-        <item>Uiterlijk</item>
-        <item>Navigatie</item>
-        <item>Galerij</item>
-        <item>VT</item>
-    </string-array>
-    <string-array name="mdnie_mode_entries">
-        <item>Standaard</item>
-        <item>Dynamisch</item>
-        <item>Natuurlijk</item>
-        <item>Film</item>
-    </string-array>
-    <string-array name="mdnie_negative_entries">
-        <item>Normaal</item>
-        <item>Omgedraaid</item>
-    </string-array>
-    <string-array name="mdnie_outdoor_entries">
-        <item>Uit (standaard)</item>
-        <item>Aan</item>
-    </string-array>
+     limitations under the License.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
     <string-array name="panel_gamma_entries">
         <item>2,2 (standaard)</item>
         <item>1,9</item>
@@ -51,25 +28,43 @@
         <item>70</item>
         <item>100</item>
     </string-array>
-    <string-array name="vibrator_intensity_entries">
-        <item>0%</item>
-        <item>25%</item>
-        <item>50% (standaard)</item>
-        <item>75%</item>
-        <item>100%</item>
-    </string-array>
     <string-array name="hspa_entries">
         <item>Alleen UMTS</item>
         <item>Alleen HSDPA</item>
         <item>HSDPA &amp; HSUPA</item>
     </string-array>
-    <string-array name="touchkey_timeout_entries">
-        <item>Nooit</item>
-        <item>1 seconde</item>
-        <item>2 seconden</item>
-        <item>3 seconden (standaard)</item>
-        <item>4 seconden</item>
-        <item>5 seconden</item>
-        <item>6 seconden</item>
+
+    <!-- NOT TRANSLATED YET: -->
+
+    <string-array name="mali_l2_mr_entries">
+        <item>28kb (stock)</item>
+        <item>48kb (default)</item>
     </string-array>
+    <string-array name="mali_pam_entries">
+        <item>16mb</item>
+        <item>24mb</item>
+        <item>32mb</item>
+        <item>48mb</item>
+    </string-array>
+    <string-array name="fsync_mode_entries">
+        <item>Enabled (default)</item>
+        <item>Disabled</item>
+        <item>Dynamic</item>
+    </string-array>
+    <string-array name="cc_currency_usb_entries">
+        <item>800 mAh *WARNING*</item>
+        <item>600 mAh (fast charge)</item>
+        <item>400 mAh</item>
+    </string-array>
+    <string-array name="deepest_sleep_states_entries">
+        <item>State 5</item>
+        <item>State 4</item>
+        <item>State 3 (default)</item>
+    </string-array>
+    <string-array name="cc_currency_charger_entries">
+        <item>800 mAh   *WARNING*</item>
+        <item>600 mAh (default)</item>
+        <item>400 mAh</item>
+    </string-array>
+
 </resources>

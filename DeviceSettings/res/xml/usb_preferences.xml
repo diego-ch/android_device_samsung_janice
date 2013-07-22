@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    
-    <PreferenceCategory
-                android:title="@string/otg_subcat_title">
-    
-    <!-- USB OTG Power -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/otg_subcat_title" >
+
+        <!-- USB OTG Power -->
         <CheckBoxPreference
-                android:key="usb_otg_power"
-                android:title="@string/otg_power_title_head"
-                android:summary="@string/otg_power_summary_head"
-                android:defaultValue="true" />
-    
+            android:defaultValue="true"
+            android:key="usb_otg_power"
+            android:summary="@string/otg_power_summary_head"
+            android:title="@string/otg_power_title_head" />
     </PreferenceCategory>
-    
-        <PreferenceCategory android:title="@string/cc_subcat_title" >
+    <PreferenceCategory android:title="@string/cc_subcat_title" >
 
         <!-- Wall charger control -->
         <com.cyanogenmod.settings.device.ChargerCurrency
@@ -23,9 +20,8 @@
             android:key="ac_currency"
             android:summary="@string/ac_cc_summary_head"
             android:title="@string/ac_cc_title_head" />
-        
-    
-                <!-- USB cable charge control -->
+
+        <!-- USB cable charge control -->
         <com.cyanogenmod.settings.device.UsbCurrency
             android:defaultValue="1"
             android:entries="@array/cc_currency_usb_entries"
@@ -34,5 +30,5 @@
             android:summary="@string/usb_cc_summary_head"
             android:title="@string/usb_cc_title_head" />
     </PreferenceCategory>
-    
+
 </PreferenceScreen>

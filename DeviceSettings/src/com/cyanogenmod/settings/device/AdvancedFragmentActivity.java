@@ -54,8 +54,8 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 	}
 
 	public static void restore(Context context) {
-		//SharedPreferences sharedPrefs = PreferenceManager
-		//	.getDefaultSharedPreferences(context);
+		// SharedPreferences sharedPrefs = PreferenceManager
+		// .getDefaultSharedPreferences(context);
 	}
 
 }

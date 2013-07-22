@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Galaxy S Advance-asetukset</string>
 
+    <string name="app_name">Galaxy S Advance-asetukset</string>
     <string name="category_screen_title">Näyttö</string>
     <string name="screen_colors_title">Värit</string>
-    <string name="mdnie_scenario_title_head">Skenaario</string>
-    <string name="mdnie_scenario_summary_head">Vaihda mDNIe-skenaario</string>
-    <string name="mdnie_mode_title_head">Tila</string>
-    <string name="mdnie_mode_summary_head">Vaihda mDNIe-tila</string>
-    <string name="mdnie_negative_title_head">Negatiivi-tila</string>
-    <string name="mdnie_negative_summary_head">Käytä käänteisiä värejä</string>
-    <string name="mdnie_outdoor_title_head">Ulkoilma-tila</string>
-    <string name="mdnie_outdoor_summary_head">Ota ulkoilma-tila käyttöön</string>
     <string name="panel_gamma_title_head">Näytön gamma</string>
     <string name="panel_gamma_summary_head">Säädä näytön gamma-arvo</string>
-
     <string name="touchscreen_subcat_title">Kosketusnäyttö</string>
     <string name="touchscreen_sensitivity_title_head">Kosketuksen herkkyys</string>
     <string name="touchscreen_sensitivity_summary_head">Säädä näytön herkkyyttä</string>
-
-    <string name="touchkey_subcat_title">Kosketusnäppäimet</string>
-    <string name="touchkey_light_title_head">Ota näppäinten taustavalo käyttöön</string>
-    <string name="touchkey_light_summary_head">Näytön ollessa päällä valot syttyvät</string>
-    <string name="touchkey_timeout_title_head">Taustavalon aikakatkaisu</string>
-    <string name="touchkey_timeout_summary_head">Säädä taustavalon sammumisen aikaväliä kosketuksesta</string>
-
-    <string name="category_sensors_title">Sensorit</string>
     <string name="accelerometer_subcat_title">Kiihtyvyysanturi</string>
     <string name="use_accelerometer_calibration_title_head">Käytä kalibrointitietoja</string>
     <string name="use_accelerometer_calibration_summary_head">Käytä kiihtyvyysanturin kalibrointiarvoja. Kalibroi merkattuasi tämän!</string>
@@ -33,18 +16,49 @@
     <string name="calibrate_accelerometer_summary_head">Aseta puhelin tasaiselle alustalle ja paina tätä kalibroidaksesi</string>
     <string name="accelerometer_dialog_head">Kalibrointi valmis</string>
     <string name="accelerometer_dialog_message">Sensori kalibroitu onnistuneesti</string>
-
-    <string name="category_haptic_title">Haptinen</string>
-    <string name="vibrator_subcat_title">Värinä</string>
-    <string name="vibrator_intensity_title_head">Värinän voimakkuus</string>
-    <string name="vibrator_intensity_summary_head">Säädä värinän voimakkuutta</string>
-
-    <string name="category_radio_title">Radio</string>
     <string name="hspa_title_head">HSPA</string>
     <string name="hspa_summary_head">Ota HSDPA/HSUPA käyttöön</string>
 
-    <string name="category_dock_title">Telakka</string>
-    <string name="dockaudio_subcat_title">Audio</string>
-    <string name="use_dock_audio_title_head">Käytä USB-audiotelakkaa</string>
-    <string name="use_dock_audio_summary_head">Käytä telakan audioulostuloa</string>
+    <!-- NOT TRANSLATED YET: -->
+    <!-- TAB: General -->
+    <string name="category_general_title">General</string>
+
+    <!-- CATEGORY: Radio mode -->
+    <string name="radio_subcat_title">Radio mode</string>
+
+    <!-- TAB: USB -->
+    <string name="category_usb_title">Usb</string>
+
+    <!-- CATEGORY: USB OTG Settings -->
+    <string name="otg_subcat_title">USB OTG Settings</string>
+    <string name="otg_power_title_head">USB-VBUS Power</string>
+    <string name="otg_power_summary_head">Enables output voltage to the USB port</string>
+
+    <!-- CATEGORY: Charger Control -->
+    <string name="cc_subcat_title">Charger control</string>
+    <string name="ac_cc_title_head">Wall charger currency</string>
+    <string name="ac_cc_summary_head">Wall charger currency in mAh, low levels protect battery but takes longer to charge, high levels may damage battery life</string>
+    <string name="usb_cc_title_head">USB cable currency</string>
+    <string name="usb_cc_summary_head">USB cable currency in mAh, useful to implement Fast Charge, low levels protect battery but takes longer to charge, high levels may damage battery life</string>
+
+    <!-- TAB: Advance -->
+    <string name="category_advanced_title">Advanced</string>
+
+    <!-- CATEGORY: Charger Control -->
+    <string name="deepsleep_subcat_title">Deep Sleep</string>
+    <string name="deepest_sleep_title_head">Deepest sleep state</string>
+    <string name="deepest_sleep_summary_head">Specify the highest deep sleep level</string>
+
+    <!-- CATEGORY: FSync -->
+    <string name="fsync_subcat_title">FSync</string>
+    <string name="fsync_title_head">FSync mode</string>
+    <string name="fsync_summary_head">Disabling fsync can improve IO performace, but it may cause data corruption. Dynamic fsync will sync all buffers when screen turns off.</string>
+
+    <!-- CATEGORY: GPU -->
+    <string name="gpu_subcat_title">GPU</string>
+    <string name="mali_l2_mr_title_head">Mali L2 Max Reads</string>
+    <string name="mali_l2_mr_summary_head">Increasing it may improve graphics performance.</string>
+    <string name="mali_pam_title_head">Mali Pre-allocated memory size</string>
+    <string name="mali_pam_summary_head">Increasing it may improve graphics performance.</string>
+
 </resources>

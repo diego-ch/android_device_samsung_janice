@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Impostazioni Galaxy S Advance</string>
-    
-    
     <string name="category_general_title">Generale</string>
-	<string name="radio_subcat_title">Modalità Rete</string>
     <string name="hspa_title_head">HSPA</string>
     <string name="hspa_summary_head">Abilita HSDPA/HSUPA</string>
     <string name="accelerometer_subcat_title">Accelerometro</string>
@@ -14,14 +12,8 @@
     <string name="calibrate_accelerometer_summary_head">Posizionare il telefono su una superficie orizzontale piana e premere per effettuare la calibrazione</string>
     <string name="accelerometer_dialog_head">Calibrazione effettuata</string>
     <string name="accelerometer_dialog_message">Il sensore è stato correttamente calibrato.</string>
-    <string name="vibrator_subcat_title">Vibratore</string>
-    <string name="vibrator_intensity_title_head">Intensità vibrazione</string>
-    <string name="vibrator_intensity_summary_head">Imposta l\'intensità della vibrazione</string>
-    <string name="advanced_subcat_title">Avanzate</string>
     <string name="deepest_sleep_title_head">Profondissimo Deep Sleep</string>
     <string name="deepest_sleep_summary_head">Specifica il più alto livello di deep sleep</string>
-	
-	
     <string name="category_screen_title">Schermo</string>
     <string name="screen_colors_title">Colori</string>
     <string name="panel_gamma_title_head">Gamma schermo</string>
@@ -29,25 +21,40 @@
     <string name="touchscreen_subcat_title">Schermo tattile</string>
     <string name="touchscreen_sensitivity_title_head">Sensibilità tocco</string>
     <string name="touchscreen_sensitivity_summary_head">Imposta la sensibilità al tocco dello schermo</string>
-    <string name="touchkey_subcat_title">Tasti a sfioramento</string>
-    <string name="touchkey_light_title_head">Retroilluminazione</string>
-    <string name="touchkey_light_summary_head">Abilita la retroilluminazione dei tasti a sfioramento quando lo schermo è attivo</string>
-    <string name="touchkey_timeout_title_head">Timer retroilluminazione</string>
-    <string name="touchkey_timeout_summary_head">Imposta l\'intervallo dopo cui la retroilluminazione dei tasti si spegne</string>
-	<string name="crt_off_subcat_title">Effetto CRT Spegnimento Schermo</string>
-    <string name="crt_off_title_head">Ritarda Sospensione</string>
-    <string name="crt_off_summary_head">Abilita / Disabilita il ritardamento della sospensione dello schermo, abiliterà l\'effetto CRT</string>
-    <string name="crt_off_delay_title_head">Ritardo in ms</string>
-    <string name="crt_off_delay_summary_head">Millisecondi da aspettare prima di spegnere lo schermo</string>
-	
-	
-	<string name="otg_subcat_title">Impostazioni USB OTG</string>
+    <string name="otg_subcat_title">Impostazioni USB OTG</string>
     <string name="otg_power_title_head">Attivazione USB-OTG</string>
     <string name="otg_power_summary_head">Abilita alimentazione (in uscita) della porta USB</string>
-	<string name="cc_subcat_title">Controllo Caricabatterie</string>
-	<string name="ac_cc_title_head">Voltaggio Caricabatterie</string>
+    <string name="cc_subcat_title">Controllo Caricabatterie</string>
+    <string name="ac_cc_title_head">Voltaggio Caricabatterie</string>
     <string name="ac_cc_summary_head">Voltaggio caricabatterie in mAh, bassi livelli proteggono la batteria ma è richiesto maggior tempo per la ricarica, alte frequenze potrebbero danneggiare la durata della batteria</string>
-	<string name="usb_cc_title_head">Voltaggio Caricabatterie USB</string>
+    <string name="usb_cc_title_head">Voltaggio Caricabatterie USB</string>
     <string name="usb_cc_summary_head">Voltaggio carica USB in mAh, utile per implementare la ricarica veloce, bassi livelli proteggono la batteria ma è richiesto maggior tempo per la ricarica, alte frequenze potrebbero danneggiare la durata della batteria</string>
-</resources>
 
+    <!-- NOT TRANSLATED YET: -->
+
+
+    <!-- CATEGORY: Radio mode -->
+    <string name="radio_subcat_title">Radio mode</string>
+
+    <!-- TAB: USB -->
+    <string name="category_usb_title">Usb</string>
+
+    <!-- TAB: Advance -->
+    <string name="category_advanced_title">Advanced</string>
+
+    <!-- CATEGORY: Charger Control -->
+    <string name="deepsleep_subcat_title">Deep Sleep</string>
+
+    <!-- CATEGORY: FSync -->
+    <string name="fsync_subcat_title">FSync</string>
+    <string name="fsync_title_head">FSync mode</string>
+    <string name="fsync_summary_head">Disabling fsync can improve IO performace, but it may cause data corruption. Dynamic fsync will sync all buffers when screen turns off.</string>
+
+    <!-- CATEGORY: GPU -->
+    <string name="gpu_subcat_title">GPU</string>
+    <string name="mali_l2_mr_title_head">Mali L2 Max Reads</string>
+    <string name="mali_l2_mr_summary_head">Increasing it may improve graphics performance.</string>
+    <string name="mali_pam_title_head">Mali Pre-allocated memory size</string>
+    <string name="mali_pam_summary_head">Increasing it may improve graphics performance.</string>
+
+</resources>

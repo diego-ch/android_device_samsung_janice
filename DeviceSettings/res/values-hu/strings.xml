@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Galaxy S Advance Beállítások</string>
 
+    <string name="app_name">Galaxy S Advance Beállítások</string>
     <string name="category_screen_title">Kijelző</string>
     <string name="screen_colors_title">Színek</string>
-    <string name="mdnie_scenario_title_head">Megjelenítés</string>
-    <string name="mdnie_scenario_summary_head">mDNIe megjelenítési beállítások</string>
-    <string name="mdnie_mode_title_head">Üzemmód</string>
-    <string name="mdnie_mode_summary_head">mDNIe üzemmódok</string>
-    <string name="mdnie_negative_title_head">Negatív üzemmód</string>
-    <string name="mdnie_negative_summary_head">Fordított színek ki/be</string>
-    <string name="mdnie_outdoor_title_head">Szabadtéri üzemmód</string>
-    <string name="mdnie_outdoor_summary_head">Szabadtéri üzemmód ki/be</string>
     <string name="panel_gamma_title_head">Kijelző gamma-értéke</string>
     <string name="panel_gamma_summary_head">Kijelző gamma-érték beállítása</string>
-
     <string name="touchscreen_subcat_title">Érintőképernyő</string>
     <string name="touchscreen_sensitivity_title_head">Érzékenység</string>
     <string name="touchscreen_sensitivity_summary_head">Érintőképernyő érzékenységének beállítása</string>
-
-    <string name="touchkey_subcat_title">Érintőgombok</string>
-    <string name="touchkey_light_title_head">Érintőgombok háttérvilágítása</string>
-    <string name="touchkey_light_summary_head">Bekapcsolja az érintőgombok háttérvilágítását bekapcsolt képernyőnél</string>
-    <string name="touchkey_timeout_title_head">Háttérvilágítás időkorlátja</string>
-    <string name="touchkey_timeout_summary_head">Háttérvilágítás késleltetése</string>
-
-    <string name="category_sensors_title">Szenzorok</string>
     <string name="accelerometer_subcat_title">Giroszkóp</string>
     <string name="use_accelerometer_calibration_title_head">Kalibrálási érték használata</string>
     <string name="use_accelerometer_calibration_summary_head">Kalibrálási érték használata. Érdemes újra kalibrálni, ha ez a funkció használatban van!</string>
@@ -33,18 +16,49 @@
     <string name="calibrate_accelerometer_summary_head">Kalibráláshoz a telefont vízszintes felületre kell helyezni, és megérinteni ezt a gombot</string>
     <string name="accelerometer_dialog_head">Kalibrálás befejezve</string>
     <string name="accelerometer_dialog_message">Az érzékelő sikeresen bekalibrálva.</string>
-
-    <string name="category_haptic_title">Érintési visszajelzés</string>
-    <string name="vibrator_subcat_title">Rezgés</string>
-    <string name="vibrator_intensity_title_head">Rezgés erőssége</string>
-    <string name="vibrator_intensity_summary_head">Rezgés erősségének beállítása</string>
-
-    <string name="category_radio_title">GSM Rádió</string>
     <string name="hspa_title_head">HSPA</string>
     <string name="hspa_summary_head">HSDPA/HSUPA engedélyezése</string>
 
-    <string name="category_dock_title">Dokkoló</string>
-    <string name="dockaudio_subcat_title">Dokkoló hangszórók</string>
-    <string name="use_dock_audio_title_head">Dokkoló hangszóróinak használata</string>
-    <string name="use_dock_audio_summary_head">Használja a dokkoló passzív hangkimenetét</string>
+    <!-- NOT TRANSLATED YET: -->
+    <!-- TAB: General -->
+    <string name="category_general_title">General</string>
+
+    <!-- CATEGORY: Radio mode -->
+    <string name="radio_subcat_title">Radio mode</string>
+
+    <!-- TAB: USB -->
+    <string name="category_usb_title">Usb</string>
+
+    <!-- CATEGORY: USB OTG Settings -->
+    <string name="otg_subcat_title">USB OTG Settings</string>
+    <string name="otg_power_title_head">USB-VBUS Power</string>
+    <string name="otg_power_summary_head">Enables output voltage to the USB port</string>
+
+    <!-- CATEGORY: Charger Control -->
+    <string name="cc_subcat_title">Charger control</string>
+    <string name="ac_cc_title_head">Wall charger currency</string>
+    <string name="ac_cc_summary_head">Wall charger currency in mAh, low levels protect battery but takes longer to charge, high levels may damage battery life</string>
+    <string name="usb_cc_title_head">USB cable currency</string>
+    <string name="usb_cc_summary_head">USB cable currency in mAh, useful to implement Fast Charge, low levels protect battery but takes longer to charge, high levels may damage battery life</string>
+
+    <!-- TAB: Advance -->
+    <string name="category_advanced_title">Advanced</string>
+
+    <!-- CATEGORY: Charger Control -->
+    <string name="deepsleep_subcat_title">Deep Sleep</string>
+    <string name="deepest_sleep_title_head">Deepest sleep state</string>
+    <string name="deepest_sleep_summary_head">Specify the highest deep sleep level</string>
+
+    <!-- CATEGORY: FSync -->
+    <string name="fsync_subcat_title">FSync</string>
+    <string name="fsync_title_head">FSync mode</string>
+    <string name="fsync_summary_head">Disabling fsync can improve IO performace, but it may cause data corruption. Dynamic fsync will sync all buffers when screen turns off.</string>
+
+    <!-- CATEGORY: GPU -->
+    <string name="gpu_subcat_title">GPU</string>
+    <string name="mali_l2_mr_title_head">Mali L2 Max Reads</string>
+    <string name="mali_l2_mr_summary_head">Increasing it may improve graphics performance.</string>
+    <string name="mali_pam_title_head">Mali Pre-allocated memory size</string>
+    <string name="mali_pam_summary_head">Increasing it may improve graphics performance.</string>
+
 </resources>
