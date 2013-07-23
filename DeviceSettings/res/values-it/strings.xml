@@ -32,6 +32,10 @@
     
     <!-- CATEGORY: Radio mode -->
     <string name="radio_subcat_title">Modalità Rete</string>
+    
+    <!-- TAB: SCREEN (Sweep2Wake) -->
++    <string name="use_sweep2wake_title_head">Sweep2Wake</string>
++    <string name="use_sweep2wake_summary_head">Sblocca il telefono con uno swype</string>
 
     <!-- TAB: USB -->
     <string name="category_usb_title">Usb</string>
