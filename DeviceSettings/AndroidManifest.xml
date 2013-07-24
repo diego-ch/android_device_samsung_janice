@@ -23,9 +23,10 @@
             </intent-filter>
         </receiver>
 		
-		<activity android:name=".GeneralFragmentActivity" />
+	<activity android:name=".GeneralFragmentActivity" />
         <activity android:name=".ScreenFragmentActivity" />
         <activity android:name=".USBFragmentActivity" />
+        <activity android:name=".AdvancedFragmentActivity" />
         
     </application>
 </manifest>
