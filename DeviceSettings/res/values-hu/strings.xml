@@ -65,4 +65,9 @@
     <string name="mali_pam_title_head">Mali Pre-allocated memory size</string>
     <string name="mali_pam_summary_head">Increasing it may improve graphics performance.</string>
 
+    <!-- CATEGORY: MMC -->
+    <string name="mmc_subcat_title">MMC</string>
+    <string name="use_spi_crc_title_head">Disable SPI CRC</string>
+    <string name="use_spi_crc_summary_head">Disabling SPI CRC can improve mmc performance (10% - 30%) but phone may freeze randomly</string>
+
 </resources>

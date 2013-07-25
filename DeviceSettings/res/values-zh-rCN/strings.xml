@@ -16,12 +16,12 @@
     <string name="calibrate_accelerometer_summary_head">把手机放在平面上，然后点击此按键进行校准</string>
     <string name="accelerometer_dialog_head">校准完成</string>
     <string name="accelerometer_dialog_message">感应器已被成功的校准.</string>
-    <string name="category_radio_title">无线电</string>
     <string name="hspa_title_head">HSPA</string>
     <string name="hspa_summary_head">启用 HSDPA/HSUPA</string>
 
     <!-- NOT TRANSLATED YET: -->
-    
+
+
     <!-- TAB: General -->
     <string name="category_general_title">General</string>
 
@@ -66,5 +66,10 @@
     <string name="mali_l2_mr_summary_head">Increasing it may improve graphics performance.</string>
     <string name="mali_pam_title_head">Mali Pre-allocated memory size</string>
     <string name="mali_pam_summary_head">Increasing it may improve graphics performance.</string>
+
+    <!-- CATEGORY: MMC -->
+    <string name="mmc_subcat_title">MMC</string>
+    <string name="use_spi_crc_title_head">Disable SPI CRC</string>
+    <string name="use_spi_crc_summary_head">Disabling SPI CRC can improve mmc performance (10% - 30%) but phone may freeze randomly</string>
 
 </resources>

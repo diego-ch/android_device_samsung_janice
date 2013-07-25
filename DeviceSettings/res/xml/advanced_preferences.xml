@@ -36,5 +36,11 @@
             android:summary="@string/mali_pam_summary_head"
             android:title="@string/mali_pam_title_head" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/mmc_subcat_title" >
+        <CheckBoxPreference
+            android:key="use_spi_crc"
+            android:summary="@string/use_spi_crc_summary_head"
+            android:title="@string/use_spi_crc_title_head" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

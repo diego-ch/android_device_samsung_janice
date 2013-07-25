@@ -33,12 +33,9 @@
     <string name="touchscreen_subcat_title">Touchscreen</string>
     <string name="touchscreen_sensitivity_title_head">Touch sensitivity</string>
     <string name="touchscreen_sensitivity_summary_head">Set touch panel sensitivity</string>
-    
     <string name="use_sweep2wake_title_head">Sweep2Wake</string>
     <string name="use_sweep2wake_summary_head">Unlock device with a swype</string>
-    
-    
-    
+
     <!-- TAB: USB -->
     <string name="category_usb_title">Usb</string>
 
@@ -73,5 +70,10 @@
     <string name="mali_l2_mr_summary_head">Increasing it may improve graphics performance.</string>
     <string name="mali_pam_title_head">Mali Pre-allocated memory size</string>
     <string name="mali_pam_summary_head">Increasing it may improve graphics performance.</string>
-
+    
+    <!-- CATEGORY: MMC -->
+    <string name="mmc_subcat_title">MMC</string>
+    <string name="use_spi_crc_title_head">Disable SPI CRC</string>
+    <string name="use_spi_crc_summary_head">Disabling SPI CRC can improve mmc performance (10% - 30%) but phone may freeze randomly</string>
+    
 </resources>

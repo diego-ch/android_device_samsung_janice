@@ -29,10 +29,10 @@
     <string name="ac_cc_summary_head">Intensità caricabatterie in mAh, bassi livelli proteggono la batteria ma è richiesto maggior tempo per la ricarica, alte frequenze potrebbero danneggiare la durata della batteria</string>
     <string name="usb_cc_title_head">Intensità Caricabatterie USB</string>
     <string name="usb_cc_summary_head">Intensità carica USB in mAh, utile per implementare la ricarica veloce, bassi livelli proteggono la batteria ma è richiesto maggior tempo per la ricarica, alte frequenze potrebbero danneggiare la durata della batteria</string>
-    
+
     <!-- CATEGORY: Radio mode -->
     <string name="radio_subcat_title">Modalità Rete</string>
-    
+
     <!-- TAB: SCREEN (Sweep2Wake) -->
     <string name="use_sweep2wake_title_head">Sweep2Wake</string>
     <string name="use_sweep2wake_summary_head">Sblocca il telefono con uno swype</string>
@@ -57,5 +57,13 @@
     <string name="mali_l2_mr_summary_head">Aumentandole potrebbero migliorare le performance grafiche.</string>
     <string name="mali_pam_title_head">Grandezza memoria Mali Pre-allocata</string>
     <string name="mali_pam_summary_head">Aumentandola potrebbero migliorare le performance grafiche.</string>
+
+    <!-- NOT TRANSLATED YET: -->
+
+
+    <!-- CATEGORY: MMC -->
+    <string name="mmc_subcat_title">MMC</string>
+    <string name="use_spi_crc_title_head">Disable SPI CRC</string>
+    <string name="use_spi_crc_summary_head">Disabling SPI CRC can improve mmc performance (10% - 30%) but phone may freeze randomly</string>
 
 </resources>

@@ -19,18 +19,20 @@ package com.cyanogenmod.settings.device;
 import com.cyanogenmod.settings.device.R;
 
 import android.content.Context;
-//import android.content.SharedPreferences;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-//import android.preference.CheckBoxPreference;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
-//import android.preference.PreferenceManager;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
 public class AdvancedFragmentActivity extends PreferenceFragment {
 
-	private static final String TAG = "GalaxySAdvance_Settings_General";
+	private static final String TAG = "GalaxySAdvance_Settings_Advanced";
+
+	public static final String FILE_SPI_CRC = "/sys/module/mmc_core/parameters/use_spi_crc";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -38,24 +40,34 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 
 		addPreferencesFromResource(R.xml.advanced_preferences);
 
-		// PreferenceScreen prefSet = getPreferenceScreen();
+		PreferenceScreen prefSet = getPreferenceScreen();
 	}
 
 	@Override
 	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
 			Preference preference) {
 
-		// String boxValue;
+		String boxValue;
 		String key = preference.getKey();
 
 		Log.w(TAG, "key: " + key);
+
+		if (key.equals(DeviceSettings.KEY_USE_SPI_CRC)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "0"
+					: "1");
+			Utils.writeValue(FILE_SPI_CRC, boxValue);
+		}
 
 		return true;
 	}
 
 	public static void restore(Context context) {
-		// SharedPreferences sharedPrefs = PreferenceManager
-		// .getDefaultSharedPreferences(context);
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
+
+		String value = sharedPrefs.getBoolean(DeviceSettings.KEY_USE_SPI_CRC,
+				false) ? "0" : "1";
+		Utils.writeValue(FILE_SPI_CRC, value);
 	}
 
 }

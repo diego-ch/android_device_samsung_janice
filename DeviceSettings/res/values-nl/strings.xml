@@ -12,7 +12,7 @@
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
-     limitations under the License.
+     limitations under the License.
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
@@ -40,6 +40,11 @@
 
     <!-- CATEGORY: Radio mode -->
     <string name="radio_subcat_title">Radio mode</string>
+
+    <!-- TAB: Screen -->
+    <!-- CATEGORY: TouchScreen -->
+    <string name="use_sweep2wake_title_head">Sweep2Wake</string>
+    <string name="use_sweep2wake_summary_head">Unlock device with a swype</string>
 
     <!-- TAB: USB -->
     <string name="category_usb_title">Usb</string>
@@ -75,5 +80,10 @@
     <string name="mali_l2_mr_summary_head">Increasing it may improve graphics performance.</string>
     <string name="mali_pam_title_head">Mali Pre-allocated memory size</string>
     <string name="mali_pam_summary_head">Increasing it may improve graphics performance.</string>
+
+    <!-- CATEGORY: MMC -->
+    <string name="mmc_subcat_title">MMC</string>
+    <string name="use_spi_crc_title_head">Disable SPI CRC</string>
+    <string name="use_spi_crc_summary_head">Disabling SPI CRC can improve mmc performance (10% - 30%) but phone may freeze randomly</string>
 
 </resources>
