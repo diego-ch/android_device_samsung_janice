@@ -468,6 +468,7 @@ on boot
     chown system system /sys/kernel/abb-charger/max_usb_c
     chown system system /sys/kernel/fsync/mode
     chown system system /sys/kernel/mxt224e/sweep2wake
+    chown system system /sys/module/mmc_core/parameters/use_spi_crc
     
 
  # Define TCP buffer sizes for various networks
