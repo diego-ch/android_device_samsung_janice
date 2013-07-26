@@ -29,4 +29,11 @@
     <!-- The camera removes the focus modes by default when touch-to-focus
      exists. Use this option to change that behavior -->
     <bool name="wantsFocusModes">true</bool>
+    <!-- Always use preferred preview size path for effects recording instead of the display resolution -->
+    <bool name="usePreferredPreviewSizeForEffects">true</bool>
+    <!-- Stay in continuous focus even if touch-to-focus is used
+         This option doesn't make sense if wantsFocusModes is on -->
+    <bool name="useContinuosFocusForTouch">true</bool>
+    <!-- Enable to allow changing shutter speed -->
+    <bool name="enableShutterSpeed">true</bool>
 </resources>
