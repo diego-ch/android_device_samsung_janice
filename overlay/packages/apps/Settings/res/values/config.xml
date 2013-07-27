@@ -30,5 +30,9 @@
     <bool name="config_show_homeWake">true</bool>
     
     <!-- Show Expanded Desktop preference -->
-    <bool name="config_show_expandedDesktop">true</bool>    
+    <bool name="config_show_expandedDesktop">true</bool>
+    
+    <!-- Processor menu, freq cap files -->
+    <string name="max_cpu_freq_file" translatable="false">/sys/power/cpufreq_max_limit</string>
+    <string name="min_cpu_freq_file" translatable="false">/sys/power/cpufreq_min_limit</string>
 </resources>
