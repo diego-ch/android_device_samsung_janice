@@ -58,12 +58,9 @@
     <string name="mali_pam_title_head">Grandezza memoria Mali Pre-allocata</string>
     <string name="mali_pam_summary_head">Aumentandola potrebbero migliorare le performance grafiche.</string>
 
-    <!-- NOT TRANSLATED YET: -->
-
-
     <!-- CATEGORY: MMC -->
-    <string name="mmc_subcat_title">MMC</string>
-    <string name="use_spi_crc_title_head">Disable SPI CRC</string>
-    <string name="use_spi_crc_summary_head">Disabling SPI CRC can improve mmc performance (10% - 30%) but phone may freeze randomly</string>
+    <string name="mmc_subcat_title">Scheda SD</string>
+    <string name="use_spi_crc_title_head">Disabilita SPI CRC</string>
+    <string name="use_spi_crc_summary_head">Disabilitando lo SPI CRC, possono migliorare le performance della Scheda SD (10% - 30%) ma il telefono potrebbe freezare in modo casuale</string>
 
 </resources>
