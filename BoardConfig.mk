@@ -1,7 +1,5 @@
 -include device/samsung/u8500-common/BoardCommonConfig.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/include
-
 # Vibrator
 BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/janice/vibrator/vibrator.c
 
