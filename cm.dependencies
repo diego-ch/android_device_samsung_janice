@@ -1,16 +1,6 @@
 [
 
    {
-    "repository": "diego-ch/android_kernel_samsung_u8500",
-    "target_path": "kernel/samsung/u8500"
-   },
-
-   {
-    "repository": "diego-ch/android_device_samsung_u8500-common",
-    "target_path": "device/samsung/u8500-common"
-   },
-
-   {
     "repository": "android_packages_apps_SamsungServiceMode",
     "target_path": "packages/apps/SamsungServiceMode"
    }
