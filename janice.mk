@@ -33,8 +33,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Packages
 PRODUCT_PACKAGES += \
-    GalaxySAdvanceSettings \
-    Focal
+    GalaxySAdvanceSettings
 
 # Init files
 PRODUCT_COPY_FILES += \
