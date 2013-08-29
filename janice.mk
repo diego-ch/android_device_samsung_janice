@@ -31,6 +31,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungU8500RIL \
     ro.telephony.sends_barcount=1
 
+# LWP FIX
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.egl.force_msaa=true
+
 # Packages
 PRODUCT_PACKAGES += \
     GalaxySAdvanceSettings
