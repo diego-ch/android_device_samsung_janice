@@ -14,7 +14,7 @@
 
         <!-- Wall charger control -->
         <com.cyanogenmod.settings.device.ChargerCurrency
-            android:defaultValue="1"
+            android:defaultValue="600"
             android:entries="@array/cc_currency_charger_entries"
             android:entryValues="@array/cc_currency_charger_entries_values"
             android:key="ac_currency"
@@ -23,7 +23,7 @@
 
         <!-- USB cable charge control -->
         <com.cyanogenmod.settings.device.UsbCurrency
-            android:defaultValue="1"
+            android:defaultValue="600"
             android:entries="@array/cc_currency_usb_entries"
             android:entryValues="@array/cc_currency_usb_entries_values"
             android:key="usb_currency"
