@@ -52,7 +52,7 @@ public class MaliL2MaxReads extends ListPreference implements
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 		Utils.writeValue(FILE,
-				sharedPrefs.getString(DeviceSettings.KEY_MALI_L2MR, "0"));
+				sharedPrefs.getString(DeviceSettings.KEY_MALI_L2MR, "48"));
 	}
 
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
