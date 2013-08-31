@@ -52,7 +52,7 @@ public class MaliPreAllocMem extends ListPreference implements
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 		Utils.writeValue(FILE,
-				sharedPrefs.getString(DeviceSettings.KEY_MALI_PAM, "0"));
+				sharedPrefs.getString(DeviceSettings.KEY_MALI_PAM, "50331648"));
 	}
 
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
