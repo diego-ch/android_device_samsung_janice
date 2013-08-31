@@ -3,7 +3,7 @@
 
     <PreferenceCategory android:title="@string/deepsleep_subcat_title" >
         <com.cyanogenmod.settings.device.DeepestSleepState
-            android:defaultValue="2"
+            android:defaultValue="3"
             android:entries="@array/deepest_sleep_states_entries"
             android:entryValues="@array/deepest_sleep_states_entries_values"
             android:key="deepest_sleep_state"
@@ -12,7 +12,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/fsync_subcat_title" >
         <com.cyanogenmod.settings.device.FsyncMode
-            android:defaultValue="2"
+            android:defaultValue="0"
             android:entries="@array/fsync_mode_entries"
             android:entryValues="@array/fsync_mode_entries_values"
             android:key="fsync_mode"
@@ -21,7 +21,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/gpu_subcat_title" >
         <com.cyanogenmod.settings.device.MaliL2MaxReads
-            android:defaultValue="2"
+            android:defaultValue="48"
             android:entries="@array/mali_l2_mr_entries"
             android:entryValues="@array/mali_l2_mr_entries_values"
             android:key="mali_l2_mr"
@@ -29,7 +29,7 @@
             android:title="@string/mali_l2_mr_title_head" />
 
         <com.cyanogenmod.settings.device.MaliPreAllocMem
-            android:defaultValue="2"
+            android:defaultValue="50331648"
             android:entries="@array/mali_pam_entries"
             android:entryValues="@array/mali_pam_entries_values"
             android:key="mali_pam"
