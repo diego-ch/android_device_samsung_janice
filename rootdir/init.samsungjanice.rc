@@ -228,6 +228,7 @@ on post-fs-data
     mkdir /data/misc/wifi 0770 wifi system
     chmod 0770 /data/misc/wifi
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+    mkdir /data/misc/wifi/hostapd.sockets 0770 wifi wifi
      
 
     mkdir /data/misc/dhcp 0775 dhcp dhcp
