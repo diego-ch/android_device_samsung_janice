@@ -32,7 +32,7 @@ public class TouchscreenSensitivity extends ListPreference implements
 		this.setOnPreferenceChangeListener(this);
 	}
 
-	private static final String FILE = "/sys/class/sec/sec_touchscreen/tsp_threshold";
+	private static final String FILE = "/sys/kernel/mxt224e/threshold_t48";
 
 	public static boolean isSupported() {
 		return Utils.fileExists(FILE);
@@ -53,7 +53,7 @@ public class TouchscreenSensitivity extends ListPreference implements
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 		Utils.writeValue(FILE, sharedPrefs.getString(
-				DeviceSettings.KEY_TOUCHSCREEN_SENSITIVITY, "50"));
+				DeviceSettings.KEY_TOUCHSCREEN_SENSITIVITY, "val=17"));
 	}
 
 	public boolean onPreferenceChange(Preference preference, Object newValue) {

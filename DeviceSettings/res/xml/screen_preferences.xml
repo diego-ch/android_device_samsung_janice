@@ -15,7 +15,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/touchscreen_subcat_title" >
         <com.cyanogenmod.settings.device.TouchscreenSensitivity
-            android:defaultValue="50"
+            android:defaultValue="val=17"
             android:entries="@array/touchscreen_sensitivity_entries"
             android:entryValues="@array/touchscreen_sensitivity_entries_values"
             android:key="touchscreen_sensitivity"

@@ -69,20 +69,20 @@
         <item>1</item>
     </string-array>
     <string-array name="touchscreen_sensitivity_entries">
+        <item>7</item>
         <item>10</item>
-        <item>20</item>
+        <item>13</item>
+        <item>17 (Default)</item>
+        <item>25</item>
         <item>30</item>
-        <item>50 (Default)</item>
-        <item>70</item>
-        <item>100</item>
     </string-array>
     <string-array name="touchscreen_sensitivity_entries_values" translatable="false">
-        <item>10</item>
-        <item>20</item>
-        <item>30</item>
-        <item>50</item>
-        <item>70</item>
-        <item>100</item>
+        <item>val=7</item>
+        <item>val=10</item>
+        <item>val=13</item>
+        <item>val=17</item>
+        <item>val=25</item>
+        <item>val=30</item>
     </string-array>
     <string-array name="hspa_entries">
         <item>UMTS Only</item>
