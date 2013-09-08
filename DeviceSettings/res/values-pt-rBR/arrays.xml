@@ -6,12 +6,12 @@
         <item>1.9</item>
     </string-array>
     <string-array name="touchscreen_sensitivity_entries">
+		<item>7</item>
         <item>10</item>
-        <item>20</item>
+        <item>13</item>
+        <item>17 (Padrão)</item>
+        <item>25</item>
         <item>30</item>
-        <item>50 (Padrão)</item>
-        <item>70</item>
-        <item>100</item>
     </string-array>
     <string-array name="hspa_entries">
         <item>Somente UMTS</item>
