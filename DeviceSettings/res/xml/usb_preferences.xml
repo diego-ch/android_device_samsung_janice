@@ -5,7 +5,7 @@
 
         <!-- USB OTG Power -->
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="usb_otg_power"
             android:summary="@string/otg_power_summary_head"
             android:title="@string/otg_power_title_head" />
