@@ -43,11 +43,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/prerecovery.rc:root/prerecovery.rc \
     $(LOCAL_PATH)/rootdir/ueventd.samsungjanice.rc:root/ueventd.samsungjanice.rc
 
+
 # RIL
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/manuf_id.cfg:system/etc/AT/manuf_id.cfg \
    $(LOCAL_PATH)/configs/model_id.cfg:system/etc/AT/model_id.cfg \
-   $(LOCAL_PATH)/configs/system_id.cfg:system/etc/AT/system_id.cfg
+   $(LOCAL_PATH)/configs/system_id.cfg:system/etc/AT/system_id.cfg \
+   $(LOCAL_PATH)/configs/yas.cfg:system/etc/yas.cfg \
+   $(LOCAL_PATH)/configs/compass_calibration:system/etc/init.d/compass_calibration
 
 # Keylayout
 PRODUCT_COPY_FILES += \
