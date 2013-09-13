@@ -30,6 +30,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.gprsclass=10 \
     ro.telephony.ril_class=SamsungU8500RIL \
     ro.telephony.sends_barcount=1
+    
+# Low in-call volume workaround test
+    PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.vc_call_vol_steps=8
 
 # Packages
 PRODUCT_PACKAGES += \
