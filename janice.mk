@@ -32,7 +32,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.sends_barcount=1
     
 # Low in-call volume workaround test
-    PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=8
 
 # Packages
