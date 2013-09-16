@@ -56,13 +56,11 @@ WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/wifi/bcmdhd_sta.b
 WIFI_DRIVER_MODULE_AP_ARG        := "firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_BAND                        := 802_11_ABG
 BOARD_LEGACY_NL80211_STA_EVENTS  := true
-# BOARD_HAVE_SAMSUNG_WIFI				 := true
-
-# WIFI TETHERING FIX
 BOARD_NO_APSME_ATTR              := true
 
 # RIL
 BOARD_RIL_CLASS := ../../../device/samsung/janice/ril/
+BOARD_MOBILEDATA_INTERFACE_NAME := "pdp0"
 
 # Vibrator
 BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/samsung/janice/vibrator/vibrator.c
@@ -76,3 +74,23 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/janice/recovery/recovery_keys.c
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/janice/recovery/graphics.c
 TARGET_RECOVERY_INITRC := device/samsung/janice/rootdir/recovery.rc
+
+# HWComposer
+BOARD_USES_HWCOMPOSER := true
+BOARD_USE_SYSFS_VSYNC_NOTIFICATION := true
+
+# Camera
+BOARD_CAMERA_HAVE_ISO := true
+COMMON_GLOBAL_CFLAGS += -DHAVE_ISO
+COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
+BOARD_USES_PROPRIETARY_LIBCAMERA := true
+BOARD_USES_PROPRIETARY_LIBFIMC := true
+
+# OMX
+BOARD_USE_SAMSUNG_COLORFORMAT := true
+BOARD_NONBLOCK_MODE_PROCESS := true
+BOARD_USE_STOREMETADATA := true
+BOARD_USE_METADATABUFFERTYPE := true
+BOARD_USES_MFC_FPS := true
+BOARD_USE_S3D_SUPPORT := true
+BOARD_USE_CSC_FIMC := false
