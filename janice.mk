@@ -18,7 +18,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # STE
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/ste_modem.sh:system/etc/ste_modem.sh
+    $(LOCAL_PATH)/configs/ste_modem.sh:system/etc/ste_modem.sh
 
 # TEE
 PRODUCT_COPY_FILES += \
@@ -53,9 +53,9 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/adm.sqlite-u8500:system/etc/adm.sqlite-u8500 \
-    $(COMMON_PATH)/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
-    $(COMMON_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/adm.sqlite-u8500:system/etc/adm.sqlite-u8500 \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
 
 # RIL
 PRODUCT_COPY_FILES += \
