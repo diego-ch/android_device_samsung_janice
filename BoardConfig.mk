@@ -31,6 +31,7 @@ BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := "console=ttySAC2,115200 consoleblank=0"
 
 # Graphics
+BOARD_EGL_CFG := device/samsung/janice/configs/egl.cfg
 BOARD_EGL_NEEDS_LEGACY_FB := true
 TARGET_DISABLE_TRIPLE_BUFFERING := true
 COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60

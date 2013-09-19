@@ -16,6 +16,10 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
+# STE
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/ste_modem.sh:system/etc/ste_modem.sh
+
 # TEE
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/tee/cops_ta.ssw:system/lib/tee/cops_ta.ssw \
@@ -47,6 +51,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/prerecovery.rc:root/prerecovery.rc \
     $(LOCAL_PATH)/rootdir/ueventd.samsungjanice.rc:root/ueventd.samsungjanice.rc
 
+# Audio
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/adm.sqlite-u8500:system/etc/adm.sqlite-u8500 \
+    $(COMMON_PATH)/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
+    $(COMMON_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
 
 # RIL
 PRODUCT_COPY_FILES += \
