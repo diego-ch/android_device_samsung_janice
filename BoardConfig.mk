@@ -60,7 +60,6 @@ BOARD_LEGACY_NL80211_STA_EVENTS  := true
 BOARD_NO_APSME_ATTR              := true
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/samsung/janice/ril/
 BOARD_MOBILEDATA_INTERFACE_NAME := "pdp0"
 
 # Vibrator

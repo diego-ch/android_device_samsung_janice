@@ -64,11 +64,5 @@ PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/system_id.cfg:system/etc/AT/system_id.cfg \
    $(LOCAL_PATH)/configs/compass_calibration:system/etc/init.d/compass_calibration
 
-# Keylayout
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/usr/keylayout/janice-kp.kl:system/usr/keylayout/janice-kp.kl \
-    $(LOCAL_PATH)/usr/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl
-
 # Use non-open-source parts if present
 $(call inherit-product-if-exists, vendor/samsung/u8500-common/janice/janice-vendor-blobs.mk)
