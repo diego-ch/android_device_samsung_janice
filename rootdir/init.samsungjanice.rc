@@ -738,6 +738,12 @@ service iprenew_bnep0 /system/bin/dhcpcd -n
     class main
     disabled
     oneshot
+    
+service gpsd /system/bin/gpsd -c /system/etc/gps.xml
+    class main
+    user gps
+    group system net_raw
+    ioprio be 0
 
 #for WiFi MFG(TestMode)
 service mfgloader /system/bin/mfgloader
