@@ -61,8 +61,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/manuf_id.cfg:system/etc/AT/manuf_id.cfg \
    $(LOCAL_PATH)/configs/model_id.cfg:system/etc/AT/model_id.cfg \
-   $(LOCAL_PATH)/configs/system_id.cfg:system/etc/AT/system_id.cfg \
-   $(LOCAL_PATH)/configs/compass_calibration:system/etc/init.d/compass_calibration
+   $(LOCAL_PATH)/configs/system_id.cfg:system/etc/AT/system_id.cfg
 
 # Use non-open-source parts if present
 $(call inherit-product-if-exists, vendor/samsung/u8500-common/janice/janice-vendor-blobs.mk)
