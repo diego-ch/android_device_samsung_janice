@@ -682,7 +682,7 @@ service mtpd /system/bin/mtpd
 on property:ro.dumpstate.dmesg=1
     write /proc/sys/kernel/dmesg_restrict 0
 
-service p2p_supplicant /system/bin/wpa_supplicant \
+service p2p_supplicant /system/bin/p2p_supplicant \
         -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -N -ip2p0 \
          -e/data/misc/wifi/entropy.bin -puse_p2p_group_interface=1
          
