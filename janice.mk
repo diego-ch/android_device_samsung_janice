@@ -41,7 +41,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Packages
 PRODUCT_PACKAGES += \
-    GalaxySAdvanceSettings
+    GalaxySAdvanceSettings \
+    CMAccount
 
 # Init files
 PRODUCT_COPY_FILES += \
