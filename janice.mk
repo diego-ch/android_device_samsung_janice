@@ -44,6 +44,12 @@ PRODUCT_PACKAGES += \
     GalaxySAdvanceSettings \
     CMAccount
 
+# Gps
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
+
+$(call inherit-product, device/common/gps/gps_eu_supl.mk)
+
 # Init files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.samsungjanice:root/fstab.samsungjanice \
