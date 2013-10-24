@@ -68,6 +68,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
 
+# Vold and Storage
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab
+
 # RIL
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/manuf_id.cfg:system/etc/AT/manuf_id.cfg \
