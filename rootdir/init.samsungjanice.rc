@@ -351,9 +351,6 @@ on early-boot
 on boot
 
 
-    # Run sysinit
-    exec /system/bin/sysinit
-
     # debugfs
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
