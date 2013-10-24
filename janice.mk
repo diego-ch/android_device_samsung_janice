@@ -42,11 +42,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Packages
 PRODUCT_PACKAGES += \
     GalaxySAdvanceSettings \
-    CMAccount
+    CMAccount \
+    Stk
 
 # Gps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
+    
+# Compass workaround
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/compass:system/etc/init.d/compass
 
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
@@ -55,7 +60,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.samsungjanice:root/fstab.samsungjanice \
     $(LOCAL_PATH)/rootdir/init.samsungjanice.rc:root/init.samsungjanice.rc \
     $(LOCAL_PATH)/rootdir/init.samsungjanice.usb.rc:root/init.samsungjanice.usb.rc \
-    $(LOCAL_PATH)/rootdir/prerecovery.rc:root/prerecovery.rc \
     $(LOCAL_PATH)/rootdir/ueventd.samsungjanice.rc:root/ueventd.samsungjanice.rc
 
 # Audio
