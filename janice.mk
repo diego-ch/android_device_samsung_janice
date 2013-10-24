@@ -34,10 +34,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.gprsclass=10 \
     ro.telephony.ril_class=SamsungU8500RIL \
     ro.telephony.sends_barcount=1
-    
-# Low in-call volume workaround test
-# PRODUCT_PROPERTY_OVERRIDES += \
-#     ro.config.vc_call_vol_steps=8
 
 # Packages
 PRODUCT_PACKAGES += \
@@ -66,11 +62,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/adm.sqlite-u8500:system/etc/adm.sqlite-u8500 \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
-
-# Vold and Storage
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # RIL
 PRODUCT_COPY_FILES += \
