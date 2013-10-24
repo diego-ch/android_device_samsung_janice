@@ -1,0 +1,18 @@
+on init
+    write /sys/devices/platform/ab8500-i2c.0/ab8500-usb.0/boot_time_device 1
+
+on early-fs
+    mount ext4 /dev/block/mmcblk0p3 /system noatime wait
+
+    mkdir /efs
+    mount ext4 /dev/block/mmcblk0p7 /efs nosuid nodev noatime wait
+
+    # J4FS(lfs) mount points.
+    mkdir /mnt 0775 root root
+    mkdir /mnt/.lfs 0755 root root
+	
+	# Install Kernel Module
+    insmod /system/lib/modules/j4fs.ko
+    insmod /system/lib/modules/param.ko
+
+    mount j4fs /dev/block/mmcblk0p1 /mnt/.lfs wait
