@@ -21,9 +21,6 @@
      for different hardware and product builds. -->
 <resources>
 
-    <!-- Disabled to activate electron beam animation (CRT-OFF) -->
-    <bool name="config_animateScreenLights">false</bool>
-
     <integer name="config_deskDockKeepsScreenOn">0</integer>
     <integer name="config_carDockKeepsScreenOn">1</integer>
 
@@ -202,5 +199,8 @@
 	
     <!-- Device supports LED flashlight -->
     <bool name="config_enableTorch">true</bool>
+    
+    <!-- True will enable the electron beam screen-off animation. -->
+    <bool name="config_screenOffAnimation">true</bool>
 
 </resources>
