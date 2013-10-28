@@ -202,5 +202,8 @@
     
     <!-- True will enable the electron beam screen-off animation. -->
     <bool name="config_screenOffAnimation">true</bool>
+    
+    <!-- Disabled to activate electron beam animation (CRT-OFF) -->
+    <bool name="config_animateScreenLights">false</bool>
 
 </resources>
