@@ -11,8 +11,10 @@
 /dev/block/mmcblk0p2                    /modemfs            ext4      noatime,nosuid,nodev,journal_async_commit,errors=panic                            wait,check
 /dev/block/mmcblk0p4                    /cache              ext4      noatime,nosuid,nodev,journal_async_commit,errors=panic                            wait,check
 /dev/block/mmcblk0p7                    /efs                ext4      noatime,nosuid,nodev,journal_async_commit,errors=panic                            wait,check
-/dev/block/mmcblk0p9                    /preload            ext4      noatime,nosuid,nodev,journal_async_commit                                         wait
 /dev/block/mmcblk0p5                    /data               ext4      noatime,nosuid,nodev,discard,noauto_da_alloc,journal_async_commit,errors=panic    wait,check,encryptable=/efs/metadata
+
+## Swap ##
+/dev/block/mmcblk0p9                    /preload            swap      defaults                                                                          defaults
 
 ## Vold managed volumes ##
 
