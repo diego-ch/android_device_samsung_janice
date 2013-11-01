@@ -1,5 +1,6 @@
 -include device/samsung/u8500-common/BoardCommonConfig.mk
 
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/janice/include
 TARGET_OTA_ASSERT_DEVICE := janice,i9070,GT-I9070
 
 # Kernel
