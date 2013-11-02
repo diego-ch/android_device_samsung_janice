@@ -39,7 +39,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     GalaxySAdvanceSettings \
     CMAccount \
-    Stk
+    Stk \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
 
 # Gps
 PRODUCT_COPY_FILES += \
