@@ -35,6 +35,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungU8500RIL \
     ro.telephony.sends_barcount=1
 
+# Enable AAC 5.1 output
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.aac_51_output_enabled=true
+
+PRODUCT_TAGS += dalvik.gc.type-precise
+
 # Packages
 PRODUCT_PACKAGES += \
     GalaxySAdvanceSettings \
