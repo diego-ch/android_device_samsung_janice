@@ -16,6 +16,9 @@
 
 package org.cyanogenmod.hardware;
 
+import org.cyanogenmod.hardware.util.FileUtils;
+import java.io.File;
+
 /* 
  * Display RGB intensity calibration (kcal)
  *
@@ -31,13 +34,27 @@ package org.cyanogenmod.hardware;
  */
 
 public class DisplayColorCalibration {
+    
+    private static final String[] FILE_PATH = new String[] {
+            "/sys/devices/pri_lcd_s6e63m0.0/filter_R",
+            "/sys/devices/pri_lcd_s6e63m0.0/filter_G",
+            "/sys/devices/pri_lcd_s6e63m0.0/filter_B"
+    };
 
     /* 
      * All HAF classes should export this boolean. 
      * Real implementations must, of course, return true 
      */
 
-    public static boolean isSupported() { return false; }
+    public static boolean isSupported() {
+
+        for (String filePath : FILE_PATH) {
+            if (!new File(filePath).exists()) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     /*
      * Set the RGB values to the given input triplet. Input is
@@ -47,7 +64,13 @@ public class DisplayColorCalibration {
      */
 
     public static boolean setColors(String colors) {
-        throw new UnsupportedOperationException();
+        String[] valuesSplit = colors.split(" ");
+        boolean result = true;
+        for (int i = 0; i < valuesSplit.length; i++) {
+            String targetFile = FILE_PATH[i];
+            result &= FileUtils.writeLine(targetFile, Integer.parseInt(valuesSplit[i]));
+        }
+        return result;
     }
 
     /* 
@@ -55,7 +78,7 @@ public class DisplayColorCalibration {
      */
 
     public static int getMaxValue() {
-        return -1;
+        return 255;
     }
 
     /* 
@@ -63,7 +86,7 @@ public class DisplayColorCalibration {
      */
 
     public static int getMinValue() {
-        return -1;
+        return 0;
     }
 
     /* 
@@ -73,6 +96,11 @@ public class DisplayColorCalibration {
      */
 
     public static String getCurColors() {
-        return "0 0 0";
+        
+        StringBuilder values = new StringBuilder();
+            for (String filePath : FILE_PATH) {
+                values.append(FileUtils.readOneLine(filePath)).append(" ");
+        }
+        return values.toString();
     }
 }

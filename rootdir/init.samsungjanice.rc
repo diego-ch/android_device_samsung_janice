@@ -470,6 +470,9 @@ on boot
     chown system system /sys/kernel/mxt224e/sweep2wake
     chown system system /sys/module/mmc_core/parameters/use_spi_crc
     chown system system /sys/kernel/mxt224e/threshold_t48
+    chown system system /sys/devices/pri_lcd_s6e63m0.0/filter_R
+    chown system system /sys/devices/pri_lcd_s6e63m0.0/filter_G
+    chown system system /sys/devices/pri_lcd_s6e63m0.0/filter_B
     write /sys/kernel/mxt224e/threshold_t48 on
     
 
