@@ -16,18 +16,29 @@
 
 package org.cyanogenmod.hardware;
 
+import org.cyanogenmod.hardware.util.FileUtils;
+import java.io.File;
+
 /**
  * Adaptive backlight support (this refers to technologies like NVIDIA SmartDimmer,
  * QCOM CABL or Samsung CABC).
  */
 public class AdaptiveBacklight {
 
+    private static final String PATH = "/sys/class/lcd/panel/power_reduce";
+
     /**
      * Whether device supports an adaptive backlight technology.
      *
      * @return boolean Supported devices must return always true
      */
-    public static boolean isSupported() { return false; }
+    public static boolean isSupported() {
+        if (!new File(PATH).exists()) {
+            return false;
+        }
+        
+        return true;
+    }
 
     /**
      * This method return the current activation status of the adaptive backlight technology.
@@ -35,7 +46,13 @@ public class AdaptiveBacklight {
      * @return boolean Must be false when adaptive backlight is not supported or not activated, or
      * the operation failed while reading the status; true in any other case.
      */
-    public static boolean isEnabled() { return false; }
+    public static boolean isEnabled() {
+        if (Integer.parseInt(FileUtils.readOneLine(PATH)) <= 0) {
+            return false;
+        }
+        
+        return true;
+    }
 
     /**
      * This method allows to setup adaptive backlight technology status.
@@ -44,6 +61,9 @@ public class AdaptiveBacklight {
      * @return boolean Must be false if adaptive backlight is not supported or the operation
      * failed; true in any other case.
      */
-    public static boolean setEnabled(boolean status) { return false; }
+    public static boolean setEnabled(boolean status) {    
+        String value = (status ? "1" : "0");    
+        return (FileUtils.writeLine(PATH, value));
+    }
 
 }
