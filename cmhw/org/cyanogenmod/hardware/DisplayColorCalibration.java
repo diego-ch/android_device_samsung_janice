@@ -68,7 +68,7 @@ public class DisplayColorCalibration {
         boolean result = true;
         for (int i = 0; i < valuesSplit.length; i++) {
             String targetFile = FILE_PATH[i];
-            result &= FileUtils.writeLine(targetFile, Integer.parseInt(valuesSplit[i]));
+            result &= FileUtils.writeLine(targetFile, valuesSplit[i]);
         }
         return result;
     }
