@@ -31,8 +31,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
     ro.telephony.default_network=0 \
-    ro.telephony.ril_class=SamsungU8500RIL \
-    ro.telephony.sends_barcount=1
+	ro.telephony.ril_class=SamsungU8500RIL \
+	ro.telephony.sends_barcount=1
+	
+# CM 11 Required lines
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.zygote.disable_gl_preload=1 \
+	ro.bq.gpu_to_cpu_unsupported=1 \
+	ro.boot.selinux=disabled
 
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
