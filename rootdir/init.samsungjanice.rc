@@ -4,13 +4,15 @@ on early-init
 
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
-    mkdir /storage 0775 system system
-    mkdir /storage/sdcard0 0775 system system
+    
+    mkdir /mnt/shell 0700 shell shell
+    mkdir /storage 0550 system sdcard_r
+    mkdir /storage/sdcard0 0700 root root
+    mkdir /storage/sdcard1 0700 root root
     chmod 0701 /mnt/media_rw
-    mkdir /storage/sdcard1 0775 system system
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-    mkdir /mnt/shell 0700 shell shell
+
     mkdir /efs 0771 radio system
     mkdir /modemfs 0771 system system
     mkdir /mnt/.lfs 0755 root root
