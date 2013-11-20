@@ -2,16 +2,16 @@ import /init.samsungjanice.usb.rc
 
 on early-init
 
-    export EXTERNAL_STORAGE /storage/sdcard0
-    export SECONDARY_STORAGE /storage/sdcard1
-    
+    chmod 0701 /mnt/media_rw
     mkdir /mnt/shell 0700 shell shell
     mkdir /storage 0550 system sdcard_r
     mkdir /storage/sdcard0 0700 root root
     mkdir /storage/sdcard1 0700 root root
-    chmod 0701 /mnt/media_rw
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+    
+    export EXTERNAL_STORAGE /storage/sdcard0
+    export SECONDARY_STORAGE /storage/sdcard1
 
     mkdir /efs 0771 radio system
     mkdir /modemfs 0771 system system
@@ -780,7 +780,7 @@ service wlandutservice /system/bin/wlandutservice
 service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard0 /storage/sdcard0
     class late_start
     disabled
-    
+
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard1 /storage/sdcard1
     class late_start
     disabled
