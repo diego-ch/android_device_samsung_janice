@@ -1,6 +1,6 @@
 import /init.samsungjanice.usb.rc
 
-on early-init
+on init
 
     chmod 0701 /mnt/media_rw
     mkdir /mnt/shell 0700 shell shell
@@ -27,9 +27,7 @@ on early-init
     write /sys/kernel/mm/ksm/pages_to_scan 100
     write /sys/kernel/mm/ksm/sleep_millisecs 500
     write /sys/kernel/mm/ksm/run 1
-
-on init
-
+    
     # setup the global environment
     export PATH /system/sbin:/system/bin:/system/xbin:/sbin:/bin:/vendor/bin
     export LD_LIBRARY_PATH /system/lib:/lib:/usr/lib:/system/lib/ste_omxcomponents:/vendor/lib
