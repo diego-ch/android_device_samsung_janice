@@ -21,8 +21,8 @@
 
 ## Vold managed volumes ##
 
-/devices/sdi2/mmc_host/mmc0/mmc0        /storage/sdcard0    auto      defaults                                                                          voldmanaged=sdcard0:8,nonremovable,lun=/sys/class/android_usb/android0/f_mass_storage/lun0/file
-/devices/sdi0/mmc_host/mmc1/mmc1        /storage/sdcard1    auto      defaults                                                                          voldmanaged=sdcard1:auto,noemulatedsd,lun=/sys/class/android_usb/android0/f_mass_storage/lun1/file
+/devices/sdi2/mmc_host/mmc0/mmc0        auto                auto      defaults                                                                          voldmanaged=sdcard0:8,nonremovable,lun=/sys/class/android_usb/android0/f_mass_storage/lun0/file
+/devices/sdi0/mmc_host/mmc1/mmc1        auto                auto      defaults                                                                          voldmanaged=sdcard1:auto,noemulatedsd,lun=/sys/class/android_usb/android0/f_mass_storage/lun1/file
 
 
 ## Recovery only ##
