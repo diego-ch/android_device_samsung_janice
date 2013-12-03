@@ -1,7 +1,6 @@
 # Include common makefile
 $(call inherit-product, device/samsung/u8500-common/common.mk)
 
-
 ifneq ($(TARGET_SCREEN_HEIGHT),800)
 # Call cm.mk because somehow it's not being called!
 $(call inherit-product, device/samsung/janice/cm.mk)
@@ -11,10 +10,6 @@ LOCAL_PATH := device/samsung/janice
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-# This device is HDPI
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # STE
 PRODUCT_COPY_FILES += \
@@ -27,29 +22,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/tee/libbassapp_ssw:system/lib/tee/libbassapp_ssw \
     $(LOCAL_PATH)/tee/smcl_ta_8500bx_secure.ssw:system/lib/tee/smcl_ta_8500bx_secure.ssw 
 
-# RIL
-PRODUCT_PROPERTY_OVERRIDES += \
-    mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
-    ro.telephony.default_network=0 \
-	ro.telephony.ril_class=SamsungU8500RIL \
-	ro.telephony.sends_barcount=1
-	
-# CM 11 Required lines
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.zygote.disable_gl_preload=1 \
-	ro.bq.gpu_to_cpu_unsupported=1 \
-	ro.boot.selinux=disabled
-
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true
 
-PRODUCT_TAGS += dalvik.gc.type-precise
-
 # Packages
 PRODUCT_PACKAGES += \
     GalaxySAdvanceSettings \
-    CMAccount \
     Stk \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
