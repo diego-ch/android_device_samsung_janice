@@ -22,7 +22,7 @@ How to build:
         git cherry-pick FETCH_HEAD
         cd ..
         cd native
-        git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/33/52033/4
+        git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/33/52033/5
         git cherry-pick FETCH_HEAD
         cd ../..
         cd system/core
