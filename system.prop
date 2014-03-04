@@ -8,13 +8,8 @@ rild.libargs=-d /dev/ttyS0
 ro.sf.lcd_density=240
 ro.lcd_min_brightness=30
 
-debug.hwui.render_dirty_regions=false
-
 # STE: Low power audio - enable ULP mode
 ste.nmf.autoidle=1
-
-# STE: Address of DBus STE bus
-ste.dbus.bus.address=unix:path=/dev/socket/dbus_ste
 
 # STE: UNSOL_CALL_RING is only sent once from RIL.
 # Android needs to generate more rings if needed.
