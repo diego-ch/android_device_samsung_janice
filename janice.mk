@@ -29,7 +29,7 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
-    $(COMMON_PATH)/configs/sirfgps.conf:system/etc/sirfgps.conf
+    $(LOCAL_PATH)/configs/sirfgps.conf:system/etc/sirfgps.conf
 
 # Compass workaround
 PRODUCT_COPY_FILES += \
