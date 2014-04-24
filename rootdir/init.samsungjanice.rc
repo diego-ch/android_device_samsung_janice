@@ -669,6 +669,9 @@ on property:sys.boot_completed=1
     chown system system /sys/kernel/liveopp/arm_step8
     chown system system /sys/kernel/liveopp/arm_step9
     chown system system /sys/kernel/mali/mali_auto_boost
+    chown system system /sys/kernel/mali/mali_boost_delay
+    chown system system /sys/kernel/mali/mali_boost_high
+    chown system system /sys/kernel/mali/mali_boost_low
     chown system system /sys/kernel/mali/mali_dvfs_config
     chown system system /sys/kernel/mali/mali_gpu_clock
     chown system system /sys/kernel/mali/mali_gpu_fullspeed
