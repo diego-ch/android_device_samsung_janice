@@ -35,6 +35,8 @@ import java.io.File;
 
 public class DisplayColorCalibration {
     
+    public static final int[] DEFAULT_RGB_VALUES = { 24, 8, 36 };
+    
     private static final String[] FILE_PATH = new String[] {
             "/sys/devices/pri_lcd_s6e63m0.0/filter_R",
             "/sys/devices/pri_lcd_s6e63m0.0/filter_G",
