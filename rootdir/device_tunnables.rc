@@ -1,4 +1,5 @@
-# System permission for NovaThor Settings
+on boot
+    # System permission for NovaThor Settings
     chown system system /proc/sys/net/ipv4/tcp_congestion_control
     chown system system /sys/block/mmcblk0/queue/read_ahead_kb
     chown system system /sys/class/camera/flash/burning_led
