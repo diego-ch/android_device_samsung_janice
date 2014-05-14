@@ -1,6 +1,6 @@
 import /init.samsungjanice.usb.rc
-# Set permissions for NovathorSettings app tunnables
-import /device_tunnables.rc
+# Set permissions for NovathorSettings app tunables
+import /device_tunables.rc
 
 on init
 

@@ -1,4 +1,4 @@
-on boot
+on property:sys.boot_completed=1
     # System permission for NovaThor Settings
     chown system system /proc/sys/net/ipv4/tcp_congestion_control
     chown system system /sys/block/mmcblk0/queue/read_ahead_kb
