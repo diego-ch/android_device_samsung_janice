@@ -1,13 +1,8 @@
 import /init.u8500.rc
-import /device_tunables.rc
-import /init.samsungjanice.usb.rc
 
 on fs
 
     exec /system/xbin/mkswap /dev/block/mmcblk0p9
-
-    mount_all /fstab.samsungjanice
-    swapon_all /fstab.samsungjanice
 
 on post-fs
 
