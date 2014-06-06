@@ -4,6 +4,9 @@ on fs
 
     exec /system/xbin/mkswap /dev/block/mmcblk0p9
 
+    mount_all /fstab.samsungjanice
+    swapon_all /fstab.samsungjanice
+
 on post-fs
 
     chown radio radio /modemfs/APPL
@@ -74,6 +77,9 @@ on post-fs-data
 
     # After we setup wireless subsystem, let dnsmasq create files for soft ap
     chown dhcp system /data/misc/dhcp
+
+    # Set indication (checked by vold) that we have finished this action
+    setprop vold.post_fs_data_done 1
 
 on boot
 
