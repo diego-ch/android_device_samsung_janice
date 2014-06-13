@@ -1,5 +1,5 @@
 on property:sys.boot_completed=1
-    # System permission for NovaThor Settings
+    # System permissions for NovaThor Settings package and CyanogenMod Hardware Abstraction Framework
     chown system system /proc/sys/net/ipv4/tcp_congestion_control
     chown system system /sys/block/mmcblk0/queue/read_ahead_kb
     chown system system /sys/class/camera/flash/burning_led
@@ -51,4 +51,5 @@ on property:sys.boot_completed=1
     chown system system /sys/module/mali/parameters/mali_l2_max_reads
     chown system system /sys/module/mali/parameters/pre_allocated_memory_size_max
     chown system system /sys/module/mmc_core/parameters/use_spi_crc
+    chown system system /sys/vibrator/pwm_value
     write /sys/kernel/mxt224e/threshold_t48 on
