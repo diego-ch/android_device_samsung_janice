@@ -18,21 +18,5 @@ TARGET_RECOVERY_FSTAB := device/samsung/janice/rootdir/fstab.samsungjanice
 # Hardware tunables (device parts replacement)
 BOARD_HARDWARE_CLASS := device/samsung/janice/cmhw
 
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/janice/selinux
-
-BOARD_SEPOLICY_UNION += \
-    device.te \
-    file.te \
-    rild.te \
-    drmserver.te \
-    ueventd.te \
-    domain.te \
-    system.te \
-    file_contexts \
-    wpa_supplicant.te \
-    vold.te
-
 # Disable legacy sensors using because janice has gyro
 BOARD_USE_LEGACY_SENSORS_FUSION := false
