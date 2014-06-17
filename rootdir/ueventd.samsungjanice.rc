@@ -18,9 +18,10 @@
 # Sensor i2c
 /dev/i2c-2                0660   media      system
 /dev/i2c-4		  0660	 system		system
+
 # PWR QOS devices
-/dev/ape_opp              0660   system     graphics
-/dev/ddr_opp              0660   system     graphics
+/dev/ape_opp              0660   media     system
+/dev/ddr_opp              0660   media     system
 
 # hwmem driver
 /dev/hwmem                0666   media      system
