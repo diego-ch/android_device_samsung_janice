@@ -3,9 +3,9 @@ on property:sys.boot_completed=1
     chown system system /proc/sys/net/ipv4/tcp_congestion_control
     chown system system /sys/block/mmcblk0/queue/read_ahead_kb
     chown system system /sys/class/camera/flash/burning_led
-    chown system system /sys/devices/pri_lcd_s6e63m0.0/filter_R
-    chown system system /sys/devices/pri_lcd_s6e63m0.0/filter_G
-    chown system system /sys/devices/pri_lcd_s6e63m0.0/filter_B
+    chown system system /sys/kernel/s6e63m0/color/main_R
+    chown system system /sys/kernel/s6e63m0/color/main_G
+    chown system system /sys/kernel/s6e63m0/color/main_B
     chown system system /sys/devices/system/cpu/sched_mc_power_savings
     chown system system /sys/kernel/abb-charger/charger_curr
     chown system system /sys/kernel/abb-charger/max_ac_c
