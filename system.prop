@@ -13,9 +13,6 @@ debug.hwui.render_dirty_regions=false
 # STE: Low power audio - enable ULP mode
 ste.nmf.autoidle=1
 
-# STE: Address of DBus STE bus
-ste.dbus.bus.address=unix:path=/dev/socket/dbus_ste
-
 # STE: UNSOL_CALL_RING is only sent once from RIL.
 # Android needs to generate more rings if needed.
 ro.telephony.call_ring.multiple=false
@@ -35,3 +32,11 @@ ste.cam.back.orientation=90
 
 # STE: Camera file path configuration
 ste.cam.ext.cfg.path.secondary=/system/usr/share/camera/config_file/samsung_s5k4ecgx_janice.dat
+
+# Hardware info
+ro.device.chipset=ST-Ericsson NovaThor U8500 (45nm)
+ro.device.cpu=ARMv7 1GHz Dual-core ARM Cortex-A9
+ro.device.gpu=Mali-400MP Single Core
+ro.device.rear_cam=5 Mpix (2592x1944)
+ro.device.front_cam=1.3 Mpix (1280x1024)
+ro.device.screen_res=4,0' 800x480 pixels ( ~233 ppi)
