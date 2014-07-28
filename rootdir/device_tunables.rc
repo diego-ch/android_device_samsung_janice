@@ -28,16 +28,17 @@ on property:sys.boot_completed=1
     chown system system /sys/kernel/abb-regu/VOTG
     chown system system /sys/kernel/debug/cpuidle/deepest_state
     chown system system /sys/kernel/fsync/mode
-    chown system system /sys/kernel/liveopp/arm_step0
-    chown system system /sys/kernel/liveopp/arm_step1
-    chown system system /sys/kernel/liveopp/arm_step2
-    chown system system /sys/kernel/liveopp/arm_step3
-    chown system system /sys/kernel/liveopp/arm_step4
-    chown system system /sys/kernel/liveopp/arm_step5
-    chown system system /sys/kernel/liveopp/arm_step6
-    chown system system /sys/kernel/liveopp/arm_step7
-    chown system system /sys/kernel/liveopp/arm_step8
-    chown system system /sys/kernel/liveopp/arm_step9
+    chown system system /sys/kernel/liveopp/arm_step00
+    chown system system /sys/kernel/liveopp/arm_step01
+    chown system system /sys/kernel/liveopp/arm_step02
+    chown system system /sys/kernel/liveopp/arm_step03
+    chown system system /sys/kernel/liveopp/arm_step04
+    chown system system /sys/kernel/liveopp/arm_step05
+    chown system system /sys/kernel/liveopp/arm_step06
+    chown system system /sys/kernel/liveopp/arm_step07
+    chown system system /sys/kernel/liveopp/arm_step08
+    chown system system /sys/kernel/liveopp/arm_step09
+    chown system system /sys/kernel/liveopp/arm_step10
     chown system system /sys/kernel/mali/mali_auto_boost
     chown system system /sys/kernel/mali/mali_boost_delay
     chown system system /sys/kernel/mali/mali_boost_high
